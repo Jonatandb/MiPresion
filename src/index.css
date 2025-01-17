@@ -1,35 +1,57 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #202020;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  /* border: 1px solid greenyellow; */
+
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  min-width: 320px;
-  min-height: 99vh;
+  max-width: 375px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 99vw;
+  padding: 3rem 0 0 0;
 }
 
 header {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 320px;
+  background-color: black;
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 375px;
 }
 
-#logo {
+header>h1 {
+  margin: 0;
+  line-height: 1.5;
+  padding-left: .5rem;
+}
+
+header>img {
   border-radius: 25px;
+  padding: .2rem;
 }
 
 section {
