@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 375px;
+}
+
+
+
+header>h1 {
+  margin: 0;
+  line-height: 1.5;
+  padding-left: .5rem;
+}
+
+header>img {
+  border-radius: 25px;
+  padding: .2rem;
+}

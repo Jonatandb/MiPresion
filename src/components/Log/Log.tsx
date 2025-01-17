@@ -1,3 +1,5 @@
+import './styles.css'
+
 import data from '../../../mockData/data.json'
 
 const getCategoryInfo = (systolic: number, diastolic: number) => {
