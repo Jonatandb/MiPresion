@@ -14,7 +14,6 @@ const App = () => {
     <>
       <Header />
       <LogsList />
-
       {
         showAddButton && <AddButton onClick={handleAddButton} />
       }

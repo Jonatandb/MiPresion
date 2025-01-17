@@ -68,7 +68,7 @@ const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) =>
                   <img className="pillIcon" src={pencilEmptyWhite} alt="Ícono no hay notas" />
               }
             </div>
-            <span id="pulse" title="Pulso">{pulse} <span id="leyend">BPM</span></span>
+            <span id="bpm" title="Pulso">{pulse} <span id="leyend">BPM</span></span>
           </section>
         </article>
       }

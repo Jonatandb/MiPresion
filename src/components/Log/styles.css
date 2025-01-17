@@ -16,6 +16,7 @@
 
 #level {
   font-size: 1.2rem;
+  font-weight: 700;
 }
 
 #date {
@@ -29,7 +30,6 @@
 
 #bpm {
   color: white;
-  font-size: 1.5rem;
 }
 
 #leyend {
@@ -68,4 +68,27 @@
   gap: .5rem;
   align-items: center;
   justify-content: center;
+}
+
+@media (prefers-color-scheme: light) {
+  #logContainer {
+    background-color: #cccccc;
+    color: red;
+  }
+
+  #date {
+    color: #303030;
+  }
+
+  #mmhg {
+    color: #303030;
+  }
+
+  #bpm {
+    color: #303030;
+  }
+
+  #leyend {
+    color: #303030;
+  }
 }

@@ -1,9 +1,19 @@
+html[data-theme="light"] {
+  --primary-color: #303030;
+  --background-color: #f1ecec;
+}
+
+html[data-theme="dark"] {
+  --primary-color: #ffffff;
+  --background-color: #303030;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #303030;
+  color: var(--primary-color);
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,8 +25,6 @@
 }
 
 body {
-  /* border: 1px solid greenyellow; */
-
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -27,20 +35,4 @@ body {
 #root {
   width: 99vw;
   padding: 3rem 0 0 0;
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
