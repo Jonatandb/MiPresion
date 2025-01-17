@@ -6,7 +6,7 @@
     "diastolic": 89,
     "pulse": 68,
     "medicine": true,
-    "notes": ""
+    "notes": "Rivotril,Muy rica!"
   },
   {
     "id": "001_182",
@@ -23,8 +23,8 @@
     "systolic": 163,
     "diastolic": 109,
     "pulse": 68,
-    "medicine": false,
-    "notes": ""
+    "medicine": true,
+    "notes": "Valium, especial!"
   },
   {
     "id": "001_140",
@@ -32,7 +32,7 @@
     "systolic": 140,
     "diastolic": 94,
     "pulse": 63,
-    "medicine": false,
+    "medicine": true,
     "notes": ""
   },
   {
@@ -41,8 +41,8 @@
     "systolic": 132,
     "diastolic": 86,
     "pulse": 67,
-    "medicine": true,
-    "notes": ""
+    "medicine": false,
+    "notes": "Pastilla de carbón 💩"
   },
   {
     "id": "001_120",
