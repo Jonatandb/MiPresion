@@ -1,11 +1,11 @@
 import Header from "./components/Header/Header"
-import Log from "./components/Log/Log"
+import LogsList from "./components/LogsList/LogsList"
 
 const App = () => {
   return (
     <>
       <Header />
-      <Log />
+      <LogsList />
     </>
   )
 }

@@ -1,11 +1,10 @@
-section {
+article {
   border-radius: 0.8rem;
   background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   padding: .5rem;
-  margin: 0rem 0 .3rem 0;
 }
 
 .row {

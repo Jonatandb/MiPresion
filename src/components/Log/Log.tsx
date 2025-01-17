@@ -1,7 +1,5 @@
 import './styles.css'
 
-import data from '../../../mockData/data.json'
-
 const getCategoryInfo = (systolic: number, diastolic: number) => {
   const categoryData = {
     style: "levelAisolated",
@@ -31,28 +29,26 @@ const getCategoryInfo = (systolic: number, diastolic: number) => {
   return categoryData
 }
 
-const Log = () => {
+const Log = ({ date, systolic, diastolic, pulse }) => {
   return (
     <>
       {
-        data.map(({ id, date, systolic, diastolic, pulse }) => (
-          <section key={id}>
-            <div className="row">
-              <span id="level" title="Categoría" className={`${getCategoryInfo(systolic, diastolic).style}`}>{`${getCategoryInfo(systolic, diastolic).category}`}</span>
-              <span id="date" title={date}>{date}</span>
+        <article>
+          <div className="row">
+            <span id="level" title="Categoría" className={`${getCategoryInfo(systolic, diastolic).style}`}>{`${getCategoryInfo(systolic, diastolic).category}`}</span>
+            <span id="date" title={date}>{date}</span>
+          </div>
+          <div className="row">
+            <div>
+              <span id="mmhg" title="Presión sistólica">{systolic}</span>
+              <span id="mmhg">/</span>
+              <span id="mmhg" title="Presión diastólica">{diastolic}</span>
+              {` `}
+              <span id="leyend" title="Milímetros de mercurio">mmhg</span>
             </div>
-            <div className="row">
-              <div>
-                <span id="mmhg" title="Presión sistólica">{systolic}</span>
-                <span id="mmhg">/</span>
-                <span id="mmhg" title="Presión diastólica">{diastolic}</span>
-                {` `}
-                <span id="leyend" title="Milímetros de mercurio">mmhg</span>
-              </div>
-              <span id="pulse" title="Pulso">{pulse} <span id="leyend">BPM</span></span>
-            </div>
-          </section>
-        ))
+            <span id="pulse" title="Pulso">{pulse} <span id="leyend">BPM</span></span>
+          </div>
+        </article>
       }
     </>
   )
