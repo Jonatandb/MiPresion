@@ -1,4 +1,4 @@
-import data from '../../mockData/data.json'
+import data from '../../../mockData/data.json'
 
 const getCategoryInfo = (systolic: number, diastolic: number) => {
   const categoryData = {
