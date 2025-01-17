@@ -4,7 +4,8 @@ article {
   color: white;
   display: flex;
   flex-direction: column;
-  padding: .5rem;
+  padding: .8rem;
+  font-size: 2rem;
 }
 
 .row {
@@ -14,17 +15,16 @@ article {
 }
 
 #level {
-  font-size: .9rem;
+  font-size: 1.2rem;
 }
 
 #date {
   color: gray;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 #mmhg {
   color: white;
-  font-size: 1.5rem;
 }
 
 #bpm {
