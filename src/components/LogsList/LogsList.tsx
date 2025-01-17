@@ -4,11 +4,21 @@ import './styles.css'
 
 import data from '../../../mockData/data.json'
 
+export interface LogData {
+  id: string,
+  date: string,
+  systolic: number,
+  diastolic: number,
+  pulse: number
+}
+
+const registers: LogData[] = data
+
 const LogsList = () => {
   return (
     <section>
       {
-        data.map(log => (
+        registers.map(log => (
           <Log key={log.id} {...log} />
         ))
       }

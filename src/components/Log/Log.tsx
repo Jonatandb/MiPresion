@@ -29,7 +29,10 @@ const getCategoryInfo = (systolic: number, diastolic: number) => {
   return categoryData
 }
 
-const Log = ({ date, systolic, diastolic, pulse }) => {
+import { LogData } from '../LogsList/LogsList'
+interface LogProps extends Omit<LogData, 'id'> { }
+
+const Log = ({ date, systolic, diastolic, pulse }: LogProps) => {
   return (
     <>
       {
