@@ -4,41 +4,53 @@
     "date": "3 Ene 13:55",
     "systolic": 162,
     "diastolic": 89,
-    "pulse": 68
+    "pulse": 68,
+    "medicine": true,
+    "notes": ""
   },
   {
     "id": "001_182",
     "date": "3 Ene 13:55",
     "systolic": 182,
     "diastolic": 119,
-    "pulse": 68
+    "pulse": 68,
+    "medicine": false,
+    "notes": ""
   },
   {
     "id": "001_163",
     "date": "3 Ene 13:55",
     "systolic": 163,
     "diastolic": 109,
-    "pulse": 68
+    "pulse": 68,
+    "medicine": false,
+    "notes": ""
   },
   {
     "id": "001_140",
     "date": "2 Ene 10:21",
     "systolic": 140,
     "diastolic": 94,
-    "pulse": 63
+    "pulse": 63,
+    "medicine": false,
+    "notes": ""
   },
   {
     "id": "001_132",
     "date": "1 Ene 16:44",
     "systolic": 132,
     "diastolic": 86,
-    "pulse": 67
+    "pulse": 67,
+    "medicine": true,
+    "notes": ""
   },
   {
     "id": "001_120",
     "date": "1 Ene 07:09",
     "systolic": 120,
     "diastolic": 80,
-    "pulse": 65
+    "pulse": 65,
+    "medicine": true,
+    "notes": ""
   }
 ]
