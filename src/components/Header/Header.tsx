@@ -1,9 +1,9 @@
 const Header = () => {
   return (
     <header>
-      <h2>
-        Logs
-      </h2>
+      <h1>
+        Registros
+      </h1>
       <img id="logo" src="/favicon.ico" alt="favicon" height={30} />
     </header>
   )
