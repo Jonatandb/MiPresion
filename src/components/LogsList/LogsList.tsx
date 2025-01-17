@@ -9,14 +9,16 @@ export interface LogData {
   date: string,
   systolic: number,
   diastolic: number,
-  pulse: number
+  pulse: number,
+  medicine: boolean,
+  notes: string
 }
 
 const registers: LogData[] = data
 
 const LogsList = () => {
   return (
-    <section>
+    <section id="logsListContainer">
       {
         registers.map(log => (
           <Log key={log.id} {...log} />

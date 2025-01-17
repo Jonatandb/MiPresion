@@ -1,4 +1,9 @@
 import './styles.css'
+import pillEmptyWhite from '../../assets/pill_empty_white.png';
+import pillFull from '../../assets/pill_full.png';
+import pencilEmptyWhite from '../../assets/pencil_empty_white.png';
+import pencilFull from '../../assets/pencil.png';
+
 
 const getCategoryInfo = (systolic: number, diastolic: number) => {
   const categoryData = {
@@ -32,16 +37,16 @@ const getCategoryInfo = (systolic: number, diastolic: number) => {
 import { LogData } from '../LogsList/LogsList'
 interface LogProps extends Omit<LogData, 'id'> { }
 
-const Log = ({ date, systolic, diastolic, pulse }: LogProps) => {
+const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) => {
   return (
     <>
       {
-        <article>
-          <div className="row">
+        <article id='logContainer'>
+          <section className="row">
             <span id="level" title="Categoría" className={`${getCategoryInfo(systolic, diastolic).style}`}>{`${getCategoryInfo(systolic, diastolic).category}`}</span>
             <span id="date" title={date}>{date}</span>
-          </div>
-          <div className="row">
+          </section>
+          <section className="row">
             <div>
               <span id="mmhg" title="Presión sistólica">{systolic}</span>
               <span id="mmhg">/</span>
@@ -49,8 +54,22 @@ const Log = ({ date, systolic, diastolic, pulse }: LogProps) => {
               {` `}
               <span id="leyend" title="Milímetros de mercurio">mmhg</span>
             </div>
+            <div id="iconsContainer">
+              {
+                medicine ?
+                  <img className="pillIcon" src={pillFull} alt="Ícono píldora tomada" />
+                  :
+                  <img className="pillIcon" src={pillEmptyWhite} alt="Ícono píldora no tomada" />
+              }
+              {
+                notes ?
+                  <img className="pillIcon" src={pencilFull} alt="Ícono hay notas" title={notes} />
+                  :
+                  <img className="pillIcon" src={pencilEmptyWhite} alt="Ícono no hay notas" />
+              }
+            </div>
             <span id="pulse" title="Pulso">{pulse} <span id="leyend">BPM</span></span>
-          </div>
+          </section>
         </article>
       }
     </>

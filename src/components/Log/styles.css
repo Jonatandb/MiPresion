@@ -1,4 +1,4 @@
-article {
+#logContainer {
   border-radius: 0.8rem;
   background-color: black;
   color: white;
@@ -56,4 +56,16 @@ article {
 .levelStage3,
 .levelAisolated {
   color: tomato;
+}
+
+.pillIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#iconsContainer {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
 }
