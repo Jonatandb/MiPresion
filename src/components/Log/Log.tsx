@@ -1,7 +1,7 @@
 import './styles.css'
-import pillEmptyWhite from '../../assets/pill_empty_white.png';
-import pillFull from '../../assets/pill_full.png';
-import pencilEmptyWhite from '../../assets/pencil_empty_white.png';
+import pillEmptyWhite from '../../assets/pill_white.png';
+import pillFull from '../../assets/pill.png';
+import pencilEmptyWhite from '../../assets/pencil_white.png';
 import pencilFull from '../../assets/pencil.png';
 
 
