@@ -2,25 +2,32 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #303030;
-
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 375px;
+  background-color: #f1ecec;
+  color: #303030;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
 }
 
+#titleContainer {
+  display: flex;
+  align-items: center;
+}
 
+#iconsRightContainer {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding-right: .6rem;
+}
 
-header>h1 {
+#mainTitle {
   margin: 0;
   line-height: 1.5;
   padding-left: .5rem;
-}
-
-header>img {
-  border-radius: 25px;
-  padding: .2rem;
 }
