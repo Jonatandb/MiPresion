@@ -43,16 +43,16 @@ const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) =>
       {
         <article id='logContainer'>
           <section className="row">
-            <span id="level" title="Categoría" className={`${getCategoryInfo(systolic, diastolic).style}`}>{`${getCategoryInfo(systolic, diastolic).category}`}</span>
-            <span id="date" title={date}>{date}</span>
+            <span className={`level ${getCategoryInfo(systolic, diastolic).style}`} title="Categoría" >{`${getCategoryInfo(systolic, diastolic).category}`}</span>
+            <span className="date" title={date}>{date}</span>
           </section>
           <section className="row">
             <div>
-              <span id="mmhg" title="Presión sistólica">{systolic}</span>
-              <span id="mmhg">/</span>
-              <span id="mmhg" title="Presión diastólica">{diastolic}</span>
+              <span className="mmhg" title="Presión sistólica">{systolic}</span>
+              <span className="mmhg">/</span>
+              <span className="mmhg" title="Presión diastólica">{diastolic}</span>
               {` `}
-              <span id="leyend" title="Milímetros de mercurio">mmhg</span>
+              <span className="leyend" title="Milímetros de mercurio">mmhg</span>
             </div>
             <div id="iconsContainer">
               {
@@ -68,7 +68,7 @@ const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) =>
                   <img className="pillIcon" src={pencilEmptyWhite} alt="Ícono no hay notas" />
               }
             </div>
-            <span id="bpm" title="Pulso">{pulse} <span id="leyend">BPM</span></span>
+            <span className="bpm" title="Pulso">{pulse} <span id="bpmLeyend">BPM</span></span>
           </section>
         </article>
       }

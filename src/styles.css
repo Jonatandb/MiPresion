@@ -1,20 +1,5 @@
-html[data-theme="light"] {
-  --primary-color: #303030;
-  --background-color: #f1ecec;
-}
-
-html[data-theme="dark"] {
-  --primary-color: #ffffff;
-  --background-color: #303030;
-}
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
-  color-scheme: light dark;
-  color: var(--primary-color);
-  background-color: var(--background-color);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +7,34 @@ html[data-theme="dark"] {
 
   box-sizing: border-box;
   user-select: none;
+
+  color-scheme: light dark;
+
+  --light-text: #1a1a1a;
+  --light-bg: #f1ecec;
+  --light-bg-secondary: #ffffff;
+  --dark-text: #f1ecec;
+  --dark-bg: #1a1a1a;
+  --dark-bg-secondary: #000000;
+
+  --text-color: var(--light-text);
+  --background-color: var(--light-bg);
+  --background-color-secondary: var(--light-bg-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --text-color: var(--dark-text);
+    --background-color: var(--dark-bg);
+    --background-color-secondary: var(--dark-bg-secondary);
+  }
+}
+
+/* Override explícito via data-theme */
+:root[data-theme="dark"] {
+  --text-color: var(--dark-text);
+  --background-color: var(--dark-bg);
+  --background-color-secondary: var(--dark-bg-secondary);
 }
 
 body {
@@ -30,9 +43,15 @@ body {
   justify-content: center;
   max-width: 375px;
   min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s;
 }
 
 #root {
-  width: 99vw;
-  padding: 3rem 0 0 0;
+  width: 100%;
+  padding: 3rem .5rem 0 .5rem;
 }

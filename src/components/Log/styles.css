@@ -1,11 +1,11 @@
 #logContainer {
   border-radius: 0.8rem;
-  background-color: black;
-  color: white;
   display: flex;
   flex-direction: column;
   padding: .8rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: var(--background-color-secondary);
 }
 
 .row {
@@ -14,26 +14,31 @@
   align-items: flex-end;
 }
 
-#level {
+.level {
   font-size: 1.2rem;
+  font-weight: 900;
+  background-color: rgba(0, 0, 0, .7);
+  padding: .01rem .2rem;
+}
+
+.date {
+  color: var(--text-color);
+  font-size: 1rem;
   font-weight: 700;
 }
 
-#date {
-  color: gray;
-  font-size: 1rem;
+.mmhg {
+  color: var(--text-color);
+  font-weight: 700;
 }
 
-#mmhg {
-  color: white;
+.bpm {
+  color: var(--text-color);
+  font-weight: 700;
 }
 
-#bpm {
-  color: white;
-}
-
-#leyend {
-  color: gray;
+.leyend {
+  color: var(--text-color);
   font-size: 0.8rem;
 }
 
@@ -68,27 +73,4 @@
   gap: .5rem;
   align-items: center;
   justify-content: center;
-}
-
-@media (prefers-color-scheme: light) {
-  #logContainer {
-    background-color: #cccccc;
-    color: red;
-  }
-
-  #date {
-    color: #303030;
-  }
-
-  #mmhg {
-    color: #303030;
-  }
-
-  #bpm {
-    color: #303030;
-  }
-
-  #leyend {
-    color: #303030;
-  }
 }

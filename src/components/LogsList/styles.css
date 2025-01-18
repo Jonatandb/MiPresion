@@ -1,6 +1,6 @@
 #logsListContainer {
   display: flex;
   flex-direction: column;
-  gap: .2rem;
+  gap: .5rem;
   margin-top: 1rem;
 }
