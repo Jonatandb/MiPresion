@@ -1,6 +1,6 @@
 import './styles.css'
 
-import add from '../../assets/add_white.png'
+import add from '@/assets/add_white.png'
 
 const AddButton = ({ onClick }: { onClick: () => void }) => {
   const handleClick = () => {

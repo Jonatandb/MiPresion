@@ -1,4 +1,4 @@
-import settings from '../../assets/settings.png'
+import settings from '@/assets/settings.png'
 
 import './styles.css'
 

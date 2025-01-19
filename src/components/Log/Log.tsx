@@ -1,13 +1,13 @@
-import { LogData } from '../LogsList/LogsList'
-import { useTheme } from '../../hooks/useTheme';
+import { LogData } from '@/components/LogsList/LogsList'
+import { useTheme } from '@/hooks/useTheme';
 
-import pencilEmptyWhite from '../../assets/pencil_white.png';
-import pencilFull from '../../assets/pencil.png';
-import pencilBlack from '../../assets/pencil_black.png';
+import pencilEmptyWhite from '@/assets/pencil_white.png';
+import pencilFull from '@/assets/pencil.png';
+import pencilBlack from '@/assets/pencil_black.png';
 
-import pillEmptyWhite from '../../assets/pill_white.png';
-import pillFull from '../../assets/pill.png';
-import pillBlack from '../../assets/pill_black.png';
+import pillEmptyWhite from '@/assets/pill_white.png';
+import pillFull from '@/assets/pill.png';
+import pillBlack from '@/assets/pill_black.png';
 
 import './styles.css'
 
@@ -38,7 +38,17 @@ const getCategoryInfo = (systolic: number, diastolic: number) => {
   return categoryData
 }
 
-const imageByTheme = {
+interface imageByThemeType {
+  light: {
+    pill: string,
+    pencil: string,
+  },
+  dark: {
+    pill: string,
+    pencil: string,
+  },
+}
+const imageByTheme: imageByThemeType = {
   light: {
     pill: pillBlack,
     pencil: pencilBlack,

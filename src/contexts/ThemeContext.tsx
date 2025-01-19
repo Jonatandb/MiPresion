@@ -1,7 +1,12 @@
 import { createContext } from "react";
-import { useBrowserTheme } from "../hooks/useBrowserTheme";
+import { useBrowserTheme } from "@/hooks/useBrowserTheme";
 
-const ThemeContext = createContext({ theme: 'light', toggleTheme: () => { } })
+interface themeContextType {
+  theme: 'light' | 'dark',
+  toggleTheme: () => void
+}
+
+const ThemeContext = createContext<themeContextType>({ theme: 'light', toggleTheme: () => { } })
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const { theme, toggleTheme } = useBrowserTheme()

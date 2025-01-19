@@ -1,8 +1,8 @@
-import Log from '../Log/Log'
+import Log from '@/components/Log/Log'
 
 import './styles.css'
 
-import data from '../../../mockData/data.json'
+import data from '@/../mockData/data.json'
 
 export interface LogData {
   id: string,

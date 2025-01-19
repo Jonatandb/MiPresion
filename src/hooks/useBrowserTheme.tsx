@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 
 export const useBrowserTheme = () => {
-  const [theme, setTheme] = useState(() => {
-    const storedTheme = localStorage.getItem('theme');
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    const storedTheme: string | null = localStorage.getItem('theme');
     if (!storedTheme) {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       return prefersDark ? 'dark' : 'light';
     }
-    return storedTheme || 'light';
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      return storedTheme as 'dark' | 'light';
+    }
+    return 'light';
   });
 
   useEffect(() => {
