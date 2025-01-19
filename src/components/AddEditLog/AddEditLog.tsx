@@ -87,7 +87,7 @@ const AddEditLog = ({ onClose, state }: AddEditLogProps) => {
             <input type="number" id="systolic" ref={systolicRef} placeholder='120' onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || '' })} value={data.systolic} />
           </div>
           <div className={styles.inputContainer}>
-            <label htmlFor="diastolic">Diástolica</label>
+            <label htmlFor="diastolic">Diastólica</label>
             <input type="number" id="diastolic" ref={diastolicRef} placeholder='80' min={1} onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || '' })} value={data.diastolic} />
           </div>
           <div className={styles.inputContainer}>
@@ -115,7 +115,7 @@ const AddEditLog = ({ onClose, state }: AddEditLogProps) => {
 
         <div className={` ${styles.row} ${styles.column}`}>
           <div className={styles.inputContainer}>
-            <textarea id="notes" placeholder='Notas' rows={2} autoComplete='off' maxLength={200} onChange={e => setData({ ...data, notes: e.target.value })} value={data.notes} />
+            <textarea id="notes" placeholder='Notas' rows={4} autoComplete='off' maxLength={200} onChange={e => setData({ ...data, notes: e.target.value })} value={data.notes} />
           </div>
         </div>
       </div>

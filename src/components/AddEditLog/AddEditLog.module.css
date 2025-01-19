@@ -119,7 +119,6 @@
 
 .inputContainer textarea {
   padding: 5px;
-  border-radius: 5px;
   color: #1a1a1a;
   background-color: white;
   font-size: 1rem;
@@ -130,7 +129,7 @@
   resize: none;
   outline: none;
   background-image: url('../../assets/pencil.png');
-  background-size: 5% 30%;
+  background-size: 1.1rem 1.1rem;
   background-repeat: no-repeat;
   background-position: top right;
 }
