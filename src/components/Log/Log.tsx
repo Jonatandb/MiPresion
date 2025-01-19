@@ -1,16 +1,21 @@
-import './styles.css'
-import pillEmptyWhite from '../../assets/pill_white.png';
-import pillFull from '../../assets/pill.png';
+import { LogData } from '../LogsList/LogsList'
+import { useTheme } from '../../hooks/useTheme';
+
 import pencilEmptyWhite from '../../assets/pencil_white.png';
 import pencilFull from '../../assets/pencil.png';
+import pencilBlack from '../../assets/pencil_black.png';
 
+import pillEmptyWhite from '../../assets/pill_white.png';
+import pillFull from '../../assets/pill.png';
+import pillBlack from '../../assets/pill_black.png';
+
+import './styles.css'
 
 const getCategoryInfo = (systolic: number, diastolic: number) => {
   const categoryData = {
     style: "levelAisolated",
     category: "DATOS INCORRECTOS"
   }
-
   if (systolic < 130 && diastolic < 85) {
     categoryData.category = "Normal"
     categoryData.style = "levelNormal"
@@ -30,14 +35,24 @@ const getCategoryInfo = (systolic: number, diastolic: number) => {
     categoryData.category = "Sistólica Aislada"
     categoryData.style = "levelAisolated"
   }
-
   return categoryData
 }
 
-import { LogData } from '../LogsList/LogsList'
+const imageByTheme = {
+  light: {
+    pill: pillBlack,
+    pencil: pencilBlack,
+  },
+  dark: {
+    pill: pillEmptyWhite,
+    pencil: pencilEmptyWhite,
+  },
+};
+
 interface LogProps extends Omit<LogData, 'id'> { }
 
 const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) => {
+  const { theme } = useTheme()
   return (
     <>
       {
@@ -47,28 +62,30 @@ const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) =>
             <span className="date" title={date}>{date}</span>
           </section>
           <section className="row">
-            <div>
+            <div id="mmhgContainer">
               <span className="mmhg" title="Presión sistólica">{systolic}</span>
               <span className="mmhg">/</span>
               <span className="mmhg" title="Presión diastólica">{diastolic}</span>
               {` `}
               <span className="leyend" title="Milímetros de mercurio">mmhg</span>
             </div>
-            <div id="iconsContainer">
-              {
-                medicine ?
-                  <img className="pillIcon" src={pillFull} alt="Ícono píldora tomada" />
-                  :
-                  <img className="pillIcon" src={pillEmptyWhite} alt="Ícono píldora no tomada" />
-              }
-              {
-                notes ?
-                  <img className="pillIcon" src={pencilFull} alt="Ícono hay notas" title={notes} />
-                  :
-                  <img className="pillIcon" src={pencilEmptyWhite} alt="Ícono no hay notas" />
-              }
+            <div id="bpmContainer">
+              <div id="iconsContainer">
+                {
+                  medicine ?
+                    <img className="pillIcon" src={pillFull} alt="Ícono píldora tomada" />
+                    :
+                    <img className="pillIcon" src={imageByTheme[theme]['pill']} alt="Ícono píldora no tomada" />
+                }
+                {
+                  notes ?
+                    <img className="pillIcon" src={pencilFull} alt="Ícono hay notas" title={notes} />
+                    :
+                    <img className="pillIcon" src={imageByTheme[theme]['pencil']} alt="Ícono no hay notas" />
+                }
+              </div>
+              <span className="bpm" title="Pulso">{pulse} <span className="leyend">BPM</span></span>
             </div>
-            <span className="bpm" title="Pulso">{pulse} <span id="bpmLeyend">BPM</span></span>
           </section>
         </article>
       }

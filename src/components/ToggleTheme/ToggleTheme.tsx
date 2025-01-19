@@ -1,12 +1,11 @@
-import { useBrowserTheme } from "../../hooks/useBrowserTheme"
-
+import { useTheme } from "../../hooks/useTheme"
 import moon from '../../assets/moon.png'
 import sun from '../../assets/sun.png'
 
 import './styles.css'
 
 const ToggleTheme = () => {
-  const { theme, toggleTheme } = useBrowserTheme()
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <img
