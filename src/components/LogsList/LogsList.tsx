@@ -3,16 +3,7 @@ import Log from '@/components/Log/Log'
 import './styles.css'
 
 import data from '@/../mockData/data.json'
-
-export interface LogData {
-  id: string,
-  date: string,
-  systolic: number,
-  diastolic: number,
-  pulse: number,
-  medicine: boolean,
-  notes: string
-}
+import { LogData } from '../AddEditLog/AddEditLog'
 
 const registers: LogData[] = data
 
