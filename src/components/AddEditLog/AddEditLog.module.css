@@ -78,7 +78,7 @@
 .row.column {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: .5rem;
 }
 
 .row>div {
@@ -90,9 +90,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
   width: 100%;
-
 }
 
 .inputContainer label {
@@ -131,6 +129,10 @@
   border: none;
   resize: none;
   outline: none;
+  background-image: url('../../assets/pencil.png');
+  background-size: 5% 30%;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 .inputContainer textarea::placeholder {
