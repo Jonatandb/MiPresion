@@ -107,13 +107,13 @@ const AddEditLog = ({ onClose, state }: AddEditLogProps) => {
             <label className={styles.pillLabel} htmlFor="pill">Medicina
               <div className={styles.pillContainer}>
                 <input type="checkbox" id="pill" onChange={e => setData({ ...data, medicine: e.target.checked })} checked={data.medicine} />
-                <img className={styles.pillIcon} src={pill} alt="Ícono de píldora" />
+                <img className={styles.pillIcon} width="1rem" height="1rem" src={pill} alt="Ícono de píldora" />
               </div>
             </label>
           </div>
         </div>
 
-        <div className={` ${styles.row} ${styles.column}`}>
+        <div className={`${styles.row} ${styles.column}`}>
           <div className={styles.inputContainer}>
             <textarea id="notes" placeholder='Notas' rows={4} autoComplete='off' maxLength={200} onChange={e => setData({ ...data, notes: e.target.value })} value={data.notes} />
           </div>
