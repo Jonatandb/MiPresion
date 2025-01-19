@@ -1,9 +1,9 @@
 import { useState } from "react"
+import AddButton from "@/components/AddButton/AddButton"
+import AddEditLog from "./components/AddEditLog/AddEditLog"
 import Header from "@/components/Header/Header"
 import LogsList from "@/components/LogsList/LogsList"
-import AddButton from "@/components/AddButton/AddButton"
 import Modal from "@/components/Modal/Modal"
-import AddEditLog from "./components/AddEditLog/AddEditLog"
 
 const App = () => {
   const [showAddEditLog, setShowAddModal] = useState(false)

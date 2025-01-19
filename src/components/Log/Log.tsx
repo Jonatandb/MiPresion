@@ -1,4 +1,5 @@
-import { LogData } from '@/components/LogsList/LogsList'
+import { LogData } from "@/components/AddEditLog/AddEditLog";
+
 import { useTheme } from '@/hooks/useTheme';
 
 import pencilEmptyWhite from '@/assets/pencil_white.png';
@@ -11,11 +12,20 @@ import pillBlack from '@/assets/pill_black.png';
 
 import './styles.css'
 
-const getCategoryInfo = (systolic: number, diastolic: number) => {
+const getCategoryInfo = (systolic: number | string, diastolic: number | string) => {
   const categoryData = {
     style: "levelAisolated",
     category: "DATOS INCORRECTOS"
   }
+
+  if (typeof systolic !== "number") {
+    systolic = Number(systolic)
+  }
+
+  if (typeof diastolic !== "number") {
+    diastolic = Number(diastolic)
+  }
+
   if (systolic < 130 && diastolic < 85) {
     categoryData.category = "Normal"
     categoryData.style = "levelNormal"
@@ -35,6 +45,7 @@ const getCategoryInfo = (systolic: number, diastolic: number) => {
     categoryData.category = "Sistólica Aislada"
     categoryData.style = "levelAisolated"
   }
+
   return categoryData
 }
 
@@ -48,6 +59,7 @@ interface imageByThemeType {
     pencil: string,
   },
 }
+
 const imageByTheme: imageByThemeType = {
   light: {
     pill: pillBlack,
