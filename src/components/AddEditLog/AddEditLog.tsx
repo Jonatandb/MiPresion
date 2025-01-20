@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { formatInTimeZone } from 'date-fns-tz'
 
 import pill from '@/assets/pill.png';
 
@@ -15,6 +16,13 @@ export interface LogData {
   date: string;
 }
 
+const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const localeISODate = formatInTimeZone(
+  new Date(),
+  userTimeZone,
+  "yyyy-MM-dd'T'HH:mm"
+);
+
 const initialState: LogData = {
   id: '',
   systolic: '',
@@ -22,7 +30,7 @@ const initialState: LogData = {
   pulse: '',
   medicine: false,
   notes: '',
-  date: new Date().toISOString().slice(0, 16)
+  date: localeISODate
 }
 
 interface AddEditLogProps {
@@ -31,8 +39,7 @@ interface AddEditLogProps {
 
 const AddEditLog = ({ onClose }: AddEditLogProps) => {
   const [data, setData] = useState<LogData>(initialState);
-  const { selectedLogId, getLogById, deleteLog, updateLog } = useLogContext()
-  const { addLog } = useLogContext()
+  const { selectedLogId, getLogById, addLog, updateLog, deleteLog } = useLogContext()
   const datePickerRef = React.useRef(null);
   const systolicRef = React.useRef(null);
   const diastolicRef = React.useRef(null);
