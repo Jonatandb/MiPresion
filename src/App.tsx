@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
-import AddButton from "@/components/AddButton/AddButton"
+import AddButtonIfLogs from "./components/AddButtonIfLogs/AddButtonIfLogs"
 import AddEditLog from "./components/AddEditLog/AddEditLog"
 import Header from "@/components/Header/Header"
 import LogsList from "@/components/LogsList/LogsList"
 import Modal from "@/components/Modal/Modal"
-import { useLogContext } from "./hooks/useLogContext"
+import NoLogsMessage from "./components/NoLogsMessage/NoLogsMessage"
 import Settings from "./components/Settings/Settings"
+import { useLogContext } from "./hooks/useLogContext"
 
 const App = () => {
   const [showAddEditLog, setShowAddModal] = useState(false)
@@ -37,7 +38,9 @@ const App = () => {
 
       <LogsList />
 
-      <AddButton onClick={handleAddButton} />
+      <AddButtonIfLogs handleAddButtonClick={handleAddButton} />
+
+      <NoLogsMessage onAddLog={handleAddButton} />
 
       <Modal onClose={handleCloseModalAddEditLog} isOpen={showAddEditLog}>
         <AddEditLog onClose={handleCloseModalAddEditLog} />
