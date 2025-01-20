@@ -1,7 +1,6 @@
 
 import { createContext, useEffect, useState } from "react";
 import { LogData } from "@/components/AddEditLog/AddEditLog";
-import mockData from '@/../mockData/data.json'
 
 export interface LogContextState {
   logs: LogData[]
@@ -15,7 +14,7 @@ export interface LogContextState {
 
 const LogContext = createContext<LogContextState>({} as LogContextState);
 
-const initialState: LogData[] = localStorage.getItem('logs') ? JSON.parse(localStorage.getItem('logs') as string) : mockData;
+const initialState: LogData[] = localStorage.getItem('logs') ? JSON.parse(localStorage.getItem('logs') as string) : [];
 
 const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [logs, setLogs] = useState<LogData[]>(initialState)
