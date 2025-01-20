@@ -144,7 +144,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
             <label className={styles.pillLabel} htmlFor="pill">Medicina
               <div className={styles.pillContainer}>
                 <input type="checkbox" id="pill" onChange={e => setData({ ...data, medicine: e.target.checked })} checked={data.medicine} />
-                <img className={styles.pillIcon} width="1rem" height="1rem" src={pill} alt="Ícono de píldora" />
+                <img className={styles.pillIcon} width="16" height="16" src={pill} alt="Ícono de píldora" />
               </div>
             </label>
           </div>

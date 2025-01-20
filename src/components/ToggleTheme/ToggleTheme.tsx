@@ -15,6 +15,7 @@ const ToggleTheme = () => {
       alt="Ícono cambiar a tema oscuro/claro"
       title={`Cambiar a tema ${theme === 'light' ? 'oscuro' : 'claro'} `}
       height={30}
+      width={30}
     />
   )
 }

@@ -94,15 +94,15 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
           <div id="iconsContainer">
             {
               medicine ?
-                <img className="icon" width="1.2rem" src={pillFull} alt="Ícono píldora tomada" />
+                <img className="icon" width="19" height="19" src={pillFull} alt="Ícono píldora tomada" />
                 :
-                <img className="icon" width="1.2rem" src={imageByTheme[theme]['pill']} alt="Ícono píldora no tomada" />
+                <img className="icon" width="19" height="19" src={imageByTheme[theme]['pill']} alt="Ícono píldora no tomada" />
             }
             {
               notes ?
-                <img className="icon" width="1.2rem" src={pencilFull} alt="Ícono hay notas" title={notes} />
+                <img className="icon" width="19" height="19" src={pencilFull} alt="Ícono hay notas" title={notes} />
                 :
-                <img className="icon" width="1.2rem" src={imageByTheme[theme]['pencil']} alt="Ícono no hay notas" />
+                <img className="icon" width="19" height="19" src={imageByTheme[theme]['pencil']} alt="Ícono no hay notas" />
             }
           </div>
           <span className="bpm" title="Pulso">{pulse} <span className="leyend">BPM</span></span>
