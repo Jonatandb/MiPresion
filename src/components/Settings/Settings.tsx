@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Modal from '../Modal/Modal'
-import BloodPressureLevels from '../BloodPressureLevels/BloodPressureLevels'
+import Modal from '@/components/Modal/Modal'
+import BloodPressureLevels from '@/components/BloodPressureLevels/BloodPressureLevels'
 import { useThemeContext } from '@/hooks/useTheme'
 import styles from './Settings.module.css'
 
