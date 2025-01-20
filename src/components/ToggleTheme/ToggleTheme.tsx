@@ -1,11 +1,11 @@
-import { useTheme } from "@/hooks/useTheme"
+import { useThemeContext } from "@/hooks/useTheme"
 import moon from '@/assets/moon.png'
 import sun from '@/assets/sun.png'
 
 import './styles.css'
 
 const ToggleTheme = () => {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, toggleTheme } = useThemeContext()
 
   return (
     <img

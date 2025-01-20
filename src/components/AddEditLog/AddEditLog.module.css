@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.buttonsContainer {
+.header {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -22,7 +22,7 @@
 }
 
 .content h2 {
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.2rem;
 }
 

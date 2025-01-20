@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import pill from '@/assets/pill.png';
 
 import styles from './AddEditLog.module.css'
+import { useLogContext } from '@/hooks/useLogContext';
 
 export interface LogData {
-  id?: string,
+  id: string,
   systolic: number | string;
   diastolic: number | string;
   pulse: number | string;
@@ -15,6 +16,7 @@ export interface LogData {
 }
 
 const initialState: LogData = {
+  id: '',
   systolic: '',
   diastolic: '',
   pulse: '',
@@ -25,11 +27,12 @@ const initialState: LogData = {
 
 interface AddEditLogProps {
   onClose: () => void
-  state?: LogData
 }
 
-const AddEditLog = ({ onClose, state }: AddEditLogProps) => {
-  const [data, setData] = useState<LogData>(state || initialState);
+const AddEditLog = ({ onClose }: AddEditLogProps) => {
+  const [data, setData] = useState<LogData>(initialState);
+  const { selectedLogId, getLogById, deleteLog, updateLog } = useLogContext()
+  const { addLog } = useLogContext()
   const datePickerRef = React.useRef(null);
   const systolicRef = React.useRef(null);
   const diastolicRef = React.useRef(null);
@@ -57,14 +60,25 @@ const AddEditLog = ({ onClose, state }: AddEditLogProps) => {
     if (!data.date) {
       data.date = new Date().toISOString().slice(0, 16)
     }
-    console.log(data.id ? 'Actualizar: ' : 'Agregar: ', data);
+
+    if (!data.id) {
+      addLog(data)
+    } else {
+      updateLog(data)
+    }
+
     onClose()
+  }
+
+  const handleDelete = () => {
+    if (window.confirm('Estas seguro de eliminar el registro?')) {
+      deleteLog(data.id)
+      onClose()
+    }
   }
 
   useEffect(() => {
     if (!data.date) {
-      console.log("data.date vacío: ", data.date);
-
       if (datePickerRef.current) {
         const datePicker = datePickerRef.current as HTMLInputElement;
         datePicker.value = new Date().toISOString().slice(0, 16);
@@ -72,11 +86,34 @@ const AddEditLog = ({ onClose, state }: AddEditLogProps) => {
     }
   }, [data.date])
 
+  useEffect(() => {
+    if (selectedLogId) {
+      const logToUpdate = getLogById(selectedLogId)
+      logToUpdate && setData(logToUpdate)
+    }
+  }, [selectedLogId, getLogById])
+
   return (
     <div className={styles.addEditLogContainer}>
-      <div className={styles.buttonsContainer}>
-        <button className={`${styles.cancelButton} ${styles.button}`} onClick={onClose}>Cancelar</button>
-        <button className={`${styles.addButton} ${styles.button} `} onClick={handleSubmit}>{data.id ? 'Actualizar' : 'Agregar'}</button>
+      <div className={styles.header}>
+        <button
+          className={`${styles.cancelButton} ${styles.button}`}
+          onClick={onClose}>
+          Cancelar
+        </button>
+        {
+          data.id && (
+            <button
+              className={`${styles.cancelButton} ${styles.button}`}
+              onClick={handleDelete}>
+              Eliminar
+            </button>
+          )}
+        <button
+          className={`${styles.addButton} ${styles.button}`}
+          onClick={handleSubmit}>
+          {data.id ? 'Actualizar' : 'Agregar'}
+        </button>
       </div>
       <div className={styles.content}>
         <h2>{data.id ? 'Actualizar' : 'Agregar'} Registro</h2>

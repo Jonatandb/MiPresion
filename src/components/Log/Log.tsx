@@ -1,6 +1,6 @@
 import { LogData } from "@/components/AddEditLog/AddEditLog";
 
-import { useTheme } from '@/hooks/useTheme';
+import { useThemeContext } from '@/hooks/useTheme';
 
 import pencilEmptyWhite from '@/assets/pencil_white.png';
 import pencilFull from '@/assets/pencil.png';
@@ -11,6 +11,7 @@ import pillFull from '@/assets/pill.png';
 import pillBlack from '@/assets/pill_black.png';
 
 import './styles.css'
+import { useLogContext } from "@/hooks/useLogContext";
 
 const getCategoryInfo = (systolic: number | string, diastolic: number | string) => {
   const categoryData = {
@@ -71,47 +72,43 @@ const imageByTheme: imageByThemeType = {
   },
 };
 
-interface LogProps extends Omit<LogData, 'id'> { }
+const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData) => {
+  const { theme } = useThemeContext()
+  const { setSelectedLogId } = useLogContext()
 
-const Log = ({ date, systolic, diastolic, pulse, medicine, notes }: LogProps) => {
-  const { theme } = useTheme()
   return (
-    <>
-      {
-        <article id='logContainer'>
-          <section className="row">
-            <span className={`level ${getCategoryInfo(systolic, diastolic).style}`} title="Categoría" >{`${getCategoryInfo(systolic, diastolic).category}`}</span>
-            <span className="date" title={date}>{date}</span>
-          </section>
-          <section className="row">
-            <div id="mmhgContainer">
-              <span className="mmhg" title="Presión sistólica">{systolic}</span>
-              <span className="mmhg">/</span>
-              <span className="mmhg" title="Presión diastólica">{diastolic}</span>
-              {` `}
-              <span className="leyend" title="Milímetros de mercurio">mmhg</span>
-            </div>
-            <div id="bpmContainer">
-              <div id="iconsContainer">
-                {
-                  medicine ?
-                    <img className="pillIcon" src={pillFull} alt="Ícono píldora tomada" />
-                    :
-                    <img className="pillIcon" src={imageByTheme[theme]['pill']} alt="Ícono píldora no tomada" />
-                }
-                {
-                  notes ?
-                    <img className="pillIcon" src={pencilFull} alt="Ícono hay notas" title={notes} />
-                    :
-                    <img className="pillIcon" src={imageByTheme[theme]['pencil']} alt="Ícono no hay notas" />
-                }
-              </div>
-              <span className="bpm" title="Pulso">{pulse} <span className="leyend">BPM</span></span>
-            </div>
-          </section>
-        </article>
-      }
-    </>
+    <article id='logContainer' onClick={() => setSelectedLogId(id)}>
+      <section className="row">
+        <span className={`level ${getCategoryInfo(systolic, diastolic).style}`} title="Categoría" >{`${getCategoryInfo(systolic, diastolic).category}`}</span>
+        <span className="date" title={date}>{date}</span>
+      </section>
+      <section className="row">
+        <div id="mmhgContainer">
+          <span className="mmhg" title="Presión sistólica">{systolic}</span>
+          <span className="mmhg">/</span>
+          <span className="mmhg" title="Presión diastólica">{diastolic}</span>
+          {` `}
+          <span className="leyend" title="Milímetros de mercurio">mmhg</span>
+        </div>
+        <div id="bpmContainer">
+          <div id="iconsContainer">
+            {
+              medicine ?
+                <img className="icon" width="1.2rem" src={pillFull} alt="Ícono píldora tomada" />
+                :
+                <img className="icon" width="1.2rem" src={imageByTheme[theme]['pill']} alt="Ícono píldora no tomada" />
+            }
+            {
+              notes ?
+                <img className="icon" width="1.2rem" src={pencilFull} alt="Ícono hay notas" title={notes} />
+                :
+                <img className="icon" width="1.2rem" src={imageByTheme[theme]['pencil']} alt="Ícono no hay notas" />
+            }
+          </div>
+          <span className="bpm" title="Pulso">{pulse} <span className="leyend">BPM</span></span>
+        </div>
+      </section>
+    </article>
   )
 }
 
