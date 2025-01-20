@@ -18,7 +18,6 @@ const unlockBody = () => {
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
-
     }
   }
 }

@@ -1,10 +1,11 @@
 import { LogContext } from "@/contexts/LogContext"
 import { useContext } from "react"
-import styles from './NoLogsMessage.module.css'
 import AddButton from "../AddButton/AddButton"
+import styles from './NoLogsMessage.module.css'
 
-const NoLogsMessage = ({ onAddLog }: { onAddLog: () => void }) => {
+const NoLogsMessage = ({ onAddClicked }: { onAddClicked: () => void }) => {
   const { logs } = useContext(LogContext)
+
   if (logs.length > 0) return null
 
   const addButtonStyles = {
@@ -17,7 +18,7 @@ const NoLogsMessage = ({ onAddLog }: { onAddLog: () => void }) => {
       <span>
         Aún no se agregaron registros
       </span>
-      <AddButton onClick={onAddLog} extraStyles={addButtonStyles} />
+      <AddButton onClick={onAddClicked} extraStyles={addButtonStyles} />
       <span>Nuevo registro</span>
     </div>
   )

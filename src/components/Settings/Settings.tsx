@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Modal from '../Modal/Modal'
-import styles from './Settings.module.css'
 import BloodPressureLevels from '../BloodPressureLevels/BloodPressureLevels'
 import { useThemeContext } from '@/hooks/useTheme'
+import styles from './Settings.module.css'
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const [showLevels, setShowLevels] = useState(false)

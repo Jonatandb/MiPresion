@@ -9,46 +9,36 @@ import Settings from "./components/Settings/Settings"
 import { useLogContext } from "./hooks/useLogContext"
 
 const App = () => {
-  const [showAddEditLog, setShowAddModal] = useState(false)
-  const [showSettings, setShowSettings] = useState(false)
+  const [modalType, setModalType] = useState<"addEditLog" | "settings">()
   const { selectedLogId, setSelectedLogId } = useLogContext()
 
   useEffect(() => {
     if (selectedLogId) {
-      setShowAddModal(true)
+      setModalType("addEditLog")
     }
   }, [selectedLogId])
 
-  const handleAddButton = () => {
-    setShowAddModal(true)
-  }
-
-  const handleCloseModalAddEditLog = () => {
-    setShowAddModal(false)
-    setSelectedLogId('')
-  }
-
-  const handleCloseModalSettings = () => {
-    setShowSettings(false)
+  const handleCloseModal = () => {
+    setModalType(undefined)
+    setSelectedLogId("")
   }
 
   return (
     <>
-      <Header onClickSettings={() => setShowSettings(true)} />
+      <Header onSettingsClicked={() => setModalType("settings")} />
 
       <LogsList />
 
-      <AddButtonIfLogs handleAddButtonClick={handleAddButton} />
+      <AddButtonIfLogs onAddClicked={() => setModalType("addEditLog")} />
 
-      <NoLogsMessage onAddLog={handleAddButton} />
+      <NoLogsMessage onAddClicked={() => setModalType("addEditLog")} />
 
-      <Modal onClose={handleCloseModalAddEditLog} isOpen={showAddEditLog}>
-        <AddEditLog onClose={handleCloseModalAddEditLog} />
-      </Modal>
-
-      <Modal onClose={handleCloseModalSettings} isOpen={showSettings}>
-        <Settings onClose={handleCloseModalSettings} />
-      </Modal>
+      {modalType && (
+        <Modal onClose={handleCloseModal} isOpen={true}>
+          {modalType === "addEditLog" && <AddEditLog onClose={handleCloseModal} />}
+          {modalType === "settings" && <Settings onClose={handleCloseModal} />}
+        </Modal>
+      )}
     </>
   )
 }
