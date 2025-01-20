@@ -11,7 +11,7 @@ const Header = () => {
       <div id="titleContainer">
         <Logo />
         <h1 id="mainTitle">
-          Registros
+          Registro de presión sanguínea
         </h1>
       </div>
 
