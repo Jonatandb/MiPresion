@@ -11,7 +11,7 @@
 
 #logContainer:hover {
   cursor: pointer;
-  background-color: tomato;
+  background-color: var(--color-primary);
 }
 
 .row {
@@ -56,24 +56,24 @@
 }
 
 .levelNormal {
-  color: green;
+  color: var(--level-normal);
 }
 
 .levelElevated {
-  color: yellowgreen;
+  color: var(--level-levated);
 }
 
 .levelStage1 {
-  color: orange;
+  color: var(--level-stage1);
 }
 
 .levelStage2 {
-  color: pink;
+  color: var(--level-stage2);
 }
 
 .levelStage3,
 .levelAisolated {
-  color: tomato;
+  color: var(--color-primary);
 }
 
 .icon {

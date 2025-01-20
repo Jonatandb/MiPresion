@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
@@ -5,26 +9,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  box-sizing: border-box;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 
   color-scheme: light dark;
 
   --light-text: #1a1a1a;
+  --light-text-secondary: #707070;
+  --light-text-tertiary: #ffffff;
   --light-bg: #f1ecec;
   --light-bg-secondary: #ffffff;
+  --color-tomato: #ff6347;
+
   --dark-text: #f1ecec;
+  --dark-text-secondary: #f1ecec;
   --dark-bg: #1a1a1a;
   --dark-bg-secondary: #000000;
 
   --text-color: var(--light-text);
+  --text-color-secondary: var(--light-text-secondary);
+  --text-color-tertiary: var(--light-text-tertiary);
   --background-color: var(--light-bg);
   --background-color-secondary: var(--light-bg-secondary);
+  --color-primary: var(--color-tomato);
+
+  --level-normal: #008000;
+  --level-elevated: #9acd32;
+  --level-stage1: #ffa500;
+  --level-stage2: #ffc0cb;
+  --level-stage3: var(--color-tomato);
+  --level-aisolated: var(--color-tomato);
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --text-color: var(--dark-text);
+    --text-color-secondary: var(--dark-text-secondary);
     --background-color: var(--dark-bg);
     --background-color-secondary: var(--dark-bg-secondary);
   }
@@ -33,6 +56,7 @@
 /* Override explícito via data-theme */
 :root[data-theme="dark"] {
   --text-color: var(--dark-text);
+  --text-color-secondary: var(--dark-text-secondary);
   --background-color: var(--dark-bg);
   --background-color-secondary: var(--dark-bg-secondary);
 }
@@ -41,7 +65,6 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  max-width: 375px;
   min-height: 100vh;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -54,4 +77,7 @@ body {
 #root {
   width: 100%;
   padding: 3rem .5rem 0 .5rem;
+
+
+  margin: 0 auto;
 }

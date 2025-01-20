@@ -14,11 +14,14 @@
 }
 
 .content {
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y pinch-zoom;
 }
 
 .content h2 {
@@ -32,7 +35,7 @@
 
 .button {
   background-color: transparent;
-  color: #1a1a1a;
+  color: var(--light-text);
   border: none;
   cursor: pointer;
   font-size: .9rem;
@@ -51,22 +54,18 @@
 }
 
 .cancelButton {
-  color: tomato;
+  color: var(--color-primary);
   font-weight: bold;
 }
 
 .addButton {
-  color: #666;
+  color: var(--text-color-secondary);
   font-weight: bold;
   cursor: pointer;
 }
 
-.disabled {
-  color: #ccc;
-}
-
 .row {
-  background-color: white;
+  background-color: var(--light-bg-secondary);
   padding: 10px;
   border-radius: 10px;
   display: flex;
@@ -97,13 +96,13 @@
   margin-bottom: 5px;
   font-size: 1rem;
   font-weight: bold;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 .inputContainer input {
   padding: 5px;
-  background-color: white;
-  color: #1a1a1a;
+  background-color: var(--light-bg-secondary);
+  color: var(--text-color);
   font-size: 2rem;
   width: 100%;
   box-sizing: border-box;
@@ -118,8 +117,8 @@
 
 .inputContainer textarea {
   padding: 5px;
-  color: #1a1a1a;
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--light-bg-secondary);
   font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
@@ -143,7 +142,6 @@
   flex-direction: row;
   width: 100%;
   margin-bottom: 0;
-
 }
 
 .dateContainer {
@@ -156,7 +154,7 @@
 .dateContainer input {
   border: 1px solid #ccc;
   background-color: #efefef;
-  color: #1a1a1a;
+  color: var(--text-color);
   font-size: 1rem;
   box-sizing: border-box;
   font-family: inherit;
@@ -173,11 +171,11 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: white;
+  background-color: var(--light-bg-secondary);
   cursor: pointer;
   width: 2rem;
   height: 1rem;
-  border: 1px solid #747474;
+  border: 1px solid var(--light-text-secondary);
   border-radius: 1rem;
   position: relative;
 }
@@ -189,15 +187,15 @@
   left: 0;
   width: .8rem;
   height: .8rem;
-  background-color: white;
-  border: 1px solid #747474;
+  background-color: var(--light-bg-secondary);
+  border: 1px solid var(--light-text-secondary);
   border-radius: 1rem;
   transition: transform 0.2s ease-in-out;
 }
 
 .pillContainer input[type="checkbox"]:checked:before {
   transform: translateX(1rem);
-  background-color: #1a1a1a;
+  background-color: var(--color-primary);
 }
 
 .pillIcon {
@@ -211,8 +209,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #1a1a1a;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.pillLabel:hover {
+  background-color: rgb(253, 250, 250);
 }

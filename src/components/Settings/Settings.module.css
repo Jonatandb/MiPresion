@@ -1,0 +1,105 @@
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  overflow: hidden;
+
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.content {
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  position: relative;
+  height: 100%;
+}
+
+.content h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.rowTitle {
+  margin-top: .8rem;
+  color: var(--text-color-secondary);
+  font-size: .6rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+
+.row {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.row:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+
+  & .arrow {
+    color: #1a1a1a !important;
+  }
+}
+
+.row span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.arrow {
+  color: #ccc !important;
+}
+
+.button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+.closeButton {
+  color: var(--color-primary);
+  font-weight: bold;
+}

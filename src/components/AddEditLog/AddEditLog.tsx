@@ -162,6 +162,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
             <textarea id="notes" placeholder='Notas' rows={4} autoComplete='off' maxLength={200} onChange={e => setData({ ...data, notes: e.target.value })} value={data.notes} />
           </div>
         </div>
+
       </div>
     </div>
   )

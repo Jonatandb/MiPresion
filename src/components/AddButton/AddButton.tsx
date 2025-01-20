@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './AddButton.module.css'
 
 import add from '@/assets/add_white.png'
 
@@ -8,8 +8,10 @@ const AddButton = ({ onClick }: { onClick: () => void }) => {
   }
 
   return (
-    <button id="addButton" onClick={handleClick}>
-      <img src={add} height={30} alt="Ícono agregar nuevo registro" title="Agregar registro"></img>
+    <button className={`${styles.addButtonContainer}`} onClick={handleClick}>
+      <div className={styles.imgContainer}>
+        <img src={add} height={30} alt="Ícono agregar nuevo registro" title="Agregar registro"></img>
+      </div>
     </button>
   )
 }

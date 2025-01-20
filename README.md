@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Registro de presión sanguínea
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Pendientes:
 
-Currently, two official plugins are available:
+- [ ] Hacer sección "Exportar a PDF"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [ ] Hacer sección "Errores y Contácto"
 
-## Expanding the ESLint configuration
+- [ ] Hacer mensaje para cuando no se crearon registros
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [ ] Implementar CSS Modules en todos los componentes
+- [ ] Usar variables CSS en todos los CSS
+- [ ] Reemplazar px por rem en todos los CSS
+- [ ] Corregir colores de dark mode
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- [✔] Hacer versión responsive
+- [✔] Hacer sección "Ajustes"
+- [✔] Corregir problema con el botón de agregar, que en cualquier otra resolución se va muy a la derecha y abajo
+- [✔] Hacer sección "Niveles de presión arterial"
+- [✔] Corregir problema con scroll luego de agregar o editar un registro, la lista de logs queda scrolleada
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+- [✔] Corregir hora por defecto al crear un log, aparece desfazada 3 horas por lo menos
+
+- [✔] Hacer sección "Agregar"
+
+- [✔] Hacer sección "Editar"
+
+- [✔] Agregar configuración para importaciones absolutas "@/components/myComponent"
+
+- [✔] Íconos de píldora y lápiz con bordes negros para el tema light
+
+- [✔] Contexto para el tema
+
+- [✔] Div que envuelva a los íconos de píldora y lápiz, junto con los datos del pulso, para que los íconos queden siempre pegados a la derecha
+
+- [✔] Guardado de datos en localStorage
+
+- [✔] Usar Vite: npm create vite
+

@@ -4,7 +4,7 @@ import ToggleTheme from '@/components/ToggleTheme/ToggleTheme'
 
 import './styles.css'
 
-const Header = () => {
+const Header = ({ onClickSettings }: { onClickSettings: () => void }) => {
 
   return (
     <header>
@@ -17,7 +17,7 @@ const Header = () => {
 
       <div id="iconsRightContainer">
         <ToggleTheme />
-        <SettingsIcon />
+        <SettingsIcon onClick={onClickSettings} />
       </div>
     </header>
   )
