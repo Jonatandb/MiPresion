@@ -30,13 +30,9 @@ const App = () => {
       <Header />
       <LogsList />
       <AddButton onClick={handleAddButton} />
-      {
-        showAddEditLog && (
-          <Modal onClose={handleModelClose}>
-            <AddEditLog onClose={handleModelClose} />
-          </Modal>
-        )
-      }
+      <Modal onClose={handleModelClose} isOpen={showAddEditLog}>
+        <AddEditLog onClose={handleModelClose} />
+      </Modal>
     </>
   )
 }

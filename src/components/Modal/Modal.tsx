@@ -1,6 +1,14 @@
 import './styles.css';
 
-const Modal = ({ onClose, children, fullscreen }: { onClose: () => void, children: React.ReactNode, fullscreen?: boolean }) => {
+interface ModalProps {
+  isOpen: boolean
+  fullscreen?: boolean
+  onClose: () => void
+  children: React.ReactNode
+}
+
+const Modal = ({ isOpen, fullscreen, onClose, children }: ModalProps) => {
+  if (!isOpen) return null
 
   const handleContentClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
