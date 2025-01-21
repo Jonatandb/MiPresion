@@ -83,15 +83,9 @@
 .row {
   display: flex;
   padding: 0.5rem;
-  color: var(--text-color-tertiary);
+  color: var(--light-text-tertiary);
   justify-content: space-between;
   text-align: center;
-}
-
-@media (prefers-color-scheme: dark) {
-  .row {
-    color: var(--text-color);
-  }
 }
 
 .row span {
