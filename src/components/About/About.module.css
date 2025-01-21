@@ -42,26 +42,38 @@
   margin-bottom: 0;
 }
 
+.socialMediaContainer {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  overflow: hidden;
+  width: 80%;
+}
+
 .pictureContainer {
   display: flex;
   padding: 0;
-  margin-top: 1rem;
+  margin-top: .2rem;
 }
 
 .pictureContainer img {
   width: 6.25rem;
   height: auto;
-  border-radius: 1.563rem;
-  padding: 0;
+  padding: 1px;
   margin: 0;
+  border-radius: 1.25rem;
+}
+
+.pictureContainer img:hover {
+  background-color: var(--color-primary);
 }
 
 .linksContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  width: 100%;
   padding: 0;
   margin: 0;
   gap: .3rem;
@@ -69,7 +81,6 @@
 
 .linksContainer a,
 .linksContainer a:link,
-.linksContainer a:hover,
 .linksContainer a:focus,
 .linksContainer a:active {
   text-decoration: none;
@@ -77,12 +88,16 @@
   border: none;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 2.5rem;
   width: 100%;
+  border-radius: 0.313rem;
+  padding: 0 .5rem;
   gap: .5rem;
   color: var(--text-color);
   font-weight: 600;
+}
+
+.linksContainer a:hover {
+  background-color: var(--color-primary);
 }
 
 .linksContainer img {
@@ -150,6 +165,8 @@
 
 .donateBanners img:hover {
   cursor: pointer;
+  background-color: var(--color-primary);
+  border-radius: 0.313rem;
 }
 
 .theterWallet {

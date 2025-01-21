@@ -30,9 +30,11 @@
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar color de fondo al hover sobre los medios de contácto en About
+- [ ] Hacer formulario de contácto (EmailJS)
 
 ## ✅ Completado:
+
+- [x] Agregar color de fondo al hover sobre los medios de contácto en About
 
 - [x] Agregar screenshots
 

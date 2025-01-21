@@ -50,39 +50,46 @@ const About = ({ onClose }: AboutProps) => {
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>
         <h2>Desarrollado por Jonatandb</h2>
-        <div className={styles.pictureContainer}>
-          <a href="http://jonatandb.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title='Ir al sitio web de Jonatandb'
-          >
-            <img
-              src={jonatandb}
-              alt="Foto de Jonatandb"
-              title="Foto de Jonatandb"
-              width={100}
-              height={100}
-            />
-          </a>
+
+        <div className={styles.socialMediaContainer}>
+
+          <div className={styles.pictureContainer}>
+            <a href="http://jonatandb.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title='Ir al sitio web de Jonatandb'
+            >
+              <img
+                src={jonatandb}
+                alt="Foto de Jonatandb"
+                title="Ir al sitio web de Jonatandb"
+                width={100}
+                height={100}
+              />
+            </a>
+          </div>
+
           <div className={styles.linksContainer}>
             <a href="mailto:jonatandb@gmail.com">
-              <img src={gmail} width="1rem" height="1rem" alt="Logo de Gmail" />
+              <img src={gmail} width="1rem" height="1rem" alt="Logo de Gmail" title='Correo a Jonatandb' />
               Gmail
             </a>
             <a href="http://github.com/jonatandb" target="_blank" rel="noopener noreferrer">
-              <img src={github} width="1rem" height="1rem" alt="Logo de Github" />
+              <img src={github} width="1rem" height="1rem" alt="Logo de Github" title='Ir al Github de Jonatandb' />
               Github
             </a>
             <a href="http://linkedin.com/in/jonatandb" target="_blank" rel="noopener noreferrer">
-              <img src={linkedin} width="1rem" height="1rem" alt="Logo de LinkedIn" />
+              <img src={linkedin} width="1rem" height="1rem" alt="Logo de LinkedIn" title='Ir al LinkedIn de Jonatandb' />
               LinkedIn
             </a>
             <a href="https://twitter.com/jonatandb" target="_blank" rel="noopener noreferrer">
-              <img src={twitter} width="1rem" height="1rem" alt="Logo de X (Twitter)" />
+              <img src={twitter} width="1rem" height="1rem" alt="Logo de X (Twitter)" title='Ir al Twitter de Jonatandb' />
               X (Twitter)
             </a>
           </div>
+
         </div>
+
         <div className={styles.donateContainer}>
           <p>💃🏻💸🕺🏻 Donaciones 🚀🙌🏻🤙🏻</p>
           <span>Si deseás apoyar mi trabajo, podés hacerlo por estos medios:</span>
@@ -101,7 +108,7 @@ const About = ({ onClose }: AboutProps) => {
             </div>
             <div onClick={() => copyToClipboard('0x58714dF4C936FB4EA3b15fC42BCF78E9746b37c6')} >
               <span title='Click par copiar dirección'>&nbsp;&nbsp;0x58714dF4C936FB4EA3b15fC42BCF78E9746b37c6</span>
-              <img src={copy} alt="Copy icon" title='Copiar dirección' width="1rem" />
+              <img src={copy} alt="Copy icon" title='Copiar dirección' width="1rem" height="1rem" />
             </div>
           </div>
         </div>
