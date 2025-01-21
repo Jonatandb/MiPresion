@@ -42,7 +42,7 @@ const BloodPressureLevels = ({ onClose }: { onClose: () => void }) => {
           </a>
         </div>
         <div className={`${styles.disclaimer}`}>
-          <span>La clasificación puede variar dependiendo de la edad, género, país, etc. Siempre consultele un profesional de la salud para saber más.</span>
+          <span>La clasificación puede variar dependiendo de la edad, género, país, etc. Siempre consulte a un profesional de la salud para saber más.</span>
         </div>
       </div>
     </section>

@@ -6,7 +6,6 @@
   overflow: hidden;
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .header {
@@ -111,34 +110,21 @@
   margin-top: 1rem;
   margin-left: 1rem;
   font-weight: bold;
+  font-size: .7rem;
 }
 
 .source a {
   color: var(--color-primary);
 }
 
-.source a:hover {
-  text-decoration: none;
-}
-
-.source a:visited {
-  color: var(--color-primary);
-}
-
-.source a:active {
-  color: var(--color-primary);
-}
-
-.source a:link {
-  color: var(--color-primary);
-}
-
-.source a:focus {
-  color: var(--color-primary);
-}
-
+.source a:hover,
+.source a:visited,
+.source a:active,
+.source a:link,
+.source a:focus,
 .source a:target {
   color: var(--color-primary);
+  text-decoration: none;
 }
 
 .disclaimer {
