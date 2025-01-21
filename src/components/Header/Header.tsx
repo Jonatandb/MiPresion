@@ -14,9 +14,14 @@ const Header = ({ onSettingsClicked }: HederProps) => {
     <header>
       <div className={`${styles.titleContainer}`}>
         <Logo />
-        <h1 className={`${styles.mainTitle}`}>
-          Registro de presión sanguínea
-        </h1>
+        <div className={`${styles.appTitle}`}>
+          <h1>
+            MiPresión
+          </h1>
+          <span>
+            Registro de presión sanguínea
+          </span>
+        </div>
       </div>
 
       <div className={`${styles.iconsRightContainer}`}>

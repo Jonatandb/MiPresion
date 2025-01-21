@@ -25,11 +25,25 @@ header {
 .iconsRightContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: .5rem;
   padding-right: .6rem;
 }
 
-.mainTitle {
+.appTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0;
   font-size: 1rem;
+}
+
+.appTitle h1 {
+  margin: 0;
+  line-height: 1;
+  font-size: 1.25rem;
+}
+
+.appTitle span {
+  font-size: .6rem;
 }
