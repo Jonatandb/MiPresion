@@ -6,6 +6,10 @@
 - [Photopea](https://www.photopea.com/)
 - [Flaticon](https://www.flaticon.com/)
 
+## 💅🏻 Capturas:
+
+![Capturas de MiPresión](./Screenshot.jpg)
+
 ## 🏁 Posibles agregados:
 
 - [ ] Agregar opción para cambiar de idioma entre inglés y español
@@ -28,55 +32,55 @@
 
 - [x] Poner nombre: MiPresión (Actualizar header)
 
-- [✔] Agregar posibilidad de borrar todos los registros
+- [x] Agregar posibilidad de borrar todos los registros
 
-- [✔] Hacer sección "Errores y Contácto" con opciones de donación
+- [x] Hacer sección "Errores y Contácto" con opciones de donación
 
-- [✔] Corregir estilo de íconos en Settings para que tengan el mismo ancho
+- [x] Corregir estilo de íconos en Settings para que tengan el mismo ancho
 
-- [✔] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
+- [x] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
 
-- [✔] Usar variables CSS en todos los CSS
+- [x] Usar variables CSS en todos los CSS
 
-- [✔] Reemplazar px por rem en todos los CSS
+- [x] Reemplazar px por rem en todos los CSS
 
-- [✔] Corregir colores de dark mode
+- [x] Corregir colores de dark mode
 
-- [✔] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
+- [x] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
 
-- [✔] Actualizar imports relativos con imports de ruta con @ en Settings
+- [x] Actualizar imports relativos con imports de ruta con @ en Settings
 
-- [✔] Hacer refactor para mejorar código en App.tsx con respecto a lógica de modales
+- [x] Hacer refactor para mejorar código en App.tsx con respecto a lógica de modales
 
-- [✔] Hacer mensaje para cuando no se crearon registros
+- [x] Hacer mensaje para cuando no se crearon registros
 
-  - [✔] Eliminar mock data y su dependencia
+  - [x] Eliminar mock data y su dependencia
 
-- [✔] Hacer versión responsive
+- [x] Hacer versión responsive
 
-- [✔] Hacer sección "Ajustes"
+- [x] Hacer sección "Ajustes"
 
-- [✔] Corregir problema con el botón de agregar, que en cualquier otra resolución se va muy a la derecha y abajo
+- [x] Corregir problema con el botón de agregar, que en cualquier otra resolución se va muy a la derecha y abajo
 
-- [✔] Hacer sección "Niveles de presión arterial"
+- [x] Hacer sección "Niveles de presión arterial"
 
-- [✔] Corregir problema con scroll luego de agregar o editar un registro, la lista de logs queda scrolleada
+- [x] Corregir problema con scroll luego de agregar o editar un registro, la lista de logs queda scrolleada
 
-- [✔] Corregir hora por defecto al crear un log, aparece desfazada 3 horas por lo menos
+- [x] Corregir hora por defecto al crear un log, aparece desfazada 3 horas por lo menos
 
-- [✔] Hacer sección "Agregar"
+- [x] Hacer sección "Agregar"
 
-- [✔] Hacer sección "Editar"
+- [x] Hacer sección "Editar"
 
-- [✔] Agregar configuración para importaciones absolutas "@/components/myComponent"
+- [x] Agregar configuración para importaciones absolutas "@/components/myComponent"
 
-- [✔] Íconos de píldora y lápiz con bordes negros para el tema light
+- [x] Íconos de píldora y lápiz con bordes negros para el tema light
 
-- [✔] Contexto para el tema
+- [x] Contexto para el tema
 
-- [✔] Div que envuelva a los íconos de píldora y lápiz, junto con los datos del pulso, para que los íconos queden siempre pegados a la derecha
+- [x] Div que envuelva a los íconos de píldora y lápiz, junto con los datos del pulso, para que los íconos queden siempre pegados a la derecha
 
-- [✔] Guardado de datos en localStorage
+- [x] Guardado de datos en localStorage
 
-- [✔] Usar Vite: npm create vite
+- [x] Usar Vite: npm create vite
 
