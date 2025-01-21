@@ -41,7 +41,6 @@
   display: none;
 }
 
-
 .button {
   background-color: transparent;
   color: var(--text-color);
@@ -98,6 +97,12 @@
   font-size: 1rem;
   font-weight: bold;
   color: var(--dark-text-tertiary);
+}
+
+.row.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .optionIcon {

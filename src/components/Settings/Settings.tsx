@@ -4,13 +4,23 @@ import BloodPressureLevels from '@/components/BloodPressureLevels/BloodPressureL
 import { useThemeContext } from '@/hooks/useTheme'
 import styles from './Settings.module.css'
 import About from '../About/About'
+import { useLogContext } from '@/hooks/useLogContext'
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const { theme, toggleTheme } = useThemeContext()
+  const { logs, resetLogs } = useLogContext()
+
   const [modalType, setModalType] = useState<"bloodPressureLevels" | "about">()
 
   const handleCloseModal = () => {
     setModalType(undefined)
+  }
+
+  const handleReset = () => {
+    if (logs.length > 0 && confirm('Estas seguro de eliminar todos los registros?')) {
+      resetLogs()
+    }
+
   }
 
   return (
@@ -22,7 +32,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <h2>Ajustes</h2>
 
         <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
-        <div className={styles.row} onClick={() => { alert('Funcionalidad no implementada') }}>
+        <div className={`${styles.row} ${styles.disabled}`} onClick={() => { alert('Funcionalidad no implementada') }}>
           <div>
             <span className={styles.optionIcon}>📄</span>
             <span>Exportar a PDF</span>
@@ -30,6 +40,15 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
           <span>
             🚧
           </span>
+        </div>
+
+        <span className={styles.rowTitle}>INFORMACIÓN</span>
+        <div className={styles.row} onClick={() => setModalType("bloodPressureLevels")}>
+          <div>
+            <span className={styles.optionIcon}>📈</span>
+            <span>Tabla de niveles de presión</span>
+          </div>
+          <span className={styles.arrow}>➡</span>
         </div>
 
         <span className={styles.rowTitle}>PERSONALIZAR</span>
@@ -40,14 +59,14 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
           </div>
         </div>
 
-        <span className={styles.rowTitle}>&nbsp;</span>
-        <div className={styles.row} onClick={() => setModalType("bloodPressureLevels")}>
+        <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ''}`} onClick={handleReset}>
           <div>
-            <span className={styles.optionIcon}>📈</span>
-            <span>Tabla de niveles de presión</span>
+            <span className={styles.optionIcon}>🗑</span>
+            <span>Eliminar todos los registros</span>
           </div>
-          <span className={styles.arrow}>➡</span>
         </div>
+
+        <span className={styles.rowTitle}>&nbsp;</span>
         <div className={styles.row} onClick={() => setModalType("about")}>
           <div>
             <span className={styles.optionIcon}>✉</span>

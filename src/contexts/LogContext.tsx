@@ -10,6 +10,7 @@ export interface LogContextState {
   updateLog: (log: LogData) => void;
   deleteLog: (id: string) => void;
   getLogById: (id: string) => LogData | undefined
+  resetLogs: () => void
 }
 
 const LogContext = createContext<LogContextState>({} as LogContextState);
@@ -46,12 +47,17 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const getLogById = (id: string) => logs.find(log => log.id === id)
 
+  const resetLogs = () => {
+    setLogs([])
+    setSelectedLogId('')
+  }
+
   useEffect(() => {
     localStorage.setItem('logs', JSON.stringify(logs))
   }, [logs])
 
   return (
-    <LogContext.Provider value={{ logs, addLog, updateLog, deleteLog, selectedLogId, setSelectedLogId, getLogById }}>
+    <LogContext.Provider value={{ logs, addLog, updateLog, deleteLog, selectedLogId, setSelectedLogId, getLogById, resetLogs }}>
       {children}
     </LogContext.Provider>
   )
