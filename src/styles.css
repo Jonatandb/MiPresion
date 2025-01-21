@@ -18,24 +18,18 @@
   color-scheme: light dark;
 
   --light-text: #1a1a1a;
-  --light-text-secondary: #707070;
+  --light-text-secondary: #b0b0b0;
   --light-text-tertiary: #ffffff;
   --light-bg: #f1ecec;
   --light-bg-secondary: #ffffff;
-  --color-tomato: #ff6347;
 
-  --dark-text: #f1ecec;
-  --dark-text-secondary: #f1ecec;
+  --dark-text: #ffffff;
+  --dark-text-secondary: #707070;
+  --dark-text-tertiary: #1a1a1a;
   --dark-bg: #1a1a1a;
   --dark-bg-secondary: #000000;
 
-  --text-color: var(--light-text);
-  --text-color-secondary: var(--light-text-secondary);
-  --text-color-tertiary: var(--light-text-tertiary);
-  --background-color: var(--light-bg);
-  --background-color-secondary: var(--light-bg-secondary);
-  --color-primary: var(--color-tomato);
-
+  --color-tomato: #ff6347;
   --level-normal: #008000;
   --level-elevated: #9acd32;
   --level-stage1: #ffa500;
@@ -43,12 +37,19 @@
   --level-stage3: var(--color-tomato);
   --level-aisolated: var(--color-tomato);
 
+  --text-color: var(--light-text);
+  --text-color-secondary: var(--light-text-secondary);
+  --text-color-tertiary: var(--light-text-tertiary);
+  --background-color: var(--light-bg);
+  --background-color-secondary: var(--light-bg-secondary);
+  --color-primary: var(--color-tomato);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --text-color: var(--dark-text);
     --text-color-secondary: var(--dark-text-secondary);
+    --text-color-tertiary: var(--dark-text-tertiary);
     --background-color: var(--dark-bg);
     --background-color-secondary: var(--dark-bg-secondary);
   }
@@ -58,6 +59,7 @@
 :root[data-theme="dark"] {
   --text-color: var(--dark-text);
   --text-color-secondary: var(--dark-text-secondary);
+  --text-color-tertiary: var(--dark-text-tertiary);
   --background-color: var(--dark-bg);
   --background-color-secondary: var(--dark-bg-secondary);
 }

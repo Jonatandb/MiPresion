@@ -65,7 +65,7 @@
 }
 
 .row {
-  background-color: var(--light-bg-secondary);
+  background-color: var(--background-color-secondary);
   padding: 10px;
   border-radius: 10px;
   display: flex;
@@ -101,39 +101,38 @@
 
 .inputContainer input {
   padding: 5px;
-  background-color: var(--light-bg-secondary);
+  background-color: var(--background-color-secondary);
   color: var(--text-color);
   font-size: 2rem;
   width: 100%;
-  box-sizing: border-box;
   font-family: inherit;
   border: none;
   text-align: center;
 }
 
 .inputContainer input::placeholder {
-  color: #ccc;
+  color: var(--text-color-secondary);
 }
 
 .inputContainer textarea {
   padding: 5px;
   color: var(--text-color);
-  background-color: var(--light-bg-secondary);
+  background-color: var(--background-color-secondary);
   font-size: 1rem;
   width: 100%;
-  box-sizing: border-box;
   font-family: inherit;
   border: none;
   resize: none;
   outline: none;
   background-image: url('../../assets/pencil.png');
+  background-origin: content-box;
   background-size: 1.1rem 1.1rem;
   background-repeat: no-repeat;
   background-position: top right;
 }
 
 .inputContainer textarea::placeholder {
-  color: #ccc;
+  color: var(--text-color-secondary);
 }
 
 .fullWidth {
@@ -153,29 +152,29 @@
 
 .dateContainer input {
   border: 1px solid #ccc;
-  background-color: #efefef;
+  background-color: var(--background-color-secondary);
   color: var(--text-color);
   font-size: 1rem;
-  box-sizing: border-box;
   font-family: inherit;
+  border-radius: 5px;
 }
 
 .pillContainer {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: .5rem 0;
+  padding: .5rem .5rem .5rem 0;
 }
 
 .pillContainer input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--light-bg-secondary);
+  background-color: var(--background-color-secondary);
   cursor: pointer;
   width: 2rem;
-  height: 1rem;
-  border: 1px solid var(--light-text-secondary);
+  height: 1.05rem;
+  border: 1px solid var(--text-color-secondary);
   border-radius: 1rem;
   position: relative;
 }
@@ -187,8 +186,8 @@
   left: 0;
   width: .8rem;
   height: .8rem;
-  background-color: var(--light-bg-secondary);
-  border: 1px solid var(--light-text-secondary);
+  background-color: var(--background-color-secondary);
+  border: 1px solid var(--text-color-secondary);
   border-radius: 1rem;
   transition: transform 0.2s ease-in-out;
 }
@@ -211,8 +210,4 @@
   width: 100%;
   cursor: pointer;
   border-radius: 10px;
-}
-
-.pillLabel:hover {
-  background-color: rgb(253, 250, 250);
 }

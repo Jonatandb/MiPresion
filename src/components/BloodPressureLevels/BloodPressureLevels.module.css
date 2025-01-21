@@ -88,6 +88,12 @@
   text-align: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .row {
+    color: var(--text-color);
+  }
+}
+
 .row span {
   flex-basis: 33.33%;
 }
