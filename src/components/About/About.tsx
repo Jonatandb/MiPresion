@@ -37,9 +37,7 @@ interface AboutProps {
 const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text).then(() => {
     alert('Dirección copiada, gracias! 🚀');
-  }).catch(err => {
-    alert('Error al copiar texto al portapapeles:', err);
-  });
+  })
 };
 
 const About = ({ onClose }: AboutProps) => {
