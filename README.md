@@ -14,11 +14,15 @@
 
 - [ ] Agregar opción para cambiar de idioma entre inglés y español
 
+- [ ] Agreagr filtro por fecha / rango de fechas
+
+- [ ] Agregar calendario
+
+- [ ] Agregar tablero con estadísticas
+
 - [ ] Agregar posibilidad de modificar valores de los niveles
 
 ## 📝 Pendientes:
-
-- [ ] Agregar screenshots y video al readme
 
 - [ ] Hacer sección "Exportar a PDF"
 
@@ -29,6 +33,8 @@
 - [ ] Agregar color de fondo al hover sobre los medios de contácto en About
 
 ## ✅ Completado:
+
+- [x] Agregar screenshots
 
 - [x] Poner nombre: MiPresión (Actualizar header)
 
