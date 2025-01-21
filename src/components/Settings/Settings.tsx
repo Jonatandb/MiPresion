@@ -17,7 +17,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
   }
 
   const handleReset = () => {
-    if (logs.length > 0 && confirm('Estas seguro de eliminar todos los registros?')) {
+    if (logs.length > 0 && confirm('Esta acción no se puede deshacer. ¿Eliminar todos los registros?')) {
       resetLogs()
     }
 
@@ -58,7 +58,6 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
             <span>Activar Tema {theme === 'light' ? 'Oscuro' : 'Claro'}</span>
           </div>
         </div>
-
         <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ''}`} onClick={handleReset}>
           <div>
             <span className={styles.optionIcon}>🗑</span>
@@ -66,11 +65,11 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
           </div>
         </div>
 
-        <span className={styles.rowTitle}>&nbsp;</span>
+        <span className={styles.rowTitle}>SOBRE MÍ</span>
         <div className={styles.row} onClick={() => setModalType("about")}>
           <div>
             <span className={styles.optionIcon}>✉</span>
-            <span>Errores & Contácto</span>
+            <span>Contácto & Errores</span>
           </div>
         </div>
       </div>
