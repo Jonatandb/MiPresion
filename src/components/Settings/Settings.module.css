@@ -74,6 +74,14 @@
   color: var(--dark-text-tertiary);
 }
 
+.optionIcon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  margin-right: .3rem;
+}
+
 .arrow {
   color: var(--light-text-secondary) !important;
 }

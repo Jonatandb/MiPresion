@@ -22,23 +22,37 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
 
         <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
         <div className={styles.row} onClick={() => { alert('Funcionalidad no implementada') }}>
-          <span>📄 Exportar a PDF</span>
-          🚧
+          <div>
+            <span className={styles.optionIcon}>📄</span>
+            <span>Exportar a PDF</span>
+          </div>
+          <span>
+            🚧
+          </span>
         </div>
 
         <span className={styles.rowTitle}>PERSONALIZAR</span>
         <div className={styles.row} onClick={() => toggleTheme()}>
-          <span>{theme === 'light' ? '🌙' : '🌞'} Activar Tema {theme === 'light' ? 'Oscuro' : 'Claro'}</span>
+          <div>
+            <span className={styles.optionIcon}>{theme === 'light' ? '🌙' : '🌞'}</span>
+            <span>Activar Tema {theme === 'light' ? 'Oscuro' : 'Claro'}</span>
+          </div>
         </div>
 
         <span className={styles.rowTitle}>&nbsp;</span>
         <div className={styles.row} onClick={() => setShowLevels(true)}>
-          <span>📈 Tabla de niveles de presión</span>
-          <span className={styles.arrow}>&gt;</span>
+          <div>
+            <span className={styles.optionIcon}>📈</span>
+            <span>Tabla de niveles de presión</span>
+          </div>
+          <span className={styles.arrow}>➡</span>
         </div>
         <div className={styles.row} onClick={() => { alert('Funcionalidad no implementada') }}>
-          <span>✉ Errores & Contácto</span>
-          🚧
+          <div>
+            <span className={styles.optionIcon}>✉</span>
+            <span>Errores & Contácto</span>
+          </div>
+          <span>🚧</span>
         </div>
 
       </div>
