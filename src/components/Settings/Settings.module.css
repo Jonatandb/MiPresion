@@ -41,6 +41,32 @@
   display: none;
 }
 
+
+.button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+.closeButton {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
 .rowTitle {
   margin-top: .8rem;
   color: var(--text-color-secondary);
@@ -84,29 +110,4 @@
 
 .arrow {
   color: var(--light-text-secondary) !important;
-}
-
-.button {
-  background-color: transparent;
-  color: var(--text-color);
-  border: none;
-  cursor: pointer;
-  font-size: .9rem;
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-  font-family: inherit;
-}
-
-.button:hover,
-.button:focus,
-.button:active {
-  text-decoration: none;
-  outline: none;
-  border: none;
-}
-
-.closeButton {
-  color: var(--color-primary);
-  font-weight: bold;
 }

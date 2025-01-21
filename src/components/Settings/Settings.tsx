@@ -3,13 +3,14 @@ import Modal from '@/components/Modal/Modal'
 import BloodPressureLevels from '@/components/BloodPressureLevels/BloodPressureLevels'
 import { useThemeContext } from '@/hooks/useTheme'
 import styles from './Settings.module.css'
+import About from '../About/About'
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
-  const [showLevels, setShowLevels] = useState(false)
   const { theme, toggleTheme } = useThemeContext()
+  const [modalType, setModalType] = useState<"bloodPressureLevels" | "about">()
 
-  const handleCloseModalLevels = () => {
-    setShowLevels(false)
+  const handleCloseModal = () => {
+    setModalType(undefined)
   }
 
   return (
@@ -40,25 +41,28 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         </div>
 
         <span className={styles.rowTitle}>&nbsp;</span>
-        <div className={styles.row} onClick={() => setShowLevels(true)}>
+        <div className={styles.row} onClick={() => setModalType("bloodPressureLevels")}>
           <div>
             <span className={styles.optionIcon}>📈</span>
             <span>Tabla de niveles de presión</span>
           </div>
           <span className={styles.arrow}>➡</span>
         </div>
-        <div className={styles.row} onClick={() => { alert('Funcionalidad no implementada') }}>
+        <div className={styles.row} onClick={() => setModalType("about")}>
           <div>
             <span className={styles.optionIcon}>✉</span>
             <span>Errores & Contácto</span>
           </div>
-          <span>🚧</span>
         </div>
-
       </div>
-      <Modal onClose={handleCloseModalLevels} isOpen={showLevels}>
-        <BloodPressureLevels onClose={handleCloseModalLevels} />
-      </Modal>
+
+      {modalType && (
+        <Modal onClose={handleCloseModal} isOpen={true}>
+          {modalType === "bloodPressureLevels" && <BloodPressureLevels onClose={handleCloseModal} />}
+          {modalType === "about" && <About onClose={handleCloseModal} />}
+        </Modal>
+      )}
+
     </div>
   )
 }
