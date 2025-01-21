@@ -25,7 +25,7 @@
 
 .imgContainer img {
   background-color: var(--color-primary);
-  padding: 10px;
+  padding: 0.625rem;
   cursor: pointer;
   border-radius: 35%;
   width: 4rem;

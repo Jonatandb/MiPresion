@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
+  padding: 1.25rem;
   overflow: hidden;
 
   height: 100%;
@@ -46,17 +46,17 @@
   color: var(--text-color-secondary);
   font-size: .6rem;
   font-weight: bold;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.075rem;
 }
 
 .row {
   background-color: white;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .row:hover {
@@ -64,18 +64,18 @@
   background-color: var(--color-primary);
 
   & .arrow {
-    color: #1a1a1a !important;
+    color: var(--dark-text-tertiary) !important;
   }
 }
 
 .row span {
   font-size: 1rem;
   font-weight: bold;
-  color: #1a1a1a;
+  color: var(--dark-text-tertiary);
 }
 
 .arrow {
-  color: #ccc !important;
+  color: var(--light-text-secondary) !important;
 }
 
 .button {

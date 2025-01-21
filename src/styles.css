@@ -42,7 +42,18 @@
   --text-color-tertiary: var(--light-text-tertiary);
   --background-color: var(--light-bg);
   --background-color-secondary: var(--light-bg-secondary);
+
   --color-primary: var(--color-tomato);
+  --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Override explícito via data-theme */
+:root[data-theme="dark"] {
+  --text-color: var(--dark-text);
+  --text-color-secondary: var(--dark-text-secondary);
+  --text-color-tertiary: var(--dark-text-tertiary);
+  --background-color: var(--dark-bg);
+  --background-color-secondary: var(--dark-bg-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,15 +64,6 @@
     --background-color: var(--dark-bg);
     --background-color-secondary: var(--dark-bg-secondary);
   }
-}
-
-/* Override explícito via data-theme */
-:root[data-theme="dark"] {
-  --text-color: var(--dark-text);
-  --text-color-secondary: var(--dark-text-secondary);
-  --text-color-tertiary: var(--dark-text-tertiary);
-  --background-color: var(--dark-bg);
-  --background-color-secondary: var(--dark-bg-secondary);
 }
 
 body {
