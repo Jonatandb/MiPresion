@@ -1,27 +1,66 @@
-# Registro de presión sanguínea
+# ![](./src/assets/favicon_white.png) Registro de presión sanguínea
 
-## Pendientes:
+## 🛠 Herramientas y recursos utilizados:
+
+- [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)
+- [Photopea](https://www.photopea.com/)
+- [Flaticon](https://www.flaticon.com/)
+
+## 🏁 Posibles agregados:
+
+- [ ] Agregar opción para cambiar de idioma entre inglés y español
+
+- [ ] Agregar posibilidad de modificar valores de los niveles
+
+## 📝 Pendientes:
+
+- [ ] Agregar screenshots y video al readme
 
 - [ ] Hacer sección "Exportar a PDF"
 
-- [ ] Hacer sección "Errores y Contácto"
+- [ ] Agrupar listado por fecha
 
-- [ ] Hacer mensaje para cuando no se crearon registros
+## 👷🏻‍♂️ Trabajando:
 
-- [ ] Implementar CSS Modules en todos los componentes
-- [ ] Usar variables CSS en todos los CSS
-- [ ] Reemplazar px por rem en todos los CSS
-- [ ] Corregir colores de dark mode
+- [ ] Agregar color de fondo al hover sobre los medios de contácto en About
 
----
+## ✅ Completado:
+
+- [x] Poner nombre: MiPresión (Actualizar header)
+
+- [✔] Agregar posibilidad de borrar todos los registros
+
+- [✔] Hacer sección "Errores y Contácto" con opciones de donación
+
+- [✔] Corregir estilo de íconos en Settings para que tengan el mismo ancho
+
+- [✔] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
+
+- [✔] Usar variables CSS en todos los CSS
+
+- [✔] Reemplazar px por rem en todos los CSS
+
+- [✔] Corregir colores de dark mode
+
+- [✔] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
+
+- [✔] Actualizar imports relativos con imports de ruta con @ en Settings
+
+- [✔] Hacer refactor para mejorar código en App.tsx con respecto a lógica de modales
+
+- [✔] Hacer mensaje para cuando no se crearon registros
+
+  - [✔] Eliminar mock data y su dependencia
 
 - [✔] Hacer versión responsive
-- [✔] Hacer sección "Ajustes"
-- [✔] Corregir problema con el botón de agregar, que en cualquier otra resolución se va muy a la derecha y abajo
-- [✔] Hacer sección "Niveles de presión arterial"
-- [✔] Corregir problema con scroll luego de agregar o editar un registro, la lista de logs queda scrolleada
 
----
+- [✔] Hacer sección "Ajustes"
+
+- [✔] Corregir problema con el botón de agregar, que en cualquier otra resolución se va muy a la derecha y abajo
+
+- [✔] Hacer sección "Niveles de presión arterial"
+
+- [✔] Corregir problema con scroll luego de agregar o editar un registro, la lista de logs queda scrolleada
 
 - [✔] Corregir hora por defecto al crear un log, aparece desfazada 3 horas por lo menos
 
