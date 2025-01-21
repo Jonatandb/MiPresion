@@ -8,28 +8,28 @@ header {
   transform: translateX(-50%);
   width: 100%;
   max-width: 375px;
-  background-color: #f1ecec;
-  color: #303030;
-  border-end-end-radius: 10px;
-  border-end-start-radius: 10px;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  border-end-end-radius: 0.625rem;
+  border-end-start-radius: 0.625rem;
   height: 3rem;
   padding-left: .3rem;
   padding-right: .3rem;
 }
 
-#titleContainer {
+.titleContainer {
   display: flex;
   align-items: center;
 }
 
-#iconsRightContainer {
+.iconsRightContainer {
   display: flex;
   align-items: center;
   gap: .5rem;
   padding-right: .6rem;
 }
 
-#mainTitle {
+.mainTitle {
   margin: 0;
   font-size: 1rem;
 }

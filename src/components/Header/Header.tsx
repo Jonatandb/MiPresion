@@ -2,20 +2,24 @@ import Logo from '@/components/Logo/Logo'
 import SettingsIcon from '@/components/SettingsIcon/SettingsIcon'
 import ToggleTheme from '@/components/ToggleTheme/ToggleTheme'
 
-import './styles.css'
+import styles from './Header.module.css'
 
-const Header = ({ onSettingsClicked }: { onSettingsClicked: () => void }) => {
+interface HederProps {
+  onSettingsClicked: () => void
+}
+
+const Header = ({ onSettingsClicked }: HederProps) => {
 
   return (
     <header>
-      <div id="titleContainer">
+      <div className={`${styles.titleContainer}`}>
         <Logo />
-        <h1 id="mainTitle">
+        <h1 className={`${styles.mainTitle}`}>
           Registro de presión sanguínea
         </h1>
       </div>
 
-      <div id="iconsRightContainer">
+      <div className={`${styles.iconsRightContainer}`}>
         <ToggleTheme />
         <SettingsIcon onClick={onSettingsClicked} />
       </div>
