@@ -41,7 +41,7 @@ const getCategoryInfo = (systolic: number | string, diastolic: number | string) 
   } else if (systolic >= 180 && diastolic >= 110) {
     categoryData.category = "Nivel 3"
     categoryData.style = styles["levelStage3"]
-  } else if (systolic >= 140 && diastolic < 90) {
+  } else if (systolic > 140 && diastolic < 90) {
     categoryData.category = "Sistólica Aislada"
     categoryData.style = styles["levelAisolated"]
   }
