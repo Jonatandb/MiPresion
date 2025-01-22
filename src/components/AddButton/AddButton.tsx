@@ -1,6 +1,6 @@
 import styles from './AddButton.module.css'
 
-import add from '@/assets/add_white.png'
+import add from '@/assets/add.png'
 
 interface AddButtonProps {
   onClick: () => void
@@ -19,7 +19,7 @@ const AddButton = ({ onClick, extraStyles }: AddButtonProps) => {
   return (
     <button className={`${styles.addButtonContainer} ${extraStyles && extraStyles['addButtonContainer'] || ''}`} onClick={handleClick}>
       <div className={`${styles.imgContainer} ${extraStyles && extraStyles['imgContainer'] || ''}`}>
-        <img src={add} height={30} alt="Ícono agregar nuevo registro" title="Agregar registro"></img>
+        <img src={add} width={64} height={64} alt="Ícono agregar nuevo registro" title="Agregar registro"></img>
       </div>
     </button>
   )
