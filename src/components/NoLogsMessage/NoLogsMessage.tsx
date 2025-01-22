@@ -1,6 +1,7 @@
-import { LogContext } from "@/contexts/LogContext"
 import { useContext } from "react"
-import AddButton from "../AddButton/AddButton"
+import { LogContext } from "@/contexts/LogContext"
+import AddButton from "@/components/AddButton/AddButton"
+
 import styles from './NoLogsMessage.module.css'
 
 const NoLogsMessage = ({ onAddClicked }: { onAddClicked: () => void }) => {

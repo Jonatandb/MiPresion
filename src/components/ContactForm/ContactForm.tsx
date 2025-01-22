@@ -1,7 +1,7 @@
+import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 
 import styles from "./ContactForm.module.css"
-import { useState } from 'react'
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false)

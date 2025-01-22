@@ -82,11 +82,15 @@ Visitar:
 
 - [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
 
+- [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
+
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Crear "BloodPressureLevelsModal.tsx" (y llamarlo desde Settings), meter dentro el contenido de "BloodPressureLevels" (sin el container y el header) para poder luego meter "BloodPressureLevels" debajo del textarea de notas en AddEditLog
+- [ ] 🐛 Corregir ordenamiento de los logs (Causa: las fechas no tienen los segundos!!)
 
 ## ✅ Completado:
+
+- [x] Crear "BloodPressureLevelsModal.tsx" (y llamarlo desde Settings), meter dentro el contenido de "BloodPressureLevels" (sin el container y el header) para poder luego meter "BloodPressureLevels" debajo del textarea de notas en AddEditLog
 
 - [x] Hacer formulario de contacto con envío de mails utilizando EmailJS
 

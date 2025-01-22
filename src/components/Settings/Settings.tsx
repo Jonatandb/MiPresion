@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Modal from '@/components/Modal/Modal'
-import BloodPressureLevels from '@/components/BloodPressureLevels/BloodPressureLevels'
+import BloodPressureLevelsModal from '@/components/Modals/BloodPressureLevelsModal/BloodPressureLevelsModal'
+import About from '@/components/About/About'
 import { useThemeContext } from '@/hooks/useTheme'
-import styles from './Settings.module.css'
-import About from '../About/About'
 import { useLogContext } from '@/hooks/useLogContext'
+
+import styles from './Settings.module.css'
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const { theme, toggleTheme } = useThemeContext()
@@ -76,7 +77,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
 
       {modalType && (
         <Modal onClose={handleCloseModal} isOpen={true}>
-          {modalType === "bloodPressureLevels" && <BloodPressureLevels onClose={handleCloseModal} />}
+          {modalType === "bloodPressureLevels" && <BloodPressureLevelsModal onClose={handleCloseModal} />}
           {modalType === "about" && <About onClose={handleCloseModal} />}
         </Modal>
       )}

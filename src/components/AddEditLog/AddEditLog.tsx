@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { formatInTimeZone } from 'date-fns-tz'
 import { useLogContext } from '@/hooks/useLogContext';
+import BloodPressureLevels from '@/components/BloodPressureLevels/BloodPressureLevels';
 
 import pill from '@/assets/pill.png';
 
@@ -84,6 +85,12 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
     }
   }
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
   useEffect(() => {
     if (!data.date) {
       if (datePickerRef.current) {
@@ -128,15 +135,15 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         <div className={styles.row}>
           <div className={styles.inputContainer}>
             <label htmlFor="systolic">Sistólica</label>
-            <input type="number" id="systolic" ref={systolicRef} placeholder='120' onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || '' })} value={data.systolic} />
+            <input type="number" id="systolic" ref={systolicRef} placeholder='120' onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || '' })} value={data.systolic} onKeyDown={handleKeyDown} />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="diastolic">Diastólica</label>
-            <input type="number" id="diastolic" ref={diastolicRef} placeholder='80' min={1} onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || '' })} value={data.diastolic} />
+            <input type="number" id="diastolic" ref={diastolicRef} placeholder='80' min={1} onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || '' })} value={data.diastolic} onKeyDown={handleKeyDown} />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="pulse">Pulso (BPM)</label>
-            <input type="number" id="pulse" ref={pulseRef} placeholder='68' min={1} onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || '' })} value={data.pulse} />
+            <input type="number" id="pulse" ref={pulseRef} placeholder='68' min={1} onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || '' })} value={data.pulse} onKeyDown={handleKeyDown} />
           </div>
         </div>
 
@@ -163,7 +170,9 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
           </div>
         </div>
 
+        <BloodPressureLevels />
       </div>
+
     </div>
   )
 }

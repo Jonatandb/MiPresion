@@ -1,4 +1,5 @@
 import { useBodyLock } from '@/hooks/useBodyLock'
+
 import styles from './Modal.module.css'
 
 interface ModalProps {
