@@ -41,7 +41,7 @@ const getCategoryInfo = (systolic: number | string, diastolic: number | string) 
   } else if (systolic >= 180 && diastolic >= 110) {
     categoryData.category = "Nivel 3"
     categoryData.style = styles["levelStage3"]
-  } else if (systolic > 140 && diastolic < 90) {
+  } else if (systolic >= 140 && diastolic < 90) {
     categoryData.category = "Sistólica Aislada"
     categoryData.style = styles["levelAisolated"]
   }
@@ -89,7 +89,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
           <span className={`${styles.mmhg}`}>/</span>
           <span className={`${styles.mmhg}`} title="Presión diastólica">{diastolic}</span>
           {` `}
-          <span className={`${styles.leyend}`} title="Milímetros de mercurio">mmhg</span>
+          <span className={`${styles.leyend}`} title="Milímetros de mercurio">mm Hg</span>
         </div>
         <div className={`${styles.bpmContainer}`}>
           <div className={`${styles.iconsContainer}`}>
