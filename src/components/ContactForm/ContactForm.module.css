@@ -20,6 +20,7 @@
   font-size: 1rem;
   background-color: var(--background-color-secondary);
   color: var(--text-color);
+  font-family: inherit;
 }
 
 .contactFormContainer form textarea {
@@ -28,6 +29,7 @@
   font-size: 1rem;
   background-color: var(--background-color-secondary);
   color: var(--text-color);
+  font-family: inherit;
 }
 
 .contactFormContainer form button {
