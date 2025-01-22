@@ -1,7 +1,17 @@
 {
   "name": "mipresion",
+  "description": "MiPresión - Registro de presión sanguínea por Jonatandb",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jonatandb",
+    "email": "jonatandb@gmail.com",
+    "url": "https://jonatandb.dev.ar/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jonatandb/MiPresion"
+  },
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -30,4 +40,3 @@
     "vite": "5.0.8"
   }
 }
-
