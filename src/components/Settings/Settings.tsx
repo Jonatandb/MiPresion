@@ -69,7 +69,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <div className={styles.row} onClick={() => setModalType("about")}>
           <div>
             <span className={styles.optionIcon}>✉</span>
-            <span>Contácto & Errores</span>
+            <span>Contacto & Errores</span>
           </div>
         </div>
       </div>

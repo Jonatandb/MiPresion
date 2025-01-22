@@ -2,6 +2,7 @@
 
 ## 🛠 Herramientas y recursos utilizados:
 
+- [EmailJS](https://emailjs.com)
 - [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)
 - [Photopea](https://www.photopea.com/)
 - [Flaticon](https://www.flaticon.com/)
@@ -28,15 +29,15 @@
 
 - [ ] Agrupar listado por fecha
 
-- [ ] Crear "BloodPressureLevelsModal.tsx" (y llamarlo desde Settings), meter dentro el contenido de "BloodPressureLevels" (sin el container y el header) para poder luego meter "BloodPressureLevels" debajo del textarea de notas en AddEditLog
-
 - [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Hacer formulario de contácto (EmailJS)
+- [ ] Crear "BloodPressureLevelsModal.tsx" (y llamarlo desde Settings), meter dentro el contenido de "BloodPressureLevels" (sin el container y el header) para poder luego meter "BloodPressureLevels" debajo del textarea de notas en AddEditLog
 
 ## ✅ Completado:
+
+- [x] Hacer formulario de contácto con envío de mails utilizando EmailJS
 
 - [x] Optimización de imágenes y creación de archivos "fuente" PSD
 

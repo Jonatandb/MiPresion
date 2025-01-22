@@ -1,0 +1,82 @@
+.donateContainer {
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--color-primary);
+  flex-direction: column;
+  padding: .3rem .4rem 0 .4rem;
+  margin: .2rem auto;
+  text-align: center;
+  border-radius: 0.313rem;
+}
+
+.donateContainer h3 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 0 .4rem 0;
+}
+
+.donateContainer span {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: .9rem;
+  margin: 0 0 0 0;
+}
+
+.donateBanners {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: .6rem;
+}
+
+.donateBanners img:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  border-radius: 0.313rem;
+}
+
+.theterWallet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: .1rem;
+
+}
+
+.theterWallet div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.theterWallet img {
+  width: 1rem;
+  height: auto;
+  padding: 0;
+  margin: 0 .5rem 0 .2rem;
+}
+
+.theterWallet p {
+  font-size: .7rem;
+  margin: 0;
+  padding: 0;
+}
+
+.theterWallet div:last-child {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.theterWallet div:last-child:hover {
+  background-color: var(--color-primary);
+  border-radius: 0.313rem;
+}
+
+.theterWallet span {
+  font-size: .60rem;
+  margin: 0;
+  cursor: pointer;
+}
