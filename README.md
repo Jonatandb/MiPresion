@@ -90,6 +90,8 @@ Visitar:
 
 ## ✅ Completado:
 
+- [x] Agregar el logo y nombre de la app al modal de Ajustes y agregar el número de versión
+
 - [x] Crear "BloodPressureLevelsModal.tsx" (y llamarlo desde Settings), meter dentro el contenido de "BloodPressureLevels" (sin el container y el header) para poder luego meter "BloodPressureLevels" debajo del textarea de notas en AddEditLog
 
 - [x] Hacer formulario de contacto con envío de mails utilizando EmailJS

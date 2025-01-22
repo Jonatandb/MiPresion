@@ -2,6 +2,7 @@
 import ContactForm from '@/components/ContactForm/ContactForm'
 import Donate from '@/components/Donate/Donate'
 import SocialMedia from '@/components/SocialMedia/SocialMedia'
+import Logo from '../Logo/Logo'
 
 import styles from './About.module.css'
 
@@ -14,6 +15,7 @@ const About = ({ onClose }: AboutProps) => {
   return (
     <div className={styles.aboutContainer} onTouchMove={e => e.stopPropagation()}>
       <div className={styles.header}>
+        <Logo />
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>

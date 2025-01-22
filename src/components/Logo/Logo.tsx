@@ -4,7 +4,29 @@ import favicon120 from '@/assets/favicon_120x120.png'
 
 import styles from './Logo.module.css'
 
-const Logo = () => <img className={`${styles.logo}`} src={favicon60} srcSet={`${favicon60} 60w, ${favicon120} 120w`} alt="Logo de MiPresión - Registro de Presión Sanguínea por Jonatandb" title='MiPresión - Registro de Presión Sanguínea por Jonatandb' height={30} width={30} />
+const images = [
+  favicon60,
+  favicon120,
+];
 
+images.forEach((image) => {
+  new Image().src = image;
+});
+
+const Logo = () => {
+  return (
+    <div className={`${styles.titleContainer}`}>
+      <img className={`${styles.logo}`} src={favicon60} srcSet={`${favicon60} 60w, ${favicon120} 120w`} alt="Logo de MiPresión - Registro de Presión Sanguínea por Jonatandb" title='MiPresión - Registro de Presión Sanguínea por Jonatandb' height={30} width={30} />
+      <div className={`${styles.appTitle}`}>
+        <h1>
+          MiPresión
+        </h1>
+        <span>
+          Registro de presión sanguínea v.1.0.0
+        </span>
+      </div>
+    </div>
+  )
+}
 
 export default Logo

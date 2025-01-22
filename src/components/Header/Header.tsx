@@ -9,21 +9,9 @@ interface HederProps {
 }
 
 const Header = ({ onSettingsClicked }: HederProps) => {
-
   return (
     <header>
-      <div className={`${styles.titleContainer}`}>
-        <Logo />
-        <div className={`${styles.appTitle}`}>
-          <h1>
-            MiPresión
-          </h1>
-          <span>
-            Registro de presión sanguínea
-          </span>
-        </div>
-      </div>
-
+      <Logo />
       <div className={`${styles.iconsRightContainer}`}>
         <ToggleTheme />
         <SettingsIcon onClick={onSettingsClicked} />

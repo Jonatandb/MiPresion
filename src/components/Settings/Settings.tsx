@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Modal from '@/components/Modal/Modal'
 import BloodPressureLevelsModal from '@/components/Modals/BloodPressureLevelsModal/BloodPressureLevelsModal'
 import About from '@/components/About/About'
+import Logo from '../Logo/Logo'
 import { useThemeContext } from '@/hooks/useTheme'
 import { useLogContext } from '@/hooks/useLogContext'
 
@@ -21,12 +22,12 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
     if (logs.length > 0 && confirm('Esta acción no se puede deshacer. ¿Eliminar todos los registros?')) {
       resetLogs()
     }
-
   }
 
   return (
     <div className={styles.settingsContainer} onTouchMove={e => e.stopPropagation()}>
       <div className={styles.header}>
+        <Logo />
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>

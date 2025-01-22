@@ -11,7 +11,8 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .button {
@@ -51,6 +52,7 @@
   touch-action: pan-y;
   position: relative;
   height: 100%;
+  margin-top: .8rem;
 }
 
 .content::-webkit-scrollbar {
