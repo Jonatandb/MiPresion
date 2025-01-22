@@ -1,15 +1,66 @@
 # ![](./src/assets/favicon_white.png) Registro de presión sanguínea
 
-## 🛠 Herramientas y recursos utilizados:
+---
 
-- [EmailJS](https://emailjs.com)
-- [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)
-- [Photopea](https://www.photopea.com/)
-- [Flaticon](https://www.flaticon.com/)
+## 👩🏻‍💻 Tecnologías usadas
 
-## 💅🏻 Capturas:
+- React, Vite, TypeScript, CSS Modules
 
-![Capturas de MiPresión](./Screenshot.jpg)
+---
+
+## 💅🏻 Capturas
+
+[![Capturas de MiPresión](./Screenshot.jpg)](https://jonatandb.dev.ar/MiPresion/)
+
+---
+
+## 🚀 Online version
+
+[https://jonatandb.dev.ar/MiPresion/](https://jonatandb.dev.ar/MiPresion/)
+
+---
+
+## Ejecutar localmente
+
+Clonar el proyecto
+
+```bash
+  git clone https://github.com/Jonatandb/MiPresion
+```
+
+Ir al directorio del proyecto
+
+```bash
+  cd MiPresion
+```
+
+Instalar dependencias
+
+```bash
+  pnpm install
+```
+
+Iniciar el servidor
+
+```bash
+  pnpm run dev
+```
+
+Visitar:
+
+- http://localhost:5173
+
+---
+
+## Generación de versión productiva para Github Pages
+
+```bash
+  pnpm run build
+```
+
+---
+
+# 🧭 Roadmap
 
 ## 🏁 Posibles agregados:
 
@@ -37,11 +88,11 @@
 
 ## ✅ Completado:
 
-- [x] Hacer formulario de contácto con envío de mails utilizando EmailJS
+- [x] Hacer formulario de contacto con envío de mails utilizando EmailJS
 
 - [x] Optimización de imágenes y creación de archivos "fuente" PSD
 
-- [x] Agregar color de fondo al hover sobre los medios de contácto en About
+- [x] Agregar color de fondo al hover sobre los medios de contacto en About
 
 - [x] Agregar screenshots
 
@@ -49,7 +100,7 @@
 
 - [x] Agregar posibilidad de borrar todos los registros
 
-- [x] Hacer sección "Errores y Contácto" con opciones de donación
+- [x] Hacer sección "Errores y Contacto" con opciones de donación
 
 - [x] Corregir estilo de íconos en Settings para que tengan el mismo ancho
 
@@ -98,4 +149,17 @@
 - [x] Guardado de datos en localStorage
 
 - [x] Usar Vite: npm create vite
+
+## 🛠 Herramientas y recursos utilizados:
+
+- [EmailJS](https://emailjs.com)
+- [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)
+- [Photopea](https://www.photopea.com/)
+- [Flaticon](https://www.flaticon.com/)
+
+---
+
+## Author
+
+- Jonatandb - [@jonatandb](https://www.github.com/jonatandb)
 
