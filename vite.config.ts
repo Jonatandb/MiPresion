@@ -3,9 +3,29 @@ import react from '@vitejs/plugin-react-swc'
 import { fileURLToPath, URL } from 'url'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: './',
-  plugins: [react()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+    {
+      name: 'rewrite-paths',
+      enforce: 'post',
+      generateBundle(options, bundle) {
+        const basePath = mode === "development" ? "/" : "/MiPresion/";
+        Object.values(bundle).forEach((chunk) => {
+          if (chunk.type === 'chunk' || chunk.type === 'asset') {
+            if ('code' in chunk) {
+              chunk.code = chunk.code
+                .replace(/["']\/assets\//g, `"${basePath}assets/`)
+            }
+          }
+        });
+      }
+    }
+  ],
+  base: mode === "development" ? "/" : "/MiPresion/",
+  build: {
+    outDir: "docs",
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -13,4 +33,8 @@ export default defineConfig({
       '@/hooks': fileURLToPath(new URL('./src/hooks', import.meta.url)),
     }
   },
-})
+}))
+
+
+
+
