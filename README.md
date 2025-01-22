@@ -8,9 +8,13 @@
 
 ---
 
-## 💅🏻 Capturas
+## 💅🏻 Funcionalidad
 
-[![Capturas de MiPresión](./Screenshot.jpg)](https://jonatandb.dev.ar/MiPresion/)
+<p align="center">
+    <a href="https://jonatandb.dev.ar/MiPresion/">
+        <img src="./MiPresion_tour.gif" alt="MiPresión - Registros de presión sanguínea por Jonatandb"/>
+    </a>
+</p>
 
 ---
 
@@ -74,7 +78,11 @@ Visitar:
 
 - [ ] Agregar posibilidad de modificar valores de los niveles
 
+- [ ] Hacer exportación a json (e importación) para descargar y/o usar con Google Drive
+
 ## 📝 Pendientes:
+
+- [ ] Corregir/agregar tabindex para navegación por teclado
 
 - [ ] Hacer sección "Exportar a PDF"
 
