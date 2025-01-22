@@ -28,11 +28,17 @@
 
 - [ ] Agrupar listado por fecha
 
+- [ ] Crear "BloodPressureLevelsModal.tsx" (y llamarlo desde Settings), meter dentro el contenido de "BloodPressureLevels" (sin el container y el header) para poder luego meter "BloodPressureLevels" debajo del textarea de notas en AddEditLog
+
+- [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
+
 ## 👷🏻‍♂️ Trabajando:
 
 - [ ] Hacer formulario de contácto (EmailJS)
 
 ## ✅ Completado:
+
+- [x] Optimización de imágenes y creación de archivos "fuente" PSD
 
 - [x] Agregar color de fondo al hover sobre los medios de contácto en About
 
