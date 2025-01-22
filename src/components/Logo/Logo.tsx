@@ -22,7 +22,7 @@ const Logo = () => {
           MiPresión
         </h1>
         <span>
-          Registro de presión sanguínea v.1.0.1
+          Registro de presión sanguínea v.1.0.2
         </span>
       </div>
     </div>
