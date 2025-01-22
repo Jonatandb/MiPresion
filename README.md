@@ -18,7 +18,7 @@
 
 ---
 
-## 🚀 Online version
+## 🚀 Sitio Web
 
 [https://jonatandb.dev.ar/MiPresion/](https://jonatandb.dev.ar/MiPresion/)
 
@@ -173,7 +173,7 @@ Visitar:
 
 ---
 
-## Author
+## Autor
 
 - Jonatandb - [@jonatandb](https://www.github.com/jonatandb)
 
