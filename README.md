@@ -88,15 +88,15 @@ Visitar:
 
 - [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
 
-- [ ] Agrupar listado por fecha
-
 - [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Quitar emojis junto al título de donaciones
+- [ ] Agrupar listado por fecha
 
 ## ✅ Completado:
+
+- [x] Quitar emojis junto al título de donaciones
 
 - [x] 🐛 Solucionar que al hacer click al lado del botón + flotante, en se abre el modal de Agregar registro
 
