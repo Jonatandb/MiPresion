@@ -82,17 +82,46 @@ Visitar:
 
 ## 📝 Pendientes:
 
-- [ ] Corregir/agregar tabindex para navegación por teclado
+- Errores:
 
-- [ ] Hacer sección "Exportar a PDF"
+  - [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
 
-- [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
+- Refactors:
 
-- [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
+  - [ ] Corregir/agregar tabindex para navegación por teclado
+  - [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
+  - [ ] Hacer que cada sección (modal) tenga su propia url
+
+- Ajustes:
+
+  - [ ] Agregar opción "Ayuda y Preguntas frecuentes" con opciones "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?"
+  - [ ] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
+    - [ ] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
+  - [ ] Agregar opción de "Modo Daltónico"
+
+- Home:
+
+  - [ ] Reemplazar "Aún no se agregaron registros" con "Aún no hay mediciones"
+  - [ ] Reemplazar "Nuevo registro" con "Agregar una medición"
+  - [ ] Ampliar area de clickeo del "buttonContainer" para incluír el botón y el "Agregar una medición"
+  - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
+    - LogsList -> Log
+      - [ ] Reemplazar "Datos incorrectos" por "Niveles fuera de rango"
+  - [ ] Agrupar listado por fecha
+
+- Agregar registro:
+
+  - [ ] Reemplazar "Agregar Registro" por "Agregar Medición"
+  - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Niveles fuera de rango" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (en incluye la sección "¿Que significa "Niveles fuera de rango"?")
+
+- Contacto:
+
+  - [ ] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agrupar listado por fecha
+- Ajustes:
+  - [ ] Hacer sección "Exportar a PDF"
 
 ## ✅ Completado:
 
