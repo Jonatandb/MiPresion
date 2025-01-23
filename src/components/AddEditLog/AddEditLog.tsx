@@ -135,7 +135,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         <div className={styles.row}>
           <div className={styles.inputContainer}>
             <label htmlFor="systolic">Sistólica</label>
-            <input type="number" id="systolic" ref={systolicRef} placeholder='120' onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })} value={data.systolic} onKeyDown={handleKeyDown} />
+            <input type="number" id="systolic" ref={systolicRef} placeholder='120' min={1} onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })} value={data.systolic} onKeyDown={handleKeyDown} />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="diastolic">Diastólica</label>
