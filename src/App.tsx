@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import AddButtonIfLogs from "./components/AddButtonIfLogs/AddButtonIfLogs"
 import AddEditLog from "./components/AddEditLog/AddEditLog"
+import FloatingAddButton from "./components/FloatingAddButton/FloatingAddButton"
 import Header from "@/components/Header/Header"
 import LogsList from "@/components/LogsList/LogsList"
 import Modal from "@/components/Modal/Modal"
@@ -10,7 +10,7 @@ import { useLogContext } from "./hooks/useLogContext"
 
 const App = () => {
   const [modalType, setModalType] = useState<"addEditLog" | "settings">()
-  const { selectedLogId, setSelectedLogId } = useLogContext()
+  const { selectedLogId, setSelectedLogId, logs } = useLogContext()
 
   useEffect(() => {
     if (selectedLogId) {
@@ -27,11 +27,14 @@ const App = () => {
     <>
       <Header onSettingsClicked={() => setModalType("settings")} />
 
-      <LogsList />
-
-      <AddButtonIfLogs onAddClicked={() => setModalType("addEditLog")} />
-
-      <NoLogsMessage onAddClicked={() => setModalType("addEditLog")} />
+      {logs.length > 0 ?
+        (<>
+          <LogsList />
+          <FloatingAddButton onClick={() => setModalType("addEditLog")} />
+        </>)
+        :
+        <NoLogsMessage onAddClicked={() => setModalType("addEditLog")} />
+      }
 
       {modalType && (
         <Modal onClose={handleCloseModal} isOpen={true}>

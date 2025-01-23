@@ -1,16 +1,16 @@
 import { LogData } from "@/components/AddEditLog/AddEditLog";
 
-import { useThemeContext } from '@/hooks/useTheme';
+import { useThemeContext } from "@/hooks/useTheme";
 import { useLogContext } from "@/hooks/useLogContext";
 
-import pencilEmptyWhite from '@/assets/pencil_white.png';
-import pencilFull from '@/assets/pencil.png';
-import pencilBlack from '@/assets/pencil_black.png';
-import pillEmptyWhite from '@/assets/pill_white.png';
-import pillFull from '@/assets/pill.png';
-import pillBlack from '@/assets/pill_black.png';
+import pencilEmptyWhite from "@/assets/pencil_white.png";
+import pencilFull from "@/assets/pencil.png";
+import pencilBlack from "@/assets/pencil_black.png";
+import pillEmptyWhite from "@/assets/pill_white.png";
+import pillFull from "@/assets/pill.png";
+import pillBlack from "@/assets/pill_black.png";
 
-import styles from './Log.module.css'
+import styles from "./Log.module.css"
 
 const getCategoryInfo = (systolic: number | string, diastolic: number | string) => {
   const categoryData = {
@@ -88,7 +88,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
           <span className={`${styles.mmhg}`} title="Presión sistólica">{systolic}</span>
           <span className={`${styles.mmhg}`}>/</span>
           <span className={`${styles.mmhg}`} title="Presión diastólica">{diastolic}</span>
-          {` `}
+          {" "}
           <span className={`${styles.leyend}`} title="Milímetros de mercurio">mm Hg</span>
         </div>
         <div className={`${styles.bpmContainer}`}>
@@ -97,13 +97,13 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
               medicine ?
                 <img className={`${styles.icon}`} width="19" height="19" src={pillFull} alt="Ícono píldora tomada" />
                 :
-                <img className={`${styles.icon}`} width="19" height="19" src={imageByTheme[theme]['pill']} alt="Ícono píldora no tomada" />
+                <img className={`${styles.icon}`} width="19" height="19" src={imageByTheme[theme]["pill"]} alt="Ícono píldora no tomada" />
             }
             {
               notes ?
                 <img className={`${styles.icon}`} width="19" height="19" src={pencilFull} alt="Ícono hay notas" title={notes} />
                 :
-                <img className={`${styles.icon}`} width="19" height="19" src={imageByTheme[theme]['pencil']} alt="Ícono no hay notas" />
+                <img className={`${styles.icon}`} width="19" height="19" src={imageByTheme[theme]["pencil"]} alt="Ícono no hay notas" />
             }
           </div>
           <span className={`${styles.bpm}`} title="Pulso">{pulse} <span className={`${styles.leyend}`}>BPM</span></span>

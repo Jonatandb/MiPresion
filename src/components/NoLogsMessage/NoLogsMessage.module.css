@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
   padding: 1.25rem;
-  overflow: hidden;
-
+  gap: 5rem;
 }
 
 .NoLogsMessageContainer span {
@@ -12,15 +12,14 @@
   font-weight: bold;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--text-color-secondary);
+  color: var(--text-color);
 }
 
-.addButtonContainer {
-  position: initial;
-  margin-top: 8rem;
-}
-
-.imgContainer {
-  display: initial;
-  padding: 1rem 0;
+.buttonContainer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }

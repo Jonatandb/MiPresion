@@ -90,15 +90,15 @@ Visitar:
 
 - [ ] Agrupar listado por fecha
 
-- [ ] Quitar emojis junto al título de donaciones
-
 - [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] 🐛 Solucionar que al hacer click al lado del botón + flotante, en se abre el modal de Agregar registro
+- [ ] Quitar emojis junto al título de donaciones
 
 ## ✅ Completado:
+
+- [x] 🐛 Solucionar que al hacer click al lado del botón + flotante, en se abre el modal de Agregar registro
 
 - [x] Que el texto del botón Agregar/Actualizar sea negro (en dark mode: blanco)
 

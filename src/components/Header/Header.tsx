@@ -1,8 +1,8 @@
-import Logo from '@/components/Logo/Logo'
-import SettingsIcon from '@/components/SettingsIcon/SettingsIcon'
-import ToggleTheme from '@/components/ToggleTheme/ToggleTheme'
+import Logo from "@/components/Logo/Logo"
+import SettingsIcon from "@/components/SettingsIcon/SettingsIcon"
+import ToggleTheme from "@/components/ToggleTheme/ToggleTheme"
 
-import styles from './Header.module.css'
+import styles from "./Header.module.css"
 
 interface HederProps {
   onSettingsClicked: () => void

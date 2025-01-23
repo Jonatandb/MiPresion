@@ -1,17 +1,16 @@
-import { useState } from 'react'
-import Modal from '@/components/Modal/Modal'
-import BloodPressureLevelsModal from '@/components/Modals/BloodPressureLevelsModal/BloodPressureLevelsModal'
-import About from '@/components/About/About'
-import Logo from '../Logo/Logo'
-import { useThemeContext } from '@/hooks/useTheme'
-import { useLogContext } from '@/hooks/useLogContext'
+import { useState } from "react"
+import About from "@/components/About/About"
+import BloodPressureLevelsModal from "@/components/Modals/BloodPressureLevelsModal/BloodPressureLevelsModal"
+import Logo from "@/components/Logo/Logo"
+import Modal from "@/components/Modal/Modal"
+import { useLogContext } from "@/hooks/useLogContext"
+import { useThemeContext } from "@/hooks/useTheme"
 
-import styles from './Settings.module.css'
+import styles from "./Settings.module.css"
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const { theme, toggleTheme } = useThemeContext()
   const { logs, resetLogs } = useLogContext()
-
   const [modalType, setModalType] = useState<"bloodPressureLevels" | "about">()
 
   const handleCloseModal = () => {
@@ -19,7 +18,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
   }
 
   const handleReset = () => {
-    if (logs.length > 0 && confirm('Esta acción no se puede deshacer. ¿Eliminar todos los registros?')) {
+    if (logs.length > 0 && confirm("Esta acción no se puede deshacer. ¿Eliminar todos los registros?")) {
       resetLogs()
     }
   }
@@ -34,7 +33,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <h2>Ajustes</h2>
 
         <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
-        <div className={`${styles.row} ${styles.disabled}`} onClick={() => { alert('Funcionalidad no implementada') }}>
+        <div className={`${styles.row} ${styles.disabled}`} onClick={() => { alert("Funcionalidad no implementada") }}>
           <div>
             <span className={styles.optionIcon}>📄</span>
             <span>Exportar a PDF</span>
@@ -56,11 +55,11 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <span className={styles.rowTitle}>PERSONALIZAR</span>
         <div className={styles.row} onClick={() => toggleTheme()}>
           <div>
-            <span className={styles.optionIcon}>{theme === 'light' ? '🌙' : '🌞'}</span>
-            <span>Activar Tema {theme === 'light' ? 'Oscuro' : 'Claro'}</span>
+            <span className={styles.optionIcon}>{theme === "light" ? "🌙" : "🌞"}</span>
+            <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
           </div>
         </div>
-        <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ''}`} onClick={handleReset}>
+        <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
           <div>
             <span className={styles.optionIcon}>🗑</span>
             <span>Eliminar todos los registros</span>

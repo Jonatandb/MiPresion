@@ -19,7 +19,7 @@ const Logo = () => {
       <img className={`${styles.logo}`} src={favicon60} srcSet={`${favicon60} 60w, ${favicon120} 120w`} alt="Logo de MiPresión - Registro de Presión Sanguínea por Jonatandb" title='MiPresión - Registro de Presión Sanguínea por Jonatandb' height={30} width={30} />
       <div className={`${styles.appTitle}`}>
         <h1>
-          MiPresión <span>v.1.2.2</span>
+          MiPresión <span>v.1.2.3</span>
         </h1>
         <span>
           Registro de presión sanguínea
