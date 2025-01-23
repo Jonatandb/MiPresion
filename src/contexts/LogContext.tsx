@@ -17,6 +17,8 @@ const LogContext = createContext<LogContextState>({} as LogContextState);
 
 const initialState: LogData[] = localStorage.getItem('logs') ? JSON.parse(localStorage.getItem('logs') as string) : [];
 
+const sortLogs = (logs: LogData[]) => logs.sort((a, b) => b.date.localeCompare(a.date))
+
 const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [logs, setLogs] = useState<LogData[]>(initialState)
   const [selectedLogId, setSelectedLogId] = useState('')
@@ -24,7 +26,7 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   const addLog = (newLog: LogData) => {
     const id = crypto.randomUUID()
     newLog.id = id
-    setLogs(prevLogs => [...prevLogs, newLog].sort((a, b) => b.date.localeCompare(a.date)))
+    setLogs(prevLogs => sortLogs([...prevLogs, newLog]))
     setSelectedLogId('')
   }
 
@@ -32,10 +34,10 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
     const OldLog = logs.find(oldLog => oldLog.id === updatedLog.id)
     if (!OldLog) return
     setLogs(prevLogs => {
-      return [
+      return sortLogs([
         ...prevLogs.filter(log => log.id !== updatedLog.id),
         { ...OldLog, ...updatedLog }
-      ].sort((a, b) => b.date.localeCompare(a.date))
+      ])
     })
     setSelectedLogId('')
   }
@@ -54,7 +56,10 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     localStorage.setItem('logs', JSON.stringify(logs))
+
   }, [logs])
+
+
 
   return (
     <LogContext.Provider value={{ logs, addLog, updateLog, deleteLog, selectedLogId, setSelectedLogId, getLogById, resetLogs }}>
