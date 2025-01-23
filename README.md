@@ -94,13 +94,13 @@ Visitar:
 
 - [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
 
-- [ ] 🐛 Solucionar que al hacer click al lado del botón + flotante, en se abre el modal de Agregar registro
-
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Que el botón Agregar/Actualizar sea negro (en dark blanco)
+- [ ] 🐛 Solucionar que al hacer click al lado del botón + flotante, en se abre el modal de Agregar registro
 
 ## ✅ Completado:
+
+- [x] Que el texto del botón Agregar/Actualizar sea negro (en dark mode: blanco)
 
 - [x] 🐛 Corregir ordenamiento de los logs (Causa: las fechas no tienen los segundos!!)
 

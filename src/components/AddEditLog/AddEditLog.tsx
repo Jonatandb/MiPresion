@@ -112,14 +112,14 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
     <div className={styles.addEditLogContainer}>
       <div className={styles.header}>
         <button
-          className={`${styles.cancelButton} ${styles.button}`}
+          className={`${styles.coloredButton} ${styles.button}`}
           onClick={onClose}>
           Cancelar
         </button>
         {
           data.id && (
             <button
-              className={`${styles.cancelButton} ${styles.button}`}
+              className={`${styles.coloredButton} ${styles.button}`}
               onClick={handleDelete}>
               Eliminar
             </button>
