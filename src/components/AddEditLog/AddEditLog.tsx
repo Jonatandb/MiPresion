@@ -17,29 +17,30 @@ export interface LogData {
   date: string;
 }
 
-const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-const localeISODate = formatInTimeZone(
-  new Date(),
-  userTimeZone,
-  "yyyy-MM-dd'T'HH:mm"
-);
-
-const initialState: LogData = {
-  id: '',
-  systolic: '',
-  diastolic: '',
-  pulse: '',
-  medicine: false,
-  notes: '',
-  date: localeISODate
-}
-
 interface AddEditLogProps {
   onClose: () => void
 }
 
 const AddEditLog = ({ onClose }: AddEditLogProps) => {
-  const [data, setData] = useState<LogData>(initialState);
+  const [data, setData] = useState<LogData>(() => {
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const localeISODate = formatInTimeZone(
+      new Date(),
+      userTimeZone,
+      "yyyy-MM-dd'T'HH:mm:ss"
+    );
+    const initialState: LogData = {
+      id: '',
+      systolic: '',
+      diastolic: '',
+      pulse: '',
+      medicine: false,
+      notes: '',
+      date: localeISODate
+    }
+    return initialState
+  });
+
   const { selectedLogId, getLogById, addLog, updateLog, deleteLog } = useLogContext()
   const datePickerRef = React.useRef(null);
   const systolicRef = React.useRef(null);

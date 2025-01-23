@@ -86,17 +86,23 @@ Visitar:
 
 - [ ] Hacer sección "Exportar a PDF"
 
+- [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
+
 - [ ] Agrupar listado por fecha
 
-- [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
+- [ ] Quitar emojis junto al título de donaciones
 
 - [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
 
+- [ ] 🐛 Solucionar que al hacer click al lado del botón + flotante, en se abre el modal de Agregar registro
+
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] 🐛 Corregir ordenamiento de los logs (Causa: las fechas no tienen los segundos!!)
+- [ ] Que el botón Agregar/Actualizar sea negro (en dark blanco)
 
 ## ✅ Completado:
+
+- [x] 🐛 Corregir ordenamiento de los logs (Causa: las fechas no tienen los segundos!!)
 
 - [x] Agregar el logo y nombre de la app al modal de Ajustes y agregar el número de versión
 
