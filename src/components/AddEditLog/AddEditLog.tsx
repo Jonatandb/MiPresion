@@ -135,15 +135,15 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         <div className={styles.row}>
           <div className={styles.inputContainer}>
             <label htmlFor="systolic">Sistólica</label>
-            <input type="number" id="systolic" ref={systolicRef} placeholder='120' min={1} onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })} value={data.systolic} onKeyDown={handleKeyDown} />
+            <input type="number" id="systolic" ref={systolicRef} placeholder='120' min={1} max={999} onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })} value={data.systolic} onKeyDown={handleKeyDown} />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="diastolic">Diastólica</label>
-            <input type="number" id="diastolic" ref={diastolicRef} placeholder='80' min={1} onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || "" })} value={data.diastolic} onKeyDown={handleKeyDown} />
+            <input type="number" id="diastolic" ref={diastolicRef} placeholder='80' min={1} max={999} onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || "" })} value={data.diastolic} onKeyDown={handleKeyDown} />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="pulse">Pulso (BPM)</label>
-            <input type="number" id="pulse" ref={pulseRef} placeholder='68' min={1} onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || "" })} value={data.pulse} onKeyDown={handleKeyDown} />
+            <input type="number" id="pulse" ref={pulseRef} placeholder='68' min={1} max={999} onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || "" })} value={data.pulse} onKeyDown={handleKeyDown} />
           </div>
         </div>
 
@@ -151,7 +151,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
           <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
             <label htmlFor="date">Fecha</label>
             <div className={styles.dateContainer}>
-              <input type="datetime-local" id="date" ref={datePickerRef} min={1} onChange={e => setData({ ...data, date: e.target.value })} value={data.date} />
+              <input type="datetime-local" id="date" ref={datePickerRef} onChange={e => setData({ ...data, date: e.target.value })} value={data.date} />
             </div>
           </div>
           <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
