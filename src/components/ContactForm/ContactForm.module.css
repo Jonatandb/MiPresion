@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.title {
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
 .contactFormContainer form {
   display: flex;
   flex-direction: column;
@@ -43,10 +48,10 @@
   width: 100%;
   border-radius: 0.313rem;
   background-color: var(--color-primary);
-  font-weight: bold;
   cursor: pointer;
   padding: 0.5rem;
   border: none;
   font-family: inherit;
-  font-size: .8rem;
+  font-size: 1rem;
+  color: var(--color-white);
 }

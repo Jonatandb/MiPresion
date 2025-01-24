@@ -1,11 +1,6 @@
-.bloodPressureLevelsContainer {
-  margin-top: .5rem;
-}
-
 .title {
   font-size: 1.2rem;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   text-align: center;
 }
 

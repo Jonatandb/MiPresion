@@ -1,4 +1,4 @@
-import styles from './BloodPressureLevels.module.css'
+import styles from "./BloodPressureLevels.module.css"
 
 const BloodPressureLevels = () => {
   return (

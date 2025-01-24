@@ -1,10 +1,10 @@
 
-import ContactForm from '@/components/ContactForm/ContactForm'
-import Donate from '@/components/Donate/Donate'
-import SocialMedia from '@/components/SocialMedia/SocialMedia'
-import Logo from '../Logo/Logo'
+import ContactForm from "@/components/ContactForm/ContactForm"
+import Donate from "@/components/Donate/Donate"
+import SocialMedia from "@/components/SocialMedia/SocialMedia"
+import Logo from "@/components/Logo/Logo"
 
-import styles from './About.module.css'
+import styles from "./About.module.css"
 
 interface AboutProps {
   onClose: () => void
@@ -20,7 +20,7 @@ const About = ({ onClose }: AboutProps) => {
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>
         <ContactForm />
-        <h2>Desarrollado por Jonatandb</h2>
+        <h2 className={styles.title}>Desarrollado por Jonatandb</h2>
         <SocialMedia />
         <Donate />
       </div>
