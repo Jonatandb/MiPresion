@@ -98,6 +98,10 @@ Visitar:
   - [ ] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
     - [ ] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
   - [ ] Agregar opción de "Modo Daltónico"
+  - [ ] Reemplazar "Activar Tema Oscuro" que cambia a "Activar Tema Claro" con un switch
+  - [ ] Agregar "Medicina Tomada" con un switch
+  - [ ] Agregar "Niveles de presión" con un switch
+  - [ ] Agregar "Notas" con un switch
 
 - Home:
 
@@ -120,10 +124,11 @@ Visitar:
 
 ## 👷🏻‍♂️ Trabajando:
 
-- Ajustes:
-  - [ ] Hacer sección "Exportar a PDF"
+- [ ] Corregir/evitar que al abrir los modales se re-descargue el logo
 
 ## ✅ Completado:
+
+- [x] Hacer sección "Exportar a PDF"
 
 - [x] Quitar emojis junto al título de donaciones
 

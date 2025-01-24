@@ -1,6 +1,7 @@
 import { useState } from "react"
 import About from "@/components/About/About"
 import BloodPressureLevelsModal from "@/components/Modals/BloodPressureLevelsModal/BloodPressureLevelsModal"
+import ExportPDFModal from "@/components/Modals/ExportPDFModal/ExportPDFModal"
 import Logo from "@/components/Logo/Logo"
 import Modal from "@/components/Modal/Modal"
 import { useLogContext } from "@/hooks/useLogContext"
@@ -11,14 +12,16 @@ import styles from "./Settings.module.css"
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const { theme, toggleTheme } = useThemeContext()
   const { logs, resetLogs } = useLogContext()
-  const [modalType, setModalType] = useState<"bloodPressureLevels" | "about">()
+  const [modalType, setModalType] = useState<"bloodPressureLevels" | "about" | "exportPDFReport">()
+
+  const thereAreLogs = logs.length > 0
 
   const handleCloseModal = () => {
     setModalType(undefined)
   }
 
   const handleReset = () => {
-    if (logs.length > 0 && confirm("Esta acción no se puede deshacer. ¿Eliminar todos los registros?")) {
+    if (thereAreLogs && confirm("Esta acción no se puede deshacer. ¿Eliminar todos los registros?")) {
       resetLogs()
     }
   }
@@ -30,17 +33,14 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>
-        <h2>Ajustes</h2>
+        <h2 className={styles.title}>Ajustes</h2>
 
         <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
-        <div className={`${styles.row} ${styles.disabled}`} onClick={() => { alert("Funcionalidad no implementada") }}>
+        <div className={`${styles.row} ${!thereAreLogs && styles.disabled}`} onClick={() => setModalType("exportPDFReport")}>
           <div>
             <span className={styles.optionIcon}>📄</span>
             <span>Exportar a PDF</span>
           </div>
-          <span>
-            🚧
-          </span>
         </div>
 
         <span className={styles.rowTitle}>INFORMACIÓN</span>
@@ -49,7 +49,6 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
             <span className={styles.optionIcon}>📈</span>
             <span>Tabla de niveles de presión</span>
           </div>
-          <span className={styles.arrow}>➡</span>
         </div>
 
         <span className={styles.rowTitle}>PERSONALIZAR</span>
@@ -79,6 +78,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <Modal onClose={handleCloseModal} isOpen={true}>
           {modalType === "bloodPressureLevels" && <BloodPressureLevelsModal onClose={handleCloseModal} />}
           {modalType === "about" && <About onClose={handleCloseModal} />}
+          {modalType === "exportPDFReport" && <ExportPDFModal onClose={handleCloseModal} />}
         </Modal>
       )}
 

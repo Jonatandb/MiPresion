@@ -1,7 +1,7 @@
-import BloodPressureLevels from '@/components/BloodPressureLevels/BloodPressureLevels'
-import Logo from '@/components/Logo/Logo'
+import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
+import Logo from "@/components/Logo/Logo"
 
-import styles from './BloodPressureLevelsModal.module.css'
+import styles from "./BloodPressureLevelsModal.module.css"
 
 const BloodPressureLevelsModal = ({ onClose }: { onClose: () => void }) => {
   return (

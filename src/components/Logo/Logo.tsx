@@ -25,7 +25,7 @@ const Logo = () => {
         width={30} />
       <div className={`${styles.appTitle}`}>
         <h1>
-          MiPresión <span>v.1.2.8</span>
+          MiPresión <span>v.1.3.0</span>
         </h1>
         <span>
           Registro de presión sanguínea

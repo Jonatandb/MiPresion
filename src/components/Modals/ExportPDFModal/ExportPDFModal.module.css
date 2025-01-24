@@ -1,4 +1,4 @@
-.settingsContainer {
+.exportPDFModalContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -10,9 +10,9 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .button {
@@ -63,55 +63,5 @@
 .title {
   font-size: 1.2rem;
   margin: 0 auto;
-}
-
-.rowTitle {
-  margin-top: .8rem;
-  color: var(--text-color-secondary);
-  font-size: .6rem;
-  font-weight: bold;
-  letter-spacing: 0.075rem;
-}
-
-.row {
-  background-color: white;
-  padding: 0.625rem .5rem .3rem;
-  border-radius: 0.625rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-.row:hover {
-  cursor: pointer;
-  background-color: var(--color-primary);
-
-  & .arrow {
-    color: var(--dark-text-tertiary) !important;
-  }
-}
-
-.row span {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--dark-text-tertiary);
-}
-
-.row.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.optionIcon {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
   text-align: center;
-  margin-right: .3rem;
-}
-
-.arrow {
-  color: var(--light-text-secondary) !important;
 }
