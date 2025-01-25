@@ -1,4 +1,6 @@
+import { useEffect } from "react"
 import { useThemeContext } from "@/hooks/useTheme"
+import { copyToClipboard } from "@/utils/copyToClipboard"
 
 import usdt from "@/assets/usdt.png"
 import kofi from "@/assets/ko-fi.png"
@@ -8,26 +10,15 @@ import copy from "@/assets/copy.png"
 
 import styles from "./Donate.module.css"
 
-const images = [
-  mercadopago_black,
-  mercadopago_white,
-  kofi,
-  usdt,
-  copy,
-];
-
-images.forEach((image) => {
-  new Image().src = image;
-});
-
-const copyToClipboard = (text: string) => {
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Dirección copiada, gracias! 🚀");
-  })
-};
-
 const Donate = () => {
   const { theme } = useThemeContext()
+
+  useEffect(() => {
+    const images = [mercadopago_black, mercadopago_white, kofi, usdt, copy];
+    images.forEach((image) => {
+      new Image().src = image;
+    });
+  }, [])
 
   return (
     <div className={styles.donateContainer}>

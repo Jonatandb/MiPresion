@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import add from "@/assets/add.png"
 
 import styles from "./AddButton.module.css"
@@ -7,6 +8,13 @@ interface AddButtonProps {
 }
 
 const AddButton = ({ onClick }: AddButtonProps) => {
+  useEffect(() => {
+    const images = [add];
+    images.forEach((image) => {
+      new Image().src = image;
+    });
+  }, [])
+
   return (
     <button className={styles.addButton} onClick={onClick}>
       <img

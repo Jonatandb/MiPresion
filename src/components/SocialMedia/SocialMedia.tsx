@@ -1,24 +1,20 @@
-import jonatandb from '@/assets/jonatandb.jpg'
-import gmail from '@/assets/gmail.png'
-import github from '@/assets/github.png'
-import linkedin from '@/assets/linkedin.png'
-import twitter from '@/assets/twitter.png'
+import { useEffect } from "react"
 
-import styles from './SocialMedia.module.css'
+import jonatandb from "@/assets/jonatandb.jpg"
+import gmail from "@/assets/gmail.png"
+import github from "@/assets/github.png"
+import linkedin from "@/assets/linkedin.png"
+import twitter from "@/assets/twitter.png"
 
-const images = [
-  jonatandb,
-  gmail,
-  github,
-  linkedin,
-  twitter,
-];
-
-images.forEach((image) => {
-  new Image().src = image;
-});
+import styles from "./SocialMedia.module.css"
 
 const SocialMedia = () => {
+  useEffect(() => {
+    const images = [jonatandb, gmail, github, linkedin, twitter];
+    images.forEach((image) => {
+      new Image().src = image;
+    });
+  }, [])
   return (
     <div className={styles.socialMediaContainer}>
       <div className={styles.pictureContainer}>

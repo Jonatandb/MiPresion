@@ -59,7 +59,13 @@ Visitar:
 ## Generación de versión productiva para Github Pages
 
 ```bash
-  pnpm run build
+  npm run build
+```
+
+O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el build:
+
+```bash
+  npm run build-dev
 ```
 
 ---
@@ -70,15 +76,13 @@ Visitar:
 
 - [ ] Agregar opción para cambiar de idioma entre inglés y español
 
-- [ ] Agreagr filtro por fecha / rango de fechas
-
 - [ ] Agregar calendario
 
 - [ ] Agregar tablero con estadísticas
 
 - [ ] Agregar posibilidad de modificar valores de los niveles
 
-- [ ] Hacer exportación a json (e importación) para descargar y/o usar con Google Drive
+- [ ] Que desde Ajustes se pueda especificar el país de origen y la tabla de niveles se muestre de acuerdo a dicho país, también los niveles mostrados en los registros.
 
 ## 📝 Pendientes:
 
@@ -91,10 +95,12 @@ Visitar:
   - [ ] Corregir/agregar tabindex para navegación por teclado
   - [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
   - [ ] Hacer que cada sección (modal) tenga su propia url
+  - [ ] Crear un contexto para guardar todos los ajustes (país, formato de fecha, dark mode, valores de la tabla de niveles, etc)
 
 - Ajustes:
 
-  - [ ] Agregar opción "Ayuda y Preguntas frecuentes" con opciones "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?"
+  - [ ] Agregar opción "Ayuda y Preguntas frecuentes"
+    - Ítems: "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?", "¿Dónde se guardan mis datos?" -> Navegador (Actualizar al agregar funcionalidad exportar/importar)
   - [ ] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
     - [ ] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
   - [ ] Agregar opción de "Modo Daltónico"
@@ -102,6 +108,10 @@ Visitar:
   - [ ] Agregar "Medicina Tomada" con un switch
   - [ ] Agregar "Niveles de presión" con un switch
   - [ ] Agregar "Notas" con un switch
+  - [ ] Exportar a PDF:
+    - [ ] Agregar opción de exportar por rango de fechas
+    - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto
+  - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar desde otro navegador (Ideal que los ajustes estén en un contexto)
 
 - Home:
 
@@ -110,23 +120,32 @@ Visitar:
   - [ ] Ampliar area de clickeo del "buttonContainer" para incluír el botón y el "Agregar una medición"
   - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
     - LogsList -> Log
-      - [ ] Reemplazar "Datos incorrectos" por "Niveles fuera de rango"
+      - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
   - [ ] Agrupar listado por fecha
+  - [ ] Agregar opción de filtrado por rango de fechas
+  - [ ] Posibilidad de registar:
+    - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
+    - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
+    - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
 
 - Agregar registro:
 
   - [ ] Reemplazar "Agregar Registro" por "Agregar Medición"
-  - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Niveles fuera de rango" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (en incluye la sección "¿Que significa "Niveles fuera de rango"?")
+  - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (e incluye la sección "¿Que significa "Valores fuera de rango"?")
 
 - Contacto:
 
   - [ ] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
 
+  - [ ] Agregar sección “Otros de mis proyectos”, con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
+
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Corregir/evitar que al abrir los modales se re-descargue el logo
+- [ ] Usar date-fns en todos lugar que muestre una fecha
 
 ## ✅ Completado:
+
+- [x] Corregir/evitar que al abrir los modales se re-descargue el logo
 
 - [x] Hacer sección "Exportar a PDF"
 
