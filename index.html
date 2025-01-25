@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BK96Q3JVW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-1BK96Q3JVW');
+  <script type="module">
+    if (import.meta.env.VITE_ANALYTICS_ENABLED === "true") {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-1BK96Q3JVW";
+      script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-1BK96Q3JVW");
+        console.log("GA enabled");
+      }
+      document.head.appendChild(script);
+    }
   </script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/ico" href="/favicon.ico" />
