@@ -6,8 +6,8 @@ const NoLogsMessage = ({ onAddClicked }: { onAddClicked: () => void }) => {
   return (
     <div className={styles.NoLogsMessageContainer}>
       <span>Aún no se agregaron registros</span>
-      <div className={styles.buttonContainer}>
-        <AddButton onClick={onAddClicked} />
+      <div className={styles.buttonContainer} onClick={onAddClicked} >
+        <AddButton onClick={() => null} />
         <span>Nuevo registro</span>
       </div>
     </div>
