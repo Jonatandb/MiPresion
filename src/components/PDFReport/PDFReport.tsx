@@ -1,6 +1,8 @@
 import { Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
 import { LogData } from "@/components/AddEditLog/AddEditLog";
-import { getCategory } from "@/utils/getCategory";
+import { getCategoryString } from "@/utils/getCategoryString";
+import { formatToShortDateWithTimeString } from "@/utils/formatDateUtils";
+
 import favicon120 from "@/assets/favicon_120x120.png"
 
 const styles = StyleSheet.create({
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
 });
 
 const PDFReport = ({ logs }: { logs: LogData[] }) => {
+  const tableTitle = `Reporte de mediciones - ${formatToShortDateWithTimeString()}`
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -71,7 +74,7 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
               </View>
             </View>
 
-            <Text style={{ ...styles.textLarge, margin: "15px 0" }}>{`Reporte de mediciones - ${new Date().toLocaleString()}`}</Text>
+            <Text style={{ ...styles.textLarge, margin: "15px 0" }}>{tableTitle}</Text>
           </View>
 
           <View style={{ ...styles.table, ...styles.borderGray }}>
@@ -106,7 +109,7 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
               logs.map(({ date, systolic, diastolic, pulse, medicine, notes }, index) => {
                 const onlyDDMMYYYYDate = new Date(date).toLocaleDateString("es-ES").split("T")[0];
                 const time = date.split("T")[1].substring(0, 5);
-                const category = getCategory(systolic, diastolic);
+                const category = getCategoryString(systolic, diastolic);
                 return (
                   <View key={index}>
                     <View wrap={false} style={{ ...styles.tableRow, width: "100%", backgroundColor: (index % 2 === 0) ? "#CCC" : "transparent" }}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels";
-import { formatInTimeZone } from "date-fns-tz"
 import { useLogContext } from "@/hooks/useLogContext";
+import { formatToISODateString } from "@/utils/formatDateUtils";
+import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels";
 
 import pill from "@/assets/pill.png";
 
@@ -23,12 +23,6 @@ interface AddEditLogProps {
 
 const AddEditLog = ({ onClose }: AddEditLogProps) => {
   const [data, setData] = useState<LogData>(() => {
-    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const localeISODate = formatInTimeZone(
-      new Date(),
-      userTimeZone,
-      "yyyy-MM-dd'T'HH:mm:ss"
-    );
     const initialState: LogData = {
       id: "",
       systolic: "",
@@ -36,7 +30,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
       pulse: "",
       medicine: false,
       notes: "",
-      date: localeISODate
+      date: formatToISODateString()
     }
     return initialState
   });

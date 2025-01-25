@@ -2,7 +2,7 @@ import { LogData } from "@/components/AddEditLog/AddEditLog";
 
 import { useThemeContext } from "@/hooks/useTheme";
 import { useLogContext } from "@/hooks/useLogContext";
-import { categoryType, getCategory } from "@/utils/getCategory";
+import { categoryType, getCategoryString } from "@/utils/getCategoryString";
 
 import pencilEmptyWhite from "@/assets/pencil_white.png";
 import pencilFull from "@/assets/pencil.png";
@@ -50,40 +50,40 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
   const { theme } = useThemeContext()
   const { setSelectedLogId } = useLogContext()
 
-  const category = getCategory(systolic, diastolic)
+  const category = getCategoryString(systolic, diastolic)
 
   return (
-    <article className={`${styles.logContainer}`} onClick={() => setSelectedLogId(id)}>
-      <section className={`${styles.row}`}>
+    <article className={styles.logContainer} onClick={() => setSelectedLogId(id)}>
+      <section className={styles.row}>
         <span className={`${styles.level} ${styleByCategory[category]}`} title="Categoría">
           {category}
         </span>
-        <span className={`${styles.date}`} title={date}>{date}</span>
+        <span className={styles.date} title={date}>⏱ {date}</span>
       </section>
-      <section className={`${styles.row}`}>
-        <div className={`${styles.mmhgContainer}`}>
-          <span className={`${styles.mmhg}`} title="Presión sistólica">{systolic}</span>
-          <span className={`${styles.mmhg}`}>/</span>
-          <span className={`${styles.mmhg}`} title="Presión diastólica">{diastolic}</span>
+      <section className={styles.row}>
+        <div className={styles.mmhgContainer}>
+          <span className={styles.mmhg} title="Presión sistólica">{systolic}</span>
+          <span className={styles.mmhg}>/</span>
+          <span className={styles.mmhg} title="Presión diastólica">{diastolic}</span>
           {" "}
-          <span className={`${styles.leyend}`} title="Milímetros de mercurio">mm Hg</span>
+          <span className={styles.leyend} title="Milímetros de mercurio">mm Hg</span>
         </div>
-        <div className={`${styles.bpmContainer}`}>
-          <div className={`${styles.iconsContainer}`}>
+        <div className={styles.bpmContainer}>
+          <div className={styles.iconsContainer}>
             {
               medicine ?
-                <img className={`${styles.icon}`} width="19" height="19" src={pillFull} alt="Ícono píldora tomada" />
+                <img className={styles.icon} width="19" height="19" src={pillFull} alt="Ícono píldora tomada" />
                 :
-                <img className={`${styles.icon}`} width="19" height="19" src={imageByTheme[theme]["pill"]} alt="Ícono píldora no tomada" />
+                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pill"]} alt="Ícono píldora no tomada" />
             }
             {
               notes ?
-                <img className={`${styles.icon}`} width="19" height="19" src={pencilFull} alt="Ícono hay notas" title={notes} />
+                <img className={styles.icon} width="19" height="19" src={pencilFull} alt="Ícono hay notas" title={notes} />
                 :
-                <img className={`${styles.icon}`} width="19" height="19" src={imageByTheme[theme]["pencil"]} alt="Ícono no hay notas" />
+                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pencil"]} alt="Ícono no hay notas" />
             }
           </div>
-          <span className={`${styles.bpm}`} title="Pulso">{pulse} <span className={`${styles.leyend}`}>BPM</span></span>
+          <span className={styles.bpm} title="Pulso">{pulse} <span className={styles.leyend}>BPM</span></span>
         </div>
       </section>
     </article>

@@ -8,7 +8,7 @@ export const categoryType = {
   DATOS_INCORRECTOS: "DATOS INCORRECTOS"
 }
 
-export const getCategory = (systolic: number | string, diastolic: number | string) => {
+export const getCategoryString = (systolic: number | string, diastolic: number | string) => {
   try {
     if (typeof systolic !== "number") {
       systolic = Number(systolic)

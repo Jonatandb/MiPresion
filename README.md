@@ -93,9 +93,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - Refactors:
 
   - [ ] Corregir/agregar tabindex para navegación por teclado
-  - [ ] Crear "AddEditLogModal" y extraer contenido actual (sin el container y el header) a un componente "AddEditLogForm"
   - [ ] Hacer que cada sección (modal) tenga su propia url
-  - [ ] Crear un contexto para guardar todos los ajustes (país, formato de fecha, dark mode, valores de la tabla de niveles, etc)
+  - [ ] Crear un contexto para guardar todos los ajustes (dark mode, idioma, país, formato de fecha, valores de la tabla de niveles, etc)
 
 - Ajustes:
 
@@ -121,7 +120,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
   - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
     - LogsList -> Log
       - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
-  - [ ] Agrupar listado por fecha
   - [ ] Agregar opción de filtrado por rango de fechas
   - [ ] Posibilidad de registar:
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
@@ -141,9 +139,13 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Usar date-fns en todos lugar que muestre una fecha
+- [ ] Cuando se le da el foco a un input autoseleccionar todo el contenido (si tiene alguno)
 
 ## ✅ Completado:
+
+- [x] Agrupar listado por fecha
+
+- [x] Usar date-fns en todo lugar que muestre una fecha
 
 - [x] Corregir/evitar que al abrir los modales se re-descargue el logo
 
