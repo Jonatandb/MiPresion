@@ -150,7 +150,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - [x] Ampliar area de clickeo del "buttonContainer" en NoLogsMessage para incluír el botón y el texto "Agregar una medición"
 
-- [x] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
+- [x] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola! me gustaría comentar que..."
 
 - [x] Cuando se le da el foco a un input autoseleccionar todo el contenido (si tiene alguno)
 
