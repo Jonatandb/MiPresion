@@ -1,48 +1,84 @@
-import { useEffect, useState } from "react"
-import AddEditLog from "./components/AddEditLog/AddEditLog"
-import FloatingAddButton from "./components/FloatingAddButton/FloatingAddButton"
+import { useEffect } from "react"
+import { Routes, Route, useNavigate } from "react-router-dom"
+import AddEditLog from "@/components/AddEditLog/AddEditLog"
+import FloatingAddButton from "@/components/FloatingAddButton/FloatingAddButton"
 import Header from "@/components/Header/Header"
 import LogsList from "@/components/LogsList/LogsList"
 import Modal from "@/components/Modal/Modal"
-import NoLogsMessage from "./components/NoLogsMessage/NoLogsMessage"
-import Settings from "./components/Settings/Settings"
-import { useLogContext } from "./hooks/useLogContext"
+import NoLogsMessage from "@/components/NoLogsMessage/NoLogsMessage"
+import Settings from "@/components/Settings/Settings"
+import ContactFormWrapper from "@/components/Modals/ContactFormWrapper/ContactFormWrapper"
+import BloodPressureLevelsWrapper from "@/components/Modals/BloodPressureLevelsWrapper/BloodPressureLevelsWrapper"
+import ExportPDFReportWrapper from "@/components/Modals/ExportPDFReportWrapper/ExportPDFReportWrapper"
+import { useLogContext } from "@/hooks/useLogContext"
 
 const App = () => {
-  const [modalType, setModalType] = useState<"addEditLog" | "settings">()
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (selectedLogId) {
-      setModalType("addEditLog")
+      navigate("/addedit")
     }
-  }, [selectedLogId])
+  }, [selectedLogId, navigate])
 
-  const handleCloseModal = () => {
-    setModalType(undefined)
+  const handleCloseModal = (to = "/") => {
+    if (typeof to !== "string") {
+      to = "/"
+    }
     setSelectedLogId("")
+    navigate(to)
   }
 
   return (
-    <>
-      <Header onSettingsClicked={() => setModalType("settings")} />
+    <main>
+      <Header onSettingsClicked={() => navigate("/settings")} />
 
-      {logs.length > 0 ?
-        (<>
+      {logs.length > 0 ? (
+        <>
           <LogsList />
-          <FloatingAddButton onClick={() => setModalType("addEditLog")} />
-        </>)
-        :
-        <NoLogsMessage onAddClicked={() => setModalType("addEditLog")} />
-      }
-
-      {modalType && (
-        <Modal onClose={handleCloseModal} isOpen={true}>
-          {modalType === "addEditLog" && <AddEditLog onClose={handleCloseModal} />}
-          {modalType === "settings" && <Settings onClose={handleCloseModal} />}
-        </Modal>
+          <FloatingAddButton onClick={() => navigate("/addedit")} />
+        </>
+      ) : (
+        <NoLogsMessage onAddClicked={() => navigate("/addedit")} />
       )}
-    </>
+
+      <Routes>
+
+        <Route path="/addedit" element={
+          <Modal onClose={() => handleCloseModal()} isOpen={true}>
+            <AddEditLog onClose={() => handleCloseModal()} />
+          </Modal>
+        } />
+
+        <Route path="/settings" element={
+          <Modal onClose={() => handleCloseModal()} isOpen={true}>
+            <Settings onClose={() => handleCloseModal()} />
+          </Modal>
+        }>
+
+          <Route path="exportpdf" element={
+            <Modal onClose={() => handleCloseModal("/settings")} isOpen={true}>
+              <ExportPDFReportWrapper onClose={() => handleCloseModal("/settings")} />
+            </Modal>
+          } />
+
+          <Route path="bloodpressurelevels" element={
+            <Modal onClose={() => handleCloseModal("/settings")} isOpen={true}>
+              <BloodPressureLevelsWrapper onClose={() => handleCloseModal("/settings")} />
+            </Modal>
+          } />
+
+          <Route path="contact" element={
+            <Modal onClose={() => handleCloseModal("/settings")} isOpen={true}>
+              <ContactFormWrapper onClose={() => handleCloseModal("/settings")} />
+            </Modal>
+          } />
+
+        </Route>
+
+      </Routes>
+    </main>
   )
 }
 

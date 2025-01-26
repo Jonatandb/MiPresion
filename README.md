@@ -108,7 +108,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - [ ] Agregar opción de exportar por rango de fechas
     - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto
   - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar desde otro navegador (Ideal que los ajustes estén en un contexto)
-  - [ ] Agregar "¿Dudas?" al texto del botón del formulario de contacto -> "¿Dudas? ¿Sugerencias? ¿Errores? 🙈"
 
 - Home:
 
@@ -131,9 +130,11 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Hacer que cada sección (modal) tenga su propia url
+- [ ] Agregar "¿Dudas?" al texto del botón del formulario de contacto -> "¿Dudas? ¿Sugerencias? ¿Errores? 🙈"
 
 ## ✅ Completado:
+
+- [x] Hacer que cada sección (modal) tenga su propia url
 
 - [x] 🐛 Solucionar falta de color de texto seleccionado
 

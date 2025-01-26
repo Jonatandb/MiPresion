@@ -1,26 +1,20 @@
-import { useState } from "react"
-import ContactFormWrapper from "@/components/Modals/ContactFormWrapper/ContactFormWrapper"
-import BloodPressureLevelsWrapper from "@/components/Modals/BloodPressureLevelsWrapper/BloodPressureLevelsWrapper"
-import ExportPDFReportWrapper from "@/components/Modals/ExportPDFReportWrapper/ExportPDFReportWrapper"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import Logo from "@/components/Logo/Logo"
-import Modal from "@/components/Modal/Modal"
 import { useLogContext } from "@/hooks/useLogContext"
 import { useThemeContext } from "@/hooks/useTheme"
 import SocialMedia from "@/components/SocialMedia/SocialMedia"
 import Donate from "@/components/Donate/Donate"
-
 import styles from "./Settings.module.css"
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const { theme, toggleTheme } = useThemeContext()
   const { logs, resetLogs } = useLogContext()
-  const [modalType, setModalType] = useState<"bloodPressureLevels" | "contactForm" | "exportPDFReport">()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const thereAreLogs = logs.length > 0
 
-  const handleCloseModal = () => {
-    setModalType(undefined)
-  }
+  const isChildRoute = location.pathname !== "/settings"
 
   const handleReset = () => {
     if (thereAreLogs && confirm("Esta acción no se puede deshacer. ¿Eliminar todas las mediciones?")) {
@@ -35,60 +29,56 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>
-        <h2 className={styles.title}>Ajustes</h2>
+        {!isChildRoute && (
+          <>
+            <h2 className={styles.title}>Ajustes</h2>
 
-        <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
-        <div className={`${styles.row} ${!thereAreLogs && styles.disabled}`} onClick={() => setModalType("exportPDFReport")}>
-          <div>
-            <span className={styles.optionIcon}>📄</span>
-            <span>Exportar a PDF</span>
-          </div>
-        </div>
+            <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
+            <div className={`${styles.row} ${!thereAreLogs && styles.disabled}`} onClick={() => navigate("/settings/exportpdf")}>
+              <div>
+                <span className={styles.optionIcon}>📄</span>
+                <span>Exportar a PDF</span>
+              </div>
+            </div>
 
-        <span className={styles.rowTitle}>INFORMACIÓN</span>
-        <div className={styles.row} onClick={() => setModalType("bloodPressureLevels")}>
-          <div>
-            <span className={styles.optionIcon}>📈</span>
-            <span>Tabla de niveles de presión</span>
-          </div>
-        </div>
+            <span className={styles.rowTitle}>INFORMACIÓN</span>
+            <div className={styles.row} onClick={() => navigate("/settings/bloodpressurelevels")}>
+              <div>
+                <span className={styles.optionIcon}>📈</span>
+                <span>Tabla de niveles de presión</span>
+              </div>
+            </div>
 
-        <span className={styles.rowTitle}>PERSONALIZAR</span>
-        <div className={styles.row} onClick={() => toggleTheme()}>
-          <div>
-            <span className={styles.optionIcon}>{theme === "light" ? "🌙" : "🌞"}</span>
-            <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
-          </div>
-        </div>
-        <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
-          <div>
-            <span className={styles.optionIcon}>🗑</span>
-            <span>Eliminar todas las mediciones</span>
-          </div>
-        </div>
+            <span className={styles.rowTitle}>PERSONALIZAR</span>
+            <div className={styles.row} onClick={() => toggleTheme()}>
+              <div>
+                <span className={styles.optionIcon}>{theme === "light" ? "🌙" : "🌞"}</span>
+                <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
+              </div>
+            </div>
+            <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
+              <div>
+                <span className={styles.optionIcon}>🗑</span>
+                <span>Eliminar todas las mediciones</span>
+              </div>
+            </div>
 
-        <span className={styles.rowTitle}>CONTACTO</span>
-        <div className={styles.row} onClick={() => setModalType("contactForm")}>
-          <div>
-            <span className={styles.optionIcon}>✉</span>
-            <span>¿Errores? ¿Sugerencias?</span>
-          </div>
-        </div>
+            <span className={styles.rowTitle}>CONTACTO</span>
+            <div className={styles.row} onClick={() => navigate("/settings/contact")}>
+              <div>
+                <span className={styles.optionIcon}>✉</span>
+                <span>¿Errores? ¿Sugerencias?</span>
+              </div>
+            </div>
 
-        <SocialMedia />
+            <SocialMedia />
+            <Donate />
 
-        <Donate />
+          </>
+        )}
 
+        <Outlet />
       </div>
-
-      {modalType && (
-        <Modal onClose={handleCloseModal} isOpen={true}>
-          {modalType === "bloodPressureLevels" && <BloodPressureLevelsWrapper onClose={handleCloseModal} />}
-          {modalType === "contactForm" && <ContactFormWrapper onClose={handleCloseModal} />}
-          {modalType === "exportPDFReport" && <ExportPDFReportWrapper onClose={handleCloseModal} />}
-        </Modal>
-      )}
-
     </div>
   )
 }
