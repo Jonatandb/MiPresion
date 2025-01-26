@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Routes, Route, useNavigate } from "react-router-dom"
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom"
 import AddEditLog from "@/components/AddEditLog/AddEditLog"
 import FloatingAddButton from "@/components/FloatingAddButton/FloatingAddButton"
 import Header from "@/components/Header/Header"
@@ -11,10 +11,16 @@ import ContactFormWrapper from "@/components/Modals/ContactFormWrapper/ContactFo
 import BloodPressureLevelsWrapper from "@/components/Modals/BloodPressureLevelsWrapper/BloodPressureLevelsWrapper"
 import ExportPDFReportWrapper from "@/components/Modals/ExportPDFReportWrapper/ExportPDFReportWrapper"
 import { useLogContext } from "@/hooks/useLogContext"
+import { trackPageView } from "@/utils/analytics"
 
 const App = () => {
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
   const navigate = useNavigate()
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (selectedLogId) {

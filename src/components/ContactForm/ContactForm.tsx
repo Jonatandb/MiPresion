@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { trackEvent } from "@/utils/analytics"
 import emailjs from "@emailjs/browser"
 
 import styles from "./ContactForm.module.css"
@@ -7,14 +8,14 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
 
     setLoading(true)
 
-    const formData = new FormData(event.target as HTMLFormElement);
-    const from_name = formData.get("name") as string;
-    const from_email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+    const formData = new FormData(event.target as HTMLFormElement)
+    const from_name = formData.get("name") as string
+    const from_email = formData.get("email") as string
+    const message = formData.get("message") as string
 
     try {
       await emailjs.send(
@@ -29,6 +30,8 @@ const ContactForm = () => {
         },
         "inLQYkCaAWoFLWU9m",
       )
+
+      trackEvent("Interaction", "ButtonClicked", "ContactForm -> SendMessage")
 
       alert(`Hola ${from_name}! Gracias por escribir, aprecio tu interés, en breve leeré tu mensaje.`);
 

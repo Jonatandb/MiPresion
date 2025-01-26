@@ -2,9 +2,10 @@ import { useState, useEffect } from "react"
 import { usePDF } from "@react-pdf/renderer"
 import PDFReport from "@/components/PDFReport/PDFReport"
 import { useLogContext } from "@/hooks/useLogContext"
+import { formatToShortDateWithoutTimeString } from "@/utils/formatDateUtils"
+import { trackEvent } from "@/utils/analytics"
 
 import styles from "./ExportPDFReport.module.css"
-import { formatToShortDateWithoutTimeString } from "@/utils/formatDateUtils"
 
 const Generator = ({ onDownloadClick }: { onDownloadClick?: () => void }) => {
   const { logs } = useLogContext()
@@ -36,6 +37,10 @@ const Generator = ({ onDownloadClick }: { onDownloadClick?: () => void }) => {
 
 const ExportPDFReport = () => {
   const [shouldGenerate, setShouldGenerate] = useState(false)
+  const handleClick = () => {
+    setShouldGenerate(true)
+    trackEvent("Interaction", "ButtonClicked", "ExportPDFReport -> GeneratePDF")
+  }
 
   const renderGenerator = () => {
     return <Generator onDownloadClick={() => setShouldGenerate(false)} />
@@ -43,7 +48,7 @@ const ExportPDFReport = () => {
 
   return (
     <div className={styles.exportPDFReportContainer}>
-      {shouldGenerate ? renderGenerator() : <button onClick={() => setShouldGenerate(true)}>Generar PDF</button>}
+      {shouldGenerate ? renderGenerator() : <button onClick={handleClick}>Generar PDF</button>}
     </div>
   )
 }
