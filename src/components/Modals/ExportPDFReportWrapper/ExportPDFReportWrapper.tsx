@@ -1,15 +1,15 @@
 import Logo from "@/components/Logo/Logo"
 import ExportPDFReport from "@/components/ExportPDFReport/ExportPDFReport"
 
-import styles from "./ExportPDFModal.module.css"
+import styles from "./ExportPDFReportWrapper.module.css"
 
-interface ExportPDFModalProps {
+interface ExportPDFReportWrapperProps {
   onClose: () => void
 }
 
-const ExportPDFModal = ({ onClose }: ExportPDFModalProps) => {
+const ExportPDFReportWrapper = ({ onClose }: ExportPDFReportWrapperProps) => {
   return (
-    <div className={styles.exportPDFModalContainer} onTouchMove={e => e.stopPropagation()}>
+    <div className={styles.exportPDFReportWrapperContainer} onTouchMove={e => e.stopPropagation()}>
       <div className={styles.header}>
         <Logo />
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
@@ -22,4 +22,4 @@ const ExportPDFModal = ({ onClose }: ExportPDFModalProps) => {
   )
 }
 
-export default ExportPDFModal
+export default ExportPDFReportWrapper

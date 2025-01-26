@@ -2,7 +2,7 @@ import styles from "./BloodPressureLevels.module.css"
 
 const BloodPressureLevels = () => {
   return (
-    <div className={styles.bloodPressureLevelsContainer}>
+    <div>
       <h2 className={styles.title}>Niveles de Presión Sanguínea</h2>
       <div className={styles.columnHeaders}>
         <span>Nivel</span>

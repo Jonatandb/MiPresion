@@ -1,7 +1,7 @@
 import { useState } from "react"
-import About from "@/components/About/About"
-import BloodPressureLevelsModal from "@/components/Modals/BloodPressureLevelsModal/BloodPressureLevelsModal"
-import ExportPDFModal from "@/components/Modals/ExportPDFModal/ExportPDFModal"
+import ContactFormWrapper from "@/components/Modals/ContactFormWrapper/ContactFormWrapper"
+import BloodPressureLevelsWrapper from "@/components/Modals/BloodPressureLevelsWrapper/BloodPressureLevelsWrapper"
+import ExportPDFReportWrapper from "@/components/Modals/ExportPDFReportWrapper/ExportPDFReportWrapper"
 import Logo from "@/components/Logo/Logo"
 import Modal from "@/components/Modal/Modal"
 import { useLogContext } from "@/hooks/useLogContext"
@@ -14,7 +14,7 @@ import styles from "./Settings.module.css"
 const Settings = ({ onClose }: { onClose: () => void }) => {
   const { theme, toggleTheme } = useThemeContext()
   const { logs, resetLogs } = useLogContext()
-  const [modalType, setModalType] = useState<"bloodPressureLevels" | "about" | "exportPDFReport">()
+  const [modalType, setModalType] = useState<"bloodPressureLevels" | "contactForm" | "exportPDFReport">()
 
   const thereAreLogs = logs.length > 0
 
@@ -68,7 +68,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         </div>
 
         <span className={styles.rowTitle}>CONTACTO</span>
-        <div className={styles.row} onClick={() => setModalType("about")}>
+        <div className={styles.row} onClick={() => setModalType("contactForm")}>
           <div>
             <span className={styles.optionIcon}>✉</span>
             <span>¿Errores? ¿Sugerencias?</span>
@@ -83,9 +83,9 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
 
       {modalType && (
         <Modal onClose={handleCloseModal} isOpen={true}>
-          {modalType === "bloodPressureLevels" && <BloodPressureLevelsModal onClose={handleCloseModal} />}
-          {modalType === "about" && <About onClose={handleCloseModal} />}
-          {modalType === "exportPDFReport" && <ExportPDFModal onClose={handleCloseModal} />}
+          {modalType === "bloodPressureLevels" && <BloodPressureLevelsWrapper onClose={handleCloseModal} />}
+          {modalType === "contactForm" && <ContactFormWrapper onClose={handleCloseModal} />}
+          {modalType === "exportPDFReport" && <ExportPDFReportWrapper onClose={handleCloseModal} />}
         </Modal>
       )}
 

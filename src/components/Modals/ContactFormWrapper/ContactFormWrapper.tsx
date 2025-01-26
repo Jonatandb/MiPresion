@@ -1,17 +1,15 @@
-
 import ContactForm from "@/components/ContactForm/ContactForm"
 import Logo from "@/components/Logo/Logo"
 
-import styles from "./About.module.css"
+import styles from "./ContactFormWrapper.module.css"
 
-interface AboutProps {
+interface ContactFormWrapperProps {
   onClose: () => void
 }
 
-const About = ({ onClose }: AboutProps) => {
-
+const ContactFormWrapper = ({ onClose }: ContactFormWrapperProps) => {
   return (
-    <div className={styles.aboutContainer} onTouchMove={e => e.stopPropagation()}>
+    <div className={styles.contactFormWrapperContainer} onTouchMove={e => e.stopPropagation()}>
       <div className={styles.header}>
         <Logo />
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
@@ -23,4 +21,4 @@ const About = ({ onClose }: AboutProps) => {
   )
 }
 
-export default About
+export default ContactFormWrapper

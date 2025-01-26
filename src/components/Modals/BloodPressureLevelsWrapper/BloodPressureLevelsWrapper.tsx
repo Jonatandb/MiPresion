@@ -1,11 +1,11 @@
 import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
 import Logo from "@/components/Logo/Logo"
 
-import styles from "./BloodPressureLevelsModal.module.css"
+import styles from "./BloodPressureLevelsWrapper.module.css"
 
-const BloodPressureLevelsModal = ({ onClose }: { onClose: () => void }) => {
+const BloodPressureLevelsWrapper = ({ onClose }: { onClose: () => void }) => {
   return (
-    <section className={styles.bloodPressureLevelsModalContainer} onTouchMove={e => e.stopPropagation()}>
+    <section className={styles.bloodPressureLevelsWrapperContainer} onTouchMove={e => e.stopPropagation()}>
       <div className={styles.header}>
         <Logo />
         <button onClick={onClose} className={`${styles.closeButton} ${styles.button}`}>Cerrar</button>
@@ -16,4 +16,4 @@ const BloodPressureLevelsModal = ({ onClose }: { onClose: () => void }) => {
     </section>
   )
 }
-export default BloodPressureLevelsModal
+export default BloodPressureLevelsWrapper
