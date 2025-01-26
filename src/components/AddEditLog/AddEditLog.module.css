@@ -113,7 +113,11 @@
 .inputContainer input::placeholder {
   color: var(--text-color-secondary);
   font-style: italic;
+}
 
+.inputContainer input:focus::selection {
+  background-color: var(--color-background-selected-text);
+  color: var(--color-white);
 }
 
 .inputContainer textarea {

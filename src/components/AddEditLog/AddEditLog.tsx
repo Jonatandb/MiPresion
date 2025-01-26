@@ -85,6 +85,12 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
     }
   };
 
+  const handleFocus = (inputRef: React.RefObject<HTMLInputElement>) => {
+    if (inputRef.current) {
+      inputRef.current.select()
+    }
+  }
+
   useEffect(() => {
     if (!data.date) {
       if (datePickerRef.current) {
@@ -138,7 +144,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               max={999}
               onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })}
               value={data.systolic} onKeyDown={handleKeyDown}
-              onFocus={() => systolicRef.current && (systolicRef.current as HTMLInputElement).select()}
+              onFocus={() => handleFocus(systolicRef)}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -152,7 +158,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               max={999}
               onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || "" })}
               value={data.diastolic} onKeyDown={handleKeyDown}
-              onFocus={() => diastolicRef.current && (diastolicRef.current as HTMLInputElement).select()}
+              onFocus={() => handleFocus(diastolicRef)}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -166,7 +172,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               max={999}
               onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || "" })}
               value={data.pulse} onKeyDown={handleKeyDown}
-              onFocus={() => pulseRef.current && (pulseRef.current as HTMLInputElement).select()}
+              onFocus={() => handleFocus(pulseRef)}
             />
           </div>
         </div>

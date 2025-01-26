@@ -45,7 +45,8 @@
   --background-color-secondary: var(--light-bg-secondary);
 
   --color-primary: var(--color-tomato);
-  --overlay-color: rgba(0, 0, 0, 0.5);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-background-selected-text: #23569a;
 }
 
 /* Override explícito via data-theme */

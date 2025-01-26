@@ -134,6 +134,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## ✅ Completado:
 
+- [x] 🐛 Solucionar falta de color de texto seleccionado
+
 - [x] Agregar About y Donate al final del Settings
 
 - [x] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
