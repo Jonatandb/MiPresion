@@ -112,9 +112,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Home:
 
-  - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
-    - LogsList -> Log
-      - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
+  - LogsList -> Log
+    - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
   - [ ] Agregar opción de filtrado por rango de fechas
   - [ ] Posibilidad de registar:
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
@@ -131,14 +130,22 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
-  - [ ] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
+- [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
 
 ## ✅ Completado:
 
+- [x] Agregar About y Donate al final del Settings
+
+- [x] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
+
+- [x] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
+
 - [x] Reemplazar "Agregar Registro" por "Agregar Medición"
+
 - [x] Reemplazar "Nuevo registro" con "Agregar una medición"
+
 - [x] Reemplazar "Aún no se agregaron registros" con "Aún no se agregaron mediciones"
+
 - [x] Ampliar area de clickeo del "buttonContainer" en NoLogsMessage para incluír el botón y el texto "Agregar una medición"
 
 - [x] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."

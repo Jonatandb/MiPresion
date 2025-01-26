@@ -59,10 +59,3 @@
 .content::-webkit-scrollbar {
   display: none;
 }
-
-.title {
-  font-size: 1.2rem;
-  margin-top: .5rem;
-  margin-bottom: 0;
-  text-align: center;
-}

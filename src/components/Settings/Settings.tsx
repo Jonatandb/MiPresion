@@ -6,6 +6,8 @@ import Logo from "@/components/Logo/Logo"
 import Modal from "@/components/Modal/Modal"
 import { useLogContext } from "@/hooks/useLogContext"
 import { useThemeContext } from "@/hooks/useTheme"
+import SocialMedia from "@/components/SocialMedia/SocialMedia"
+import Donate from "@/components/Donate/Donate"
 
 import styles from "./Settings.module.css"
 
@@ -65,13 +67,18 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
           </div>
         </div>
 
-        <span className={styles.rowTitle}>SOBRE MÍ</span>
+        <span className={styles.rowTitle}>CONTACTO</span>
         <div className={styles.row} onClick={() => setModalType("about")}>
           <div>
             <span className={styles.optionIcon}>✉</span>
-            <span>Contacto & Errores</span>
+            <span>¿Errores? ¿Sugerencias?</span>
           </div>
         </div>
+
+        <SocialMedia />
+
+        <Donate />
+
       </div>
 
       {modalType && (

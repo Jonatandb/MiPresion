@@ -1,7 +1,5 @@
 
 import ContactForm from "@/components/ContactForm/ContactForm"
-import Donate from "@/components/Donate/Donate"
-import SocialMedia from "@/components/SocialMedia/SocialMedia"
 import Logo from "@/components/Logo/Logo"
 
 import styles from "./About.module.css"
@@ -20,9 +18,6 @@ const About = ({ onClose }: AboutProps) => {
       </div>
       <div className={styles.content} onTouchMove={e => e.stopPropagation()}>
         <ContactForm />
-        <h2 className={styles.title}>Desarrollado por Jonatandb</h2>
-        <SocialMedia />
-        <Donate />
       </div>
     </div>
   )
