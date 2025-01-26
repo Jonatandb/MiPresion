@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { usePDF } from "@react-pdf/renderer"
 import PDFReport from "@/components/PDFReport/PDFReport"
 import { useLogContext } from "@/hooks/useLogContext"
@@ -9,6 +9,13 @@ import { formatToShortDateWithoutTimeString } from "@/utils/formatDateUtils"
 const Generator = ({ onDownloadClick }: { onDownloadClick?: () => void }) => {
   const { logs } = useLogContext()
   const [instance] = usePDF({ document: <PDFReport logs={logs} /> })
+  const [buttonText, setButtonText] = useState("Listo! 😎🤙🏻")
+
+  useEffect(() => {
+    if (!instance.error && !instance.loading && instance.url) {
+      setTimeout(() => setButtonText("Descargar"), 1500)
+    }
+  }, [instance])
 
   if (instance.loading) return <div>Generando...</div>
 
@@ -22,7 +29,7 @@ const Generator = ({ onDownloadClick }: { onDownloadClick?: () => void }) => {
 
   return (
     <a href={instance.url!} download={fileName} onClick={() => setTimeout(() => onDownloadClick!(), 10)}>
-      Descargar
+      {buttonText}
     </a>
   )
 }

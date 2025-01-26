@@ -111,8 +111,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Home:
 
-  - LogsList -> Log
-    - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
   - [ ] Agregar opción de filtrado por rango de fechas
   - [ ] Posibilidad de registar:
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
@@ -120,7 +118,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
   - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
 
-- Agregar registro:
+- Agregar medición:
 
   - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (e incluye la sección "¿Que significa "Valores fuera de rango"?")
 
@@ -130,9 +128,12 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar confirmación visual luego de que el reporte PDF haya sido generado y esté listo para descargar
+- LogsList -> Log
+  - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
 
 ## ✅ Completado:
+
+- [x] Agregar confirmación visual luego de que el reporte PDF haya sido generado y esté listo para descargar
 
 - [x] Agregar "¿Dudas?" al texto del botón del formulario de contacto -> "¿Dudas? ¿Sugerencias? ¿Errores? 🙈"
 
