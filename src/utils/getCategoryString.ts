@@ -1,11 +1,11 @@
 export const categoryType = {
   NORMAL: "Normal",
-  NORMAL_ELEVADA: "Normal Elevada",
-  NIVEL_1: "Nivel 1",
-  NIVEL_2: "Nivel 2",
-  NIVEL_3: "Nivel 3",
-  SISTOLICA_AISLADA: "Sistólica Aislada",
-  DATOS_INCORRECTOS: "DATOS INCORRECTOS"
+  NORMAL_ELEVATED: "Normal Elevada",
+  STAGE_1: "Nivel 1",
+  STAGE_2: "Nivel 2",
+  STAGE_3: "Nivel 3",
+  SYSTOLIC_AISOLATED: "Sistólica Aislada",
+  OUT_OF_RANGE: "Valores fuera de rango"
 }
 
 export const getCategoryString = (systolic: number | string, diastolic: number | string) => {
@@ -17,22 +17,22 @@ export const getCategoryString = (systolic: number | string, diastolic: number |
       diastolic = Number(diastolic)
     }
   } catch (error) {
-    return categoryType.DATOS_INCORRECTOS
+    return categoryType.OUT_OF_RANGE
   }
 
   if (systolic < 130 && diastolic < 85) {
     return categoryType.NORMAL
   } else if ((systolic >= 130 && systolic <= 139) && (diastolic >= 85 && diastolic <= 89)) {
-    return categoryType.NORMAL_ELEVADA
+    return categoryType.NORMAL_ELEVATED
   } else if ((systolic >= 140 && systolic <= 159) && (diastolic >= 90 && diastolic <= 99)) {
-    return categoryType.NIVEL_1
+    return categoryType.STAGE_1
   } else if ((systolic >= 160 && systolic <= 179) && (diastolic >= 100 && diastolic <= 109)) {
-    return categoryType.NIVEL_2
+    return categoryType.STAGE_2
   } else if (systolic >= 180 && diastolic >= 110) {
-    return categoryType.NIVEL_3
+    return categoryType.STAGE_3
   } else if (systolic >= 140 && diastolic < 90) {
-    return categoryType.SISTOLICA_AISLADA
+    return categoryType.SYSTOLIC_AISOLATED
   }
 
-  return categoryType.DATOS_INCORRECTOS
+  return categoryType.OUT_OF_RANGE
 }

@@ -16,12 +16,12 @@ import styles from "./Log.module.css"
 
 const styleByCategory = {
   [categoryType.NORMAL]: styles["levelNormal"],
-  [categoryType.NORMAL_ELEVADA]: styles["levelElevated"],
-  [categoryType.NIVEL_1]: styles["levelStage1"],
-  [categoryType.NIVEL_2]: styles["levelStage2"],
-  [categoryType.NIVEL_3]: styles["levelStage3"],
-  [categoryType.SISTOLICA_AISLADA]: styles["levelAisolated"],
-  [categoryType.DATOS_INCORRECTOS]: styles["levelError"]
+  [categoryType.NORMAL_ELEVATED]: styles["levelElevated"],
+  [categoryType.STAGE_1]: styles["levelStage1"],
+  [categoryType.STAGE_2]: styles["levelStage2"],
+  [categoryType.STAGE_3]: styles["levelStage3"],
+  [categoryType.SYSTOLIC_AISOLATED]: styles["levelAisolated"],
+  [categoryType.OUT_OF_RANGE]: styles["levelError"]
 }
 
 interface imageByThemeType {

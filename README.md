@@ -97,8 +97,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Ajustes:
 
-  - [ ] Agregar opción "Ayuda y Preguntas frecuentes"
-    - Ítems: "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?", "¿Dónde se guardan mis datos?" -> Navegador (Actualizar al agregar funcionalidad exportar/importar)
   - [ ] Agregar opción de "Modo Daltónico"
   - [ ] Reemplazar "Activar Tema Oscuro" que cambia a "Activar Tema Claro" con un switch
   - [ ] Agregar "Medicina Tomada" con un switch
@@ -128,10 +126,12 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- LogsList -> Log
-  - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
+- [ ] Agregar opción "Ayuda y Preguntas frecuentes"
+  - Ítems: "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?", "¿Dónde se guardan mis datos?" -> Navegador (Actualizar al agregar funcionalidad exportar/importar)
 
 ## ✅ Completado:
+
+- [x] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
 
 - [x] Agregar confirmación visual luego de que el reporte PDF haya sido generado y esté listo para descargar
 
