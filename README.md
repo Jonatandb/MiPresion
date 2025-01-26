@@ -114,9 +114,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Home:
 
-  - [ ] Reemplazar "Aún no se agregaron registros" con "Aún no hay mediciones"
-  - [ ] Reemplazar "Nuevo registro" con "Agregar una medición"
-  - [ ] Ampliar area de clickeo del "buttonContainer" para incluír el botón y el "Agregar una medición"
   - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
     - LogsList -> Log
       - [ ] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
@@ -128,7 +125,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Agregar registro:
 
-  - [ ] Reemplazar "Agregar Registro" por "Agregar Medición"
   - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (e incluye la sección "¿Que significa "Valores fuera de rango"?")
 
 - Contacto:
@@ -137,9 +133,14 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
+- [ ] Reemplazar "Aún no se agregaron registros" con "Aún no hay mediciones"
+- [ ] Reemplazar "Nuevo registro" con "Agregar una medición"
+- [ ] Ampliar area de clickeo del "buttonContainer" para incluír el botón y el "Agregar una medición"
+- [ ] Reemplazar "Agregar Registro" por "Agregar Medición"
 
 ## ✅ Completado:
+
+- [x] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
 
 - [x] Cuando se le da el foco a un input autoseleccionar todo el contenido (si tiene alguno)
 

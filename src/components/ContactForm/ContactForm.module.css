@@ -44,6 +44,12 @@
   resize: none;
 }
 
+.contactFormContainer form input::placeholder,
+.contactFormContainer form textarea::placeholder {
+  color: var(--text-color-secondary);
+  font-style: italic;
+}
+
 .contactFormContainer form button {
   width: 100%;
   border-radius: 0.313rem;

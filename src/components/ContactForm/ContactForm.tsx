@@ -46,9 +46,9 @@ const ContactForm = () => {
     <div className={styles.contactFormContainer}>
       <h2 className={styles.title}>Contacto</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" id="name" name="name" placeholder="Mi nombre" required />
+        <input type="text" id="name" name="name" placeholder="Nombre" required />
         <input type="email" id="email" name="email" placeholder="mi@correo.com" required />
-        <textarea id="message" name="message" rows={2} autoComplete="off" placeholder="Hola Jonatandb! te escribo para decirte..." required></textarea>
+        <textarea id="message" name="message" rows={2} autoComplete="off" placeholder="Hola, me gustaría comentar que..." required></textarea>
         <button type="submit" disabled={loading}>{loading ? "Enviando..." : "Enviar"}</button>
       </form>
     </div>
