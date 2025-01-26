@@ -73,7 +73,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
   }
 
   const handleDelete = () => {
-    if (window.confirm("Estas seguro de eliminar el registro?")) {
+    if (window.confirm("¿Eliminar esta medición?")) {
       deleteLog(data.id)
       onClose()
     }
@@ -124,7 +124,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         </button>
       </div>
       <div className={styles.content}>
-        <h2>{data.id ? "Actualizar" : "Agregar"} Registro</h2>
+        <h2>{data.id ? "Actualizar" : "Agregar"} Medición</h2>
 
         <div className={styles.row}>
           <div className={styles.inputContainer}>

@@ -21,8 +21,8 @@ const AddButton = ({ onClick }: AddButtonProps) => {
         src={add}
         width={64}
         height={64}
-        alt="Ícono agregar nuevo registro"
-        title="Agregar registro" />
+        alt="Ícono agregar nueva medición"
+        title="Agregar medición" />
     </button>
   )
 }

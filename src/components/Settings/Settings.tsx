@@ -21,7 +21,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
   }
 
   const handleReset = () => {
-    if (thereAreLogs && confirm("Esta acción no se puede deshacer. ¿Eliminar todos los registros?")) {
+    if (thereAreLogs && confirm("Esta acción no se puede deshacer. ¿Eliminar todas las mediciones?")) {
       resetLogs()
     }
   }
@@ -61,7 +61,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
         <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
           <div>
             <span className={styles.optionIcon}>🗑</span>
-            <span>Eliminar todos los registros</span>
+            <span>Eliminar todas las mediciones</span>
           </div>
         </div>
 

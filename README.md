@@ -100,8 +100,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
   - [ ] Agregar opción "Ayuda y Preguntas frecuentes"
     - Ítems: "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?", "¿Dónde se guardan mis datos?" -> Navegador (Actualizar al agregar funcionalidad exportar/importar)
-  - [ ] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
-    - [ ] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
   - [ ] Agregar opción de "Modo Daltónico"
   - [ ] Reemplazar "Activar Tema Oscuro" que cambia a "Activar Tema Claro" con un switch
   - [ ] Agregar "Medicina Tomada" con un switch
@@ -133,12 +131,15 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Reemplazar "Aún no se agregaron registros" con "Aún no hay mediciones"
-- [ ] Reemplazar "Nuevo registro" con "Agregar una medición"
-- [ ] Ampliar area de clickeo del "buttonContainer" para incluír el botón y el "Agregar una medición"
-- [ ] Reemplazar "Agregar Registro" por "Agregar Medición"
+- [ ] Reemplazar subtítulo "SOBRE MÍ" por "CONTACTO"
+  - [ ] Reemplazar "Contacto & Errores" por "¿Errores? ¿Sugerencias?"
 
 ## ✅ Completado:
+
+- [x] Reemplazar "Agregar Registro" por "Agregar Medición"
+- [x] Reemplazar "Nuevo registro" con "Agregar una medición"
+- [x] Reemplazar "Aún no se agregaron registros" con "Aún no se agregaron mediciones"
+- [x] Ampliar area de clickeo del "buttonContainer" en NoLogsMessage para incluír el botón y el texto "Agregar una medición"
 
 - [x] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
 
