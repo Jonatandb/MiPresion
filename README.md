@@ -133,15 +133,15 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Contacto:
 
-  - [ ] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
-
   - [ ] Agregar sección “Otros de mis proyectos”, con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Cuando se le da el foco a un input autoseleccionar todo el contenido (si tiene alguno)
+- [ ] Reemplazar el placeholder "Hola Jonatandb! te escribo para decirte..." por "Hola, me gustaría comentar que..."
 
 ## ✅ Completado:
+
+- [x] Cuando se le da el foco a un input autoseleccionar todo el contenido (si tiene alguno)
 
 - [x] Agrupar listado por fecha
 
