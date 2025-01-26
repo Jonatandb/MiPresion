@@ -93,7 +93,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - Refactors:
 
   - [ ] Corregir/agregar tabindex para navegación por teclado
-  - [ ] Hacer que cada sección (modal) tenga su propia url
   - [ ] Crear un contexto para guardar todos los ajustes (dark mode, idioma, país, formato de fecha, valores de la tabla de niveles, etc)
 
 - Ajustes:
@@ -120,6 +119,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
+  - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
 
 - Agregar registro:
 
@@ -131,7 +131,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
+- [ ] Hacer que cada sección (modal) tenga su propia url
 
 ## ✅ Completado:
 
