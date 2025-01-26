@@ -130,9 +130,11 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar "¿Dudas?" al texto del botón del formulario de contacto -> "¿Dudas? ¿Sugerencias? ¿Errores? 🙈"
+- [ ] Agregar confirmación visual luego de que el reporte PDF haya sido generado y esté listo para descargar
 
 ## ✅ Completado:
+
+- [x] Agregar "¿Dudas?" al texto del botón del formulario de contacto -> "¿Dudas? ¿Sugerencias? ¿Errores? 🙈"
 
 - [x] Hacer que cada sección (modal) tenga su propia url
 

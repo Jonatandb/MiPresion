@@ -67,7 +67,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
             <div className={styles.row} onClick={() => navigate("/settings/contact")}>
               <div>
                 <span className={styles.optionIcon}>✉</span>
-                <span>¿Errores? ¿Sugerencias?</span>
+                <span>¿Dudas? ¿Sugerencias? ¿Errores? 🙈</span>
               </div>
             </div>
 
