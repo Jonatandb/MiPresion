@@ -16,11 +16,11 @@ import { trackPageView } from "@/utils/analytics"
 const App = () => {
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
   const navigate = useNavigate()
-  const location = useLocation();
+  const location = useLocation()
 
   useEffect(() => {
-    trackPageView(location.pathname);
-  }, [location.pathname]);
+    trackPageView(location.pathname)
+  }, [location.pathname])
 
   useEffect(() => {
     if (selectedLogId) {
@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <main>
-      <Header onSettingsClicked={() => navigate("/settings")} />
+      <Header />
 
       {logs.length > 0 ? (
         <>

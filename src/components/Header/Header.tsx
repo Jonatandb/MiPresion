@@ -1,20 +1,19 @@
 import Logo from "@/components/Logo/Logo"
-import SettingsIcon from "@/components/SettingsIcon/SettingsIcon"
-import ToggleTheme from "@/components/ToggleTheme/ToggleTheme"
+import ToggleThemeIconButton from "@/components/Header/ToggleThemeIconButton/ToggleThemeIconButton"
+import HelpIconButton from "@/components/Header/HelpIconButton/HelpIconButton"
+import SettingsIconButton from "@/components/Header/SettingsIconButton/SettingsIconButton"
 
 import styles from "./Header.module.css"
 
-interface HederProps {
-  onSettingsClicked: () => void
-}
+const Header = () => {
 
-const Header = ({ onSettingsClicked }: HederProps) => {
   return (
     <header>
       <Logo />
       <div className={`${styles.iconsRightContainer}`}>
-        <ToggleTheme />
-        <SettingsIcon onClick={onSettingsClicked} />
+        <ToggleThemeIconButton />
+        <HelpIconButton />
+        <SettingsIconButton />
       </div>
     </header>
   )
