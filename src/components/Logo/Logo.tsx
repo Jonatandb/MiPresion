@@ -13,7 +13,7 @@ const Logo = React.memo(() => {
       />
       <div className={`${styles.appTitle}`}>
         <h1>
-          MiPresión <span>v.1.5.0</span>
+          MiPresión <span>v.1.5.1</span>
         </h1>
         <span>
           Registro de presión sanguínea
