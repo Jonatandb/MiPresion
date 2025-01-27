@@ -7,7 +7,7 @@ const HelpIconButton = () => {
   const navigate = useNavigate()
   return (
     <button
-      onClick={() => navigate("/settings")}
+      onClick={() => navigate("/help")}
       aria-label={"Ícono de ayuda"}
       role="button"
       className={styles.helpIconButton}

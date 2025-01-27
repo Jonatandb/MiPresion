@@ -114,7 +114,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
-  - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
 
 - Agregar medición:
 
@@ -126,14 +125,18 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
   - [ ] Agregar sección “Otros de mis proyectos”, con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
 - Ayuda:
-- [ ] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador (Bloqueado por: Funcionalidad exportar/importar)
+  - [ ] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador (Bloqueado por: Funcionalidad exportar/importar)
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar opción "Ayuda y Preguntas frecuentes"
-  - Ítems: "¿Cómo me tomo la presión?", "¿"Niveles fuera de rango"?", "Tabla de niveles de presión"
+- [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
+- [ ] Agregar ícono de advertencia junto al mensaje "Valores fuerda de rango" en las mediciones de LogsList
 
 ## ✅ Completado:
+
+- [x] Agregar ícono "Ayuda" en el header
+
+  - Ítems: "¿Cómo me tomo la presión?", "¿"Valores fuera de rango"?", "Tabla de niveles de presión"
 
 - [x] Reemplazar "Datos incorrectos" por "Valores fuera de rango" y un ícono de advertencia ⚠
 

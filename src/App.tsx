@@ -12,6 +12,9 @@ import BloodPressureLevelsWrapper from "@/components/Modals/BloodPressureLevelsW
 import ExportPDFReportWrapper from "@/components/Modals/ExportPDFReportWrapper/ExportPDFReportWrapper"
 import { useLogContext } from "@/hooks/useLogContext"
 import { trackPageView } from "@/utils/analytics"
+import Help from "@/components/Help/Help"
+import BloodPressureMeasurementGuideWrapper from "@/components/Modals/BloodPressureMeasurementGuideWrapper/BloodPressureMeasurementGuideWrapper"
+import OutOfRangeValuesWrapper from "./components/Modals/OutOfRangeValuesWrapper/OutOfRangeValuesWrapper"
 
 const App = () => {
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
@@ -57,6 +60,32 @@ const App = () => {
           </Modal>
         } />
 
+        <Route path="/help" element={
+          <Modal onClose={() => handleCloseModal()} isOpen={true}>
+            <Help onClose={() => handleCloseModal()} />
+          </Modal>
+        }>
+
+          <Route path="measurementguide" element={
+            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
+              <BloodPressureMeasurementGuideWrapper onClose={() => handleCloseModal("/help")} />
+            </Modal>
+          } />
+
+          <Route path="outofrangevalues" element={
+            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
+              <OutOfRangeValuesWrapper onClose={() => handleCloseModal("/help")} />
+            </Modal>
+          } />
+
+          <Route path="bloodpressurelevels" element={
+            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
+              <BloodPressureLevelsWrapper onClose={() => handleCloseModal("/help")} />
+            </Modal>
+          } />
+
+        </Route>
+
         <Route path="/settings" element={
           <Modal onClose={() => handleCloseModal()} isOpen={true}>
             <Settings onClose={() => handleCloseModal()} />
@@ -66,12 +95,6 @@ const App = () => {
           <Route path="exportpdf" element={
             <Modal onClose={() => handleCloseModal("/settings")} isOpen={true}>
               <ExportPDFReportWrapper onClose={() => handleCloseModal("/settings")} />
-            </Modal>
-          } />
-
-          <Route path="bloodpressurelevels" element={
-            <Modal onClose={() => handleCloseModal("/settings")} isOpen={true}>
-              <BloodPressureLevelsWrapper onClose={() => handleCloseModal("/settings")} />
             </Modal>
           } />
 

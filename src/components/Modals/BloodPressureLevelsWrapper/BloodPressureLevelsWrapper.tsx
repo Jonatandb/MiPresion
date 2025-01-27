@@ -1,5 +1,5 @@
-import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
 import Logo from "@/components/Logo/Logo"
+import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
 
 import styles from "./BloodPressureLevelsWrapper.module.css"
 
