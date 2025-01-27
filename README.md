@@ -130,9 +130,10 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 ## 👷🏻‍♂️ Trabajando:
 
 - [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
-- [ ] Agregar ícono de advertencia junto al mensaje "Valores fuerda de rango" en las mediciones de LogsList
 
 ## ✅ Completado:
+
+- [x] Agregar ícono de advertencia junto al mensaje "Valores fuerda de rango" en las mediciones de LogsList
 
 - [x] Agregar ícono "Ayuda" en el header
 

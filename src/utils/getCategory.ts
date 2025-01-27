@@ -53,18 +53,17 @@ const categories: Category[] = [
 ]
 
 export const getCategory = (systolic: number | string, diastolic: number | string) => {
+  let systolicNum: number
+  let diastolicNum: number
+
   try {
-    if (typeof systolic !== "number") {
-      systolic = Number(systolic)
-    }
-    if (typeof diastolic !== "number") {
-      diastolic = Number(diastolic)
-    }
+    systolicNum = Number(systolic)
+    diastolicNum = Number(diastolic)
   } catch (error) {
     return { key: "OUT_OF_RANGE", value: categoryType.OUT_OF_RANGE }
   }
 
-  const category = categories.find((c) => c.condition(systolic, diastolic))
+  const category = categories.find((c) => c.condition(systolicNum, diastolicNum))
 
   return category || { key: "OUT_OF_RANGE", value: categoryType.OUT_OF_RANGE }
 }
