@@ -1,9 +1,16 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
-import Logo from "@/components/Logo/Logo"
 import { useLogContext } from "@/hooks/useLogContext"
 import { useThemeContext } from "@/hooks/useTheme"
+import Logo from "@/components/Logo/Logo"
 import SocialMedia from "@/components/SocialMedia/SocialMedia"
 import Donate from "@/components/Donate/Donate"
+
+import PdfIcon from "@/assets/svg/pdf.svg?react"
+import MoonIcon from "@/assets/svg/moon.svg?react"
+import SunIcon from "@/assets/svg/sun.svg?react"
+import TrashIcon from "@/assets/svg/trash.svg?react"
+import EmailIcon from "@/assets/svg/email.svg?react"
+
 import styles from "./Settings.module.css"
 
 const Settings = ({ onClose }: { onClose: () => void }) => {
@@ -35,40 +42,27 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
 
             <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
             <div className={`${styles.row} ${!thereAreLogs && styles.disabled}`} onClick={() => navigate("/settings/exportpdf")}>
-              <div>
-                <span className={styles.optionIcon}>📄</span>
-                <span>Exportar a PDF</span>
-              </div>
-            </div>
-
-            <span className={styles.rowTitle}>INFORMACIÓN</span>
-            <div className={styles.row} onClick={() => navigate("/settings/bloodpressurelevels")}>
-              <div>
-                <span className={styles.optionIcon}>📈</span>
-                <span>Tabla de niveles de presión</span>
-              </div>
+              <PdfIcon width={20} height={20} />
+              <span>Exportar a PDF</span>
             </div>
 
             <span className={styles.rowTitle}>PERSONALIZAR</span>
             <div className={styles.row} onClick={() => toggleTheme()}>
-              <div>
-                <span className={styles.optionIcon}>{theme === "light" ? "🌙" : "🌞"}</span>
-                <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
-              </div>
+              {theme === "light" ?
+                <MoonIcon width={20} height={20} />
+                :
+                <SunIcon width={20} height={20} />}
+              <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
             </div>
             <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
-              <div>
-                <span className={styles.optionIcon}>🗑</span>
-                <span>Eliminar todas las mediciones</span>
-              </div>
+              <TrashIcon width={20} height={20} />
+              <span>Eliminar todas las mediciones</span>
             </div>
 
             <span className={styles.rowTitle}>CONTACTO</span>
             <div className={styles.row} onClick={() => navigate("/settings/contact")}>
-              <div>
-                <span className={styles.optionIcon}>✉</span>
-                <span>¿Dudas? ¿Sugerencias? ¿Errores? 🙈</span>
-              </div>
+              <EmailIcon width={20} height={20} />
+              <span>¿Dudas? ¿Sugerencias? ¿Errores?</span>
             </div>
 
             <SocialMedia />

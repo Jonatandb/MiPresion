@@ -74,22 +74,17 @@
 }
 
 .row {
-  background-color: white;
-  padding: 0.625rem .5rem .3rem;
+  background-color: var(--color-white);
+  padding: 0.3rem .5rem .3rem;
   border-radius: 0.625rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 0.625rem;
+  align-items: flex-start;
 }
 
 .row:hover {
   cursor: pointer;
   background-color: var(--color-primary);
-
-  & .arrow {
-    color: var(--dark-text-tertiary) !important;
-  }
 }
 
 .row span {
@@ -102,16 +97,4 @@
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-}
-
-.optionIcon {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  text-align: center;
-  margin-right: .3rem;
-}
-
-.arrow {
-  color: var(--light-text-secondary) !important;
 }
