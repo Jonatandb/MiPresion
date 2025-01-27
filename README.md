@@ -110,15 +110,14 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - Home:
 
   - [ ] Agregar opción de filtrado por rango de fechas
+
+- Agregar medición:
+
+  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar tales valores y finalmente guarde el valor de sistólica y diastólica promediados
   - [ ] Posibilidad de registar:
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
-
-- Agregar medición:
-
-  - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (e incluye la sección "¿Que significa "Valores fuera de rango"?")
-  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar tales valores y finalmente guarde el valor de sistólica y diastólica promediados
 
 - Contacto:
 
@@ -129,9 +128,11 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Errores? ¿Sugerencias?" (y otras opciones útiles)
+- [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Dudas? ¿Sugerencias? ¿Errores?" (y otras opciones útiles)
 
 ## ✅ Completado:
+
+- [x] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre la sección "¿Que significa "Valores fuera de rango"?
 
 - [x] Agregar ícono de advertencia junto al mensaje "Valores fuerda de rango" en las mediciones de LogsList
 
