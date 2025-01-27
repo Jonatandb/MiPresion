@@ -1,18 +1,18 @@
-import { LogData } from "@/components/AddEditLog/AddEditLog";
+import { LogData } from "@/components/AddEditLog/AddEditLog"
 
-import { useThemeContext } from "@/hooks/useTheme";
-import { useLogContext } from "@/hooks/useLogContext";
-import { categoryType, getCategoryString } from "@/utils/getCategoryString";
+import { useThemeContext } from "@/hooks/useTheme"
+import { useLogContext } from "@/hooks/useLogContext"
+import { categoryType, getCategory } from "@/utils/getCategory"
 
-import pencilEmptyWhite from "@/assets/pencil_white.png";
-import pencilFull from "@/assets/pencil.png";
-import pencilBlack from "@/assets/pencil_black.png";
-import pillEmptyWhite from "@/assets/pill_white.png";
-import pillFull from "@/assets/pill.png";
-import pillBlack from "@/assets/pill_black.png";
+import pencilEmptyWhite from "@/assets/pencil_white.png"
+import pencilFull from "@/assets/pencil.png"
+import pencilBlack from "@/assets/pencil_black.png"
+import pillEmptyWhite from "@/assets/pill_white.png"
+import pillFull from "@/assets/pill.png"
+import pillBlack from "@/assets/pill_black.png"
+import WarningIcon from "@/assets/svg/warning.svg?react"
 
 import styles from "./Log.module.css"
-
 
 const styleByCategory = {
   [categoryType.NORMAL]: styles["levelNormal"],
@@ -44,19 +44,19 @@ const imageByTheme: imageByThemeType = {
     pill: pillEmptyWhite,
     pencil: pencilEmptyWhite,
   },
-};
+}
 
 const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData) => {
   const { theme } = useThemeContext()
   const { setSelectedLogId } = useLogContext()
 
-  const category = getCategoryString(systolic, diastolic)
+  const category = getCategory(systolic, diastolic)
 
   return (
     <article className={styles.logContainer} onClick={() => setSelectedLogId(id)}>
       <section className={styles.row}>
-        <span className={`${styles.level} ${styleByCategory[category]}`} title="Categoría">
-          {category}
+        <span className={`${styles.level} ${styleByCategory[category.value]}`} title="Categoría">
+          {category.value} {(category.value == categoryType.OUT_OF_RANGE) ? <WarningIcon width={20} height={20} /> : ""}
         </span>
         <span className={styles.date} title={date}>⏱ {date}</span>
       </section>
