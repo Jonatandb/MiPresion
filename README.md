@@ -119,15 +119,19 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - Agregar medición:
 
   - [ ] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre el modal de "Ayuda y Preguntas frecuentes" (e incluye la sección "¿Que significa "Valores fuera de rango"?")
+  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar tales valores y finalmente guarde el valor de sistólica y diastólica promediados
 
 - Contacto:
 
   - [ ] Agregar sección “Otros de mis proyectos”, con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
+- Ayuda:
+- [ ] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador (Bloqueado por: Funcionalidad exportar/importar)
+
 ## 👷🏻‍♂️ Trabajando:
 
 - [ ] Agregar opción "Ayuda y Preguntas frecuentes"
-  - Ítems: "¿Cómo me tomo la presión?", "¿Que significa "Niveles fuera de rango"?", "¿Dónde se guardan mis datos?" -> Navegador (Actualizar al agregar funcionalidad exportar/importar)
+  - Ítems: "¿Cómo me tomo la presión?", "¿"Niveles fuera de rango"?", "Tabla de niveles de presión"
 
 ## ✅ Completado:
 

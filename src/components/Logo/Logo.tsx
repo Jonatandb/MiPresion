@@ -1,31 +1,19 @@
-
-import React, { useEffect } from "react"
-import favicon60 from "@/assets/favicon_60x60.png"
-import favicon120 from "@/assets/favicon_120x120.png"
+import React from "react"
+import Favicon from "@/assets/svg/favicon.svg?react"
 
 import styles from "./Logo.module.css"
 
 const Logo = React.memo(() => {
-  useEffect(() => {
-    const images = [favicon60, favicon120];
-    images.forEach((image) => {
-      new Image().src = image;
-    });
-  }, [])
-
   return (
     <div className={`${styles.titleContainer}`}>
-      <img className={`${styles.logo}`}
-        src={favicon60}
-        srcSet={`${favicon60} 60w, ${favicon120} 120w`}
-        sizes="(max-width: 600px) 30px, (max-width: 1200px) 60px, 120px"
-        alt="Logo de MiPresión - Registro de Presión Sanguínea por Jonatandb"
-        title='MiPresión - Registro de Presión Sanguínea por Jonatandb'
-        height={30}
-        width={30} />
+      <Favicon
+        className={styles.logo}
+        width="1.875rem"
+        height="1.875rem"
+      />
       <div className={`${styles.appTitle}`}>
         <h1>
-          MiPresión <span>v.1.4.0</span>
+          MiPresión <span>v.1.4.1</span>
         </h1>
         <span>
           Registro de presión sanguínea
