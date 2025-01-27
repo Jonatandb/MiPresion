@@ -31,7 +31,7 @@ const ContactForm = () => {
         "inLQYkCaAWoFLWU9m",
       )
 
-      trackEvent("Interaction", "ButtonClicked", "ContactForm -> SendMessage")
+      trackEvent("ButtonClicked_SendMessage_ContactForm")
 
       alert(`Hola ${from_name}! Gracias por escribir, aprecio tu interés, en breve leeré tu mensaje.`);
 

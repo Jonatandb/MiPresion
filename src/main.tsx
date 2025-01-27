@@ -4,11 +4,11 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import { ThemeContextProvider } from "@/contexts/ThemeContext"
 import { LogContextProvider } from "@/contexts/LogContext"
 import App from "@/App"
-import { initializeGA } from "@/utils/analytics";
+import { initializeGA } from "@/utils/analytics"
 
 import "@/styles.css"
 
-initializeGA();
+initializeGA()
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

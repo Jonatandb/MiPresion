@@ -39,7 +39,7 @@ const ExportPDFReport = () => {
   const [shouldGenerate, setShouldGenerate] = useState(false)
   const handleClick = () => {
     setShouldGenerate(true)
-    trackEvent("Interaction", "ButtonClicked", "ExportPDFReport -> GeneratePDF")
+    trackEvent("ButtonClicked_GeneratePDF_ExportPDFReport")
   }
 
   const renderGenerator = () => {
