@@ -142,6 +142,22 @@
   font-style: italic;
 }
 
+.outOfRangeMessageContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.outOfRangeMessageContainer span {
+  font-size: .8rem;
+}
+
+.outOfRangeMessageContainer a {
+  color: var(--color-primary);
+  font-size: .8rem;
+  text-decoration: underline;
+}
+
 .fullWidth {
   display: flex;
   justify-content: space-between;
@@ -217,4 +233,9 @@
   width: 100%;
   cursor: pointer;
   border-radius: 0.625rem;
+}
+
+.backToTop {
+  color: var(--color-primary);
+  text-align: center;
 }

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useLogContext } from "@/hooks/useLogContext";
-import { formatToISODateString } from "@/utils/formatDateUtils";
-import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels";
+import React, { useCallback, useEffect, useState } from "react"
+import { useLogContext } from "@/hooks/useLogContext"
+import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
+import OutOfRangeValues from "@/components/OutOfRangesValues/OutOfRangesValues"
+import { formatToISODateString } from "@/utils/formatDateUtils"
+import { categoryType, getCategory } from "@/utils/getCategory"
 
-import pill from "@/assets/pill.png";
+import pill from "@/assets/pill.png"
+import WarningIcon from "@/assets/svg/warning.svg?react"
 
 import styles from "./AddEditLog.module.css"
 
@@ -22,6 +25,7 @@ interface AddEditLogProps {
 }
 
 const AddEditLog = ({ onClose }: AddEditLogProps) => {
+  const { setSelectedLogId } = useLogContext()
   const [data, setData] = useState<LogData>(() => {
     const initialState: LogData = {
       id: "",
@@ -33,12 +37,14 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
       date: formatToISODateString()
     }
     return initialState
-  });
+  })
+  const [showOutOfRangeMessage, setShowOutOfRangeMessage] = useState(false)
+
   const { selectedLogId, getLogById, addLog, updateLog, deleteLog } = useLogContext()
-  const datePickerRef = React.useRef(null);
-  const systolicRef = React.useRef(null);
-  const diastolicRef = React.useRef(null);
-  const pulseRef = React.useRef(null);
+  const datePickerRef = React.useRef(null)
+  const systolicRef = React.useRef(null)
+  const diastolicRef = React.useRef(null)
+  const pulseRef = React.useRef(null)
 
   const handleSubmit = () => {
     if (!data.systolic) {
@@ -63,6 +69,16 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
       data.date = new Date().toISOString().slice(0, 16)
     }
 
+    if (hasOutOfRangeValues()) {
+      const wantToSaveAnyway = confirm("Valores fuera de rango. ¿Guardar igual?")
+      if (wantToSaveAnyway == false) {
+        setShowOutOfRangeMessage(true)
+        return
+      }
+    } else {
+      setShowOutOfRangeMessage(true)
+    }
+
     if (!data.id) {
       addLog(data)
     } else {
@@ -71,6 +87,11 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
 
     onClose()
   }
+
+  const hasOutOfRangeValues = useCallback((systolic = data.systolic, diastolic = data.diastolic) => {
+    const category = getCategory(systolic, diastolic)
+    return category.value === categoryType.OUT_OF_RANGE
+  }, [data.systolic, data.diastolic])
 
   const handleDelete = () => {
     if (window.confirm("¿Eliminar esta medición?")) {
@@ -81,9 +102,9 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      handleSubmit();
+      handleSubmit()
     }
-  };
+  }
 
   const handleFocus = (inputRef: React.RefObject<HTMLInputElement>) => {
     if (inputRef.current) {
@@ -94,18 +115,26 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
   useEffect(() => {
     if (!data.date) {
       if (datePickerRef.current) {
-        const datePicker = datePickerRef.current as HTMLInputElement;
-        datePicker.value = new Date().toISOString().slice(0, 16);
+        const datePicker = datePickerRef.current as HTMLInputElement
+        datePicker.value = formatToISODateString()
+      }
+    } else {
+      if (hasOutOfRangeValues(data.systolic, data.diastolic)) {
+        setShowOutOfRangeMessage(true)
+      } else {
+        setShowOutOfRangeMessage(false)
       }
     }
-  }, [data.date])
+  }, [data.date, data, hasOutOfRangeValues])
 
   useEffect(() => {
     if (selectedLogId) {
       const logToUpdate = getLogById(selectedLogId)
       logToUpdate && setData(logToUpdate)
     }
-  }, [selectedLogId, getLogById])
+
+    return () => setSelectedLogId("")
+  }, [selectedLogId, getLogById, setSelectedLogId])
 
   return (
     <div className={styles.addEditLogContainer}>
@@ -130,7 +159,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         </button>
       </div>
       <div className={styles.content}>
-        <h2>{data.id ? "Actualizar" : "Agregar"} Medición</h2>
+        <h2 id="top">{data.id ? "Actualizar" : "Agregar"} Medición</h2>
 
         <div className={styles.row}>
           <div className={styles.inputContainer}>
@@ -176,7 +205,13 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
             />
           </div>
         </div>
-
+        {showOutOfRangeMessage && (
+          <div className={styles.outOfRangeMessageContainer}>
+            <WarningIcon width="1rem" height="1rem" />
+            <span>Valores fuera de rango</span>
+            <a href="#outOfRangesValues">¿Que significa?</a>
+          </div>
+        )}
         <div className={`${styles.row} ${styles.column}`}>
           <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
             <label htmlFor="date">Fecha</label>
@@ -201,8 +236,12 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         </div>
 
         <BloodPressureLevels />
-      </div>
 
+        <i id="outOfRangesValues"></i>
+        <OutOfRangeValues />
+
+        <a className={styles.backToTop} href="#top">Ir arriba</a>
+      </div>
     </div>
   )
 }
