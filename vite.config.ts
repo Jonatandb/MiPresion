@@ -1,16 +1,20 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react-swc"
 import { fileURLToPath, URL } from "url"
+import svgr from "vite-plugin-svgr"
+import dts from "vite-plugin-dts"
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
+    svgr(),
+    dts(),
     react(),
     {
       name: "rewrite-paths",
       enforce: "post",
       generateBundle(options, bundle) {
-        const basePath = mode === "development" ? "/" : "/MiPresion/";
+        const basePath = mode === "development" ? "/" : "/MiPresion/"
         Object.values(bundle).forEach((chunk) => {
           if (chunk.type === "chunk" || chunk.type === "asset") {
             if ("code" in chunk) {
@@ -18,7 +22,7 @@ export default defineConfig(({ mode }) => ({
                 .replace(/["']\/assets\//g, `"${basePath}assets/`)
             }
           }
-        });
+        })
       }
     }
   ],
