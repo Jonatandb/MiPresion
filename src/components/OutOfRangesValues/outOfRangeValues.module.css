@@ -1,0 +1,17 @@
+.title {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.outOfRangeValuesContainer ul {
+  margin: 0;
+}
+
+.outOfRangeValuesContainer li {
+  margin-top: .5rem;
+}
+
+.outOfRangeValuesContainer a {
+  color: var(--color-primary);
+}
