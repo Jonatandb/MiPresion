@@ -65,6 +65,9 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
               <span>¿Dudas? ¿Sugerencias? ¿Errores?</span>
             </div>
 
+            <span className={styles.rowTitle}></span>
+            <span className={styles.rowTitle}></span>
+
             <SocialMedia />
             <Donate />
 
