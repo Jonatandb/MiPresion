@@ -107,6 +107,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto
   - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar desde otro navegador (Ideal que los ajustes estén en un contexto)
 
+  - [ ] Agregar opción "Otros de mis proyectos"
+
 - Home:
 
   - [ ] Agregar opción de filtrado por rango de fechas
@@ -123,14 +125,13 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
   - [ ] Agregar sección “Otros de mis proyectos”, con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
-- Ayuda:
-  - [ ] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador (Bloqueado por: Funcionalidad exportar/importar)
-
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar debajo de "Agregar una medición", botones de "Ayuda y Preguntas frecuentes", "¿Cómo me tomo la presión?", "¿Dudas? ¿Sugerencias? ¿Errores?" (y otras opciones útiles)
+- [ ] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador
 
 ## ✅ Completado:
+
+- [x] Agregar debajo de "Agregar una medición", componente de "Accesos Directos" con "¿Cómo me tomo la presión?", "¿Sugerencias? ¿Errores?" (y otras opciones útiles)
 
 - [x] Cuando se quita el foco de "Sistólica" y/o "Diastólica", validar (si hay datos en ambos campos) y mostrar una leyenda con "Valores fuera de rango (¿Qué significa?)" (clickeable) que muestre la sección "¿Que significa "Valores fuera de rango"?
 

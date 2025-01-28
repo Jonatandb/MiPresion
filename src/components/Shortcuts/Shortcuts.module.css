@@ -1,0 +1,61 @@
+.shortcutsContainer {
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  width: 65%;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  position: relative;
+  height: 100%;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.rowTitle {
+  margin-top: .8rem;
+  color: var(--text-color-secondary);
+  font-size: .6rem;
+  font-weight: bold;
+  letter-spacing: 0.075rem;
+}
+
+.row {
+  background-color: var(--color-white);
+  padding: 0.3rem .5rem .3rem;
+  border-radius: 0.625rem;
+  display: flex;
+  gap: 0.625rem;
+  align-items: flex-start;
+}
+
+.row:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+}
+
+.row span {
+  font-size: .8rem;
+  font-weight: bold;
+  color: var(--dark-text-tertiary);
+}
+
+.row.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
