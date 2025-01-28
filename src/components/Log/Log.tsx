@@ -55,10 +55,10 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
   return (
     <article className={styles.logContainer} onClick={() => setSelectedLogId(id)}>
       <section className={styles.row}>
-        <span className={`${styles.level} ${styleByCategory[category.value]}`} title="Categoría">
+        <span className={`${styles.level} ${styleByCategory[category.value]}`} title="Nivel">
           {category.value} {(category.value == categoryType.OUT_OF_RANGE) ? <WarningIcon width={20} height={20} /> : ""}
         </span>
-        <span className={styles.date} title={date}>⏱ {date}</span>
+        <span className={styles.date} title="Hora">⏱ {date}</span>
       </section>
       <section className={styles.row}>
         <div className={styles.mmhgContainer}>
@@ -72,15 +72,15 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
           <div className={styles.iconsContainer}>
             {
               medicine ?
-                <img className={styles.icon} width="19" height="19" src={pillFull} alt="Ícono píldora tomada" />
+                <img className={styles.icon} width="19" height="19" src={pillFull} alt="Ícono píldora tomada" title="Píldora tomada" />
                 :
-                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pill"]} alt="Ícono píldora no tomada" />
+                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pill"]} alt="Ícono píldora no tomada" title="Píldora no tomada" />
             }
             {
               notes ?
-                <img className={styles.icon} width="19" height="19" src={pencilFull} alt="Ícono hay notas" title={notes} />
+                <img className={styles.icon} width="19" height="19" src={pencilFull} alt="Ícono hay notas" title="Hay notas" />
                 :
-                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pencil"]} alt="Ícono no hay notas" />
+                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pencil"]} alt="Ícono no hay notas" title="No hay notas" />
             }
           </div>
           <span className={styles.bpm} title="Pulso">{pulse} <span className={styles.leyend}>BPM</span></span>
