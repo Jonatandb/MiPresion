@@ -17,47 +17,78 @@ const SocialMedia = () => {
     })
   }, [])
 
+  const handleImageClick = () => {
+    trackEvent("ImageClicked_ProfilePicture_SocialMedia")
+    window.open("http://jonatandb.github.io/", "_blank", "noopener,noreferrer")
+  }
+
   return (
-    <>
-      <h2 className={styles.title}>Desarrollado por Jonatandb</h2>
-      <div className={styles.socialMediaContainer}>
-        <div className={styles.pictureContainer}>
-          <a href="http://jonatandb.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title='Ir al sitio web de Jonatandb'
-            onClick={() => trackEvent("ImageClicked_ProfilePicture_SocialMedia")}
-          >
-            <img
-              src={jonatandb}
+    <div className={styles.socialMediaContainer}>
+      <h4 className={`${styles.title}`}>Desarrollado por Jonatandb</h4>
+      <div className={styles.socialMediaContent}>
+        <div className={styles.socialMediaContentWrapper}>
+
+          <div className={styles.pictureContainer}>
+            <img src={jonatandb}
               alt="Foto de Jonatandb"
               title="Ir al sitio web de Jonatandb"
               width={100}
-              height={100}
+              onClick={handleImageClick}
             />
-          </a>
+          </div>
+
+          <div className={styles.linksContainer}>
+            <a href="mailto:jonatandb@gmail.com"
+              onClick={() => trackEvent("LinkClicked_Gmail_SocialMedia")}
+            >
+              <img src={gmail}
+                alt="Logo de Gmail"
+                title='Correo a Jonatandb'
+                width={16}
+              />
+              Gmail
+            </a>
+            <a href="http://github.com/jonatandb"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("LinkClicked_Github_SocialMedia")}
+            >
+              <img src={github}
+                alt="Logo de Github"
+                title='Ir al Github de Jonatandb'
+                width={16}
+              />
+              Github
+            </a>
+            <a href="http://linkedin.com/in/jonatandb"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("LinkClicked_LinkedIn_SocialMedia")}
+            >
+              <img src={linkedin}
+                alt="Logo de LinkedIn"
+                title='Ir al LinkedIn de Jonatandb'
+                width={16}
+              />
+              LinkedIn
+            </a>
+            <a href="https://twitter.com/jonatandb"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("LinkClicked_Twitter_SocialMedia")}
+            >
+              <img src={twitter}
+                alt="Logo de X (Twitter)"
+                title='Ir al Twitter de Jonatandb'
+                width={16}
+              />
+              X (Twitter)
+            </a>
+          </div>
         </div>
 
-        <div className={styles.linksContainer}>
-          <a href="mailto:jonatandb@gmail.com" onClick={() => trackEvent("LinkClicked_Gmail_SocialMedia")}>
-            <img src={gmail} width="1rem" height="1rem" alt="Logo de Gmail" title='Correo a Jonatandb' />
-            Gmail
-          </a>
-          <a href="http://github.com/jonatandb" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("LinkClicked_Github_SocialMedia")}>
-            <img src={github} width="1rem" height="1rem" alt="Logo de Github" title='Ir al Github de Jonatandb' />
-            Github
-          </a>
-          <a href="http://linkedin.com/in/jonatandb" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("LinkClicked_LinkedIn_SocialMedia")}>
-            <img src={linkedin} width="1rem" height="1rem" alt="Logo de LinkedIn" title='Ir al LinkedIn de Jonatandb' />
-            LinkedIn
-          </a>
-          <a href="https://twitter.com/jonatandb" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("LinkClicked_Twitter_SocialMedia")}>
-            <img src={twitter} width="1rem" height="1rem" alt="Logo de X (Twitter)" title='Ir al Twitter de Jonatandb' />
-            X (Twitter)
-          </a>
-        </div>
       </div>
-    </>
+    </div>
   )
 }
 

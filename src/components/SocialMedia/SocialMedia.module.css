@@ -1,30 +1,36 @@
-.title {
-  font-size: 1.2rem;
-  margin-top: .5rem;
-  margin-bottom: 0;
-  text-align: center;
+.socialMediaContainer {
+  max-width: 375px;
 }
 
-.socialMediaContainer {
-  display: flex;
+.title {
   margin: 0 auto;
-  justify-content: space-between;
-  padding: 0 1.25rem;
-  width: 80%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.socialMediaContent {
+  display: flex;
+  justify-content: center;
+  border: 2px;
+}
+
+.socialMediaContentWrapper {
+  display: flex;
+  padding: .2rem;
+  gap: 5%;
+  width: 100%;
+  justify-content: center;
 }
 
 .pictureContainer {
   display: flex;
-  padding: 0;
-  margin-top: .2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .pictureContainer img {
-  width: 6.25rem;
-  height: auto;
-  padding: 1px;
-  margin: 0;
   border-radius: 1.25rem;
+  padding: .025rem;
 }
 
 .pictureContainer img:hover {
@@ -35,10 +41,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  white-space: nowrap;
   justify-content: center;
-  padding: 0;
-  margin: 0;
-  gap: .3rem;
+  gap: .2rem;
 }
 
 .linksContainer a,
@@ -46,13 +51,9 @@
 .linksContainer a:focus,
 .linksContainer a:active {
   text-decoration: none;
-  outline: none;
-  border: none;
   display: flex;
   align-items: center;
-  width: 100%;
   border-radius: 0.313rem;
-  padding: 0 .5rem;
   gap: .5rem;
   color: var(--text-color);
   font-weight: 600;
@@ -63,6 +64,7 @@
 }
 
 .linksContainer img {
+  outline: none;
+  border: none;
   width: 1rem;
-  height: auto;
 }
