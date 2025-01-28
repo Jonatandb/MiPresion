@@ -112,6 +112,28 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
     }
   }
 
+  const handleOnBlur = () => {
+    const updatedData = { ...data }
+
+    type LogDataNumberKeys = "systolic" | "diastolic" | "pulse"
+
+    const validateAndSet = (key: LogDataNumberKeys, value: string | number) => {
+      const numValue = Number(value)
+      if (isNaN(numValue) || numValue < 0 || numValue > 500) {
+        updatedData[key] = ""
+      } else {
+        updatedData[key] = numValue
+      }
+    }
+
+    validateAndSet("systolic", data.systolic)
+    validateAndSet("diastolic", data.diastolic)
+    validateAndSet("pulse", data.pulse)
+
+    setData(updatedData)
+  }
+
+
   useEffect(() => {
     if (!data.date) {
       if (datePickerRef.current) {
@@ -174,6 +196,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })}
               value={data.systolic} onKeyDown={handleKeyDown}
               onFocus={() => handleFocus(systolicRef)}
+              onBlur={handleOnBlur}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -188,6 +211,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || "" })}
               value={data.diastolic} onKeyDown={handleKeyDown}
               onFocus={() => handleFocus(diastolicRef)}
+              onBlur={handleOnBlur}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -202,6 +226,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || "" })}
               value={data.pulse} onKeyDown={handleKeyDown}
               onFocus={() => handleFocus(pulseRef)}
+              onBlur={handleOnBlur}
             />
           </div>
         </div>

@@ -129,6 +129,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## ✅ Completado:
 
+- [x] Agregado de validación que elimina valores de sistólica, diastólica y pulso cuando el ingreso es incorrecto (no númerico, menor a cero o mayor a 500)
+
 - [x] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador
 
 - [x] Agregar debajo de "Agregar una medición", componente de "Accesos Directos" con "¿Cómo me tomo la presión?", "¿Sugerencias? ¿Errores?" (y otras opciones útiles)
