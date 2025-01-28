@@ -1,14 +1,8 @@
-# ![](./src/assets/favicon_white.png) Registro de presión sanguínea
+# 🩸MiPresión
+
+- Registro de presión sanguínea
 
 ---
-
-## 👩🏻‍💻 Tecnologías usadas
-
-- React, Vite, TypeScript, CSS Modules
-
----
-
-## 💅🏻 Funcionalidad
 
 <p align="center">
     <a href="https://jonatandb.dev.ar/MiPresion/">
@@ -16,11 +10,18 @@
     </a>
 </p>
 
----
-
 ## 🚀 Sitio Web
 
 [https://jonatandb.dev.ar/MiPresion/](https://jonatandb.dev.ar/MiPresion/)
+
+---
+
+## 👩🏻‍💻 Tecnologías usadas
+
+- React
+- Vite
+- TypeScript
+- CSS Modules
 
 ---
 
@@ -94,6 +95,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
   - [ ] Corregir/agregar tabindex para navegación por teclado
   - [ ] Crear un contexto para guardar todos los ajustes (dark mode, idioma, país, formato de fecha, valores de la tabla de niveles, etc)
+  - Pasar a svg todos los íconos
 
 - Ajustes:
 
@@ -106,10 +108,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - [ ] Agregar opción de exportar por rango de fechas
     - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto
   - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar desde otro navegador (Ideal que los ajustes estén en un contexto)
-
-- Home:
-
-  - [ ] Agregar opción de filtrado por rango de fechas
+  - [ ] Agregar sección “Otros de mis proyectos” (debajo de Donate o SocialMedia, incluso debajo del formulario de contacto), con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
 - Agregar medición:
 
@@ -118,10 +117,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
-
-- Contacto:
-
-  - [ ] Agregar sección “Otros de mis proyectos”, con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
 ## 👷🏻‍♂️ Trabajando:
 
