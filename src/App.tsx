@@ -14,7 +14,9 @@ import { useLogContext } from "@/hooks/useLogContext"
 import { trackPageView } from "@/utils/analytics"
 import Help from "@/components/Help/Help"
 import BloodPressureMeasurementGuideWrapper from "@/components/Modals/BloodPressureMeasurementGuideWrapper/BloodPressureMeasurementGuideWrapper"
-import OutOfRangeValuesWrapper from "./components/Modals/OutOfRangeValuesWrapper/OutOfRangeValuesWrapper"
+import OutOfRangeValuesWrapper from "@/components/Modals/OutOfRangeValuesWrapper/OutOfRangeValuesWrapper"
+import Shortcuts from "@/components/Shortcuts/Shortcuts"
+import DataStorageWrapper from "@/components/Modals/DataStorageWrapper/DataStorageWrapper"
 
 const App = () => {
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
@@ -49,8 +51,12 @@ const App = () => {
           <FloatingAddButton onClick={() => navigate("/addedit")} />
         </>
       ) : (
-        <NoLogsMessage onAddClicked={() => navigate("/addedit")} />
+        <>
+          <NoLogsMessage onAddClicked={() => navigate("/addedit")} />
+          <Shortcuts />
+        </>
       )}
+
 
       <Routes>
 
@@ -75,6 +81,12 @@ const App = () => {
           <Route path="outofrangevalues" element={
             <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
               <OutOfRangeValuesWrapper onClose={() => handleCloseModal("/help")} />
+            </Modal>
+          } />
+
+          <Route path="storage" element={
+            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
+              <DataStorageWrapper onClose={() => handleCloseModal("/help")} />
             </Modal>
           } />
 

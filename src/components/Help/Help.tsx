@@ -6,6 +6,7 @@ import Donate from "@/components/Donate/Donate"
 import QuestionIcon from "@/assets/svg/question.svg?react"
 import WarningIcon from "@/assets/svg/warning.svg?react"
 import ChartIcon from "@/assets/svg/chart.svg?react"
+import StorageIcon from "@/assets/svg/storage.svg?react"
 
 import styles from "./Help.module.css"
 
@@ -35,6 +36,12 @@ const Help = ({ onClose }: { onClose: () => void }) => {
             <div className={styles.row} onClick={() => navigate("/help/outofrangevalues")}>
               <WarningIcon width={20} height={20} />
               <span>¿"Valores fuera de rango"?</span>
+            </div>
+
+            <span className={styles.rowTitle}></span>
+            <div className={styles.row} onClick={() => navigate("/help/storage")}>
+              <StorageIcon width={20} height={20} />
+              <span>¿Dónde se guardan mis datos?</span>
             </div>
 
             <span className={styles.rowTitle}></span>

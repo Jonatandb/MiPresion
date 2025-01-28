@@ -107,8 +107,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto
   - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar desde otro navegador (Ideal que los ajustes estén en un contexto)
 
-  - [ ] Agregar opción "Otros de mis proyectos"
-
 - Home:
 
   - [ ] Agregar opción de filtrado por rango de fechas
@@ -127,9 +125,11 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador
+- [ ] Agregar opción "Otros de mis proyectos"
 
 ## ✅ Completado:
+
+- [x] Agregar sección "¿Dónde se guardan mis datos?" -> Navegador
 
 - [x] Agregar debajo de "Agregar una medición", componente de "Accesos Directos" con "¿Cómo me tomo la presión?", "¿Sugerencias? ¿Errores?" (y otras opciones útiles)
 
