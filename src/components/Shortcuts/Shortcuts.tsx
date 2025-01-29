@@ -18,19 +18,19 @@ const Shortcuts = () => {
 
         <span className={styles.rowTitle}></span>
         <div className={styles.row} onClick={() => navigate("/help/measurementguide")}>
-          <QuestionIcon width={20} height={20} />
+          <QuestionIcon width="1.25rem" height="1.25rem" />
           <span>¿Cómo me tomo la presión?</span>
         </div>
 
         <span className={styles.rowTitle}></span>
         <div className={styles.row} onClick={() => navigate("/help/bloodpressurelevels")}>
-          <ChartIcon width={20} height={20} />
+          <ChartIcon width="1.25rem" height="1.25rem" />
           <span>Tabla de niveles de presión</span>
         </div>
 
         <span className={styles.rowTitle}></span>
         <div className={styles.row} onClick={() => navigate("/settings/contact")}>
-          <EmailIcon width={20} height={20} />
+          <EmailIcon width="1.25rem" height="1.25rem" />
           <span>¿Sugerencias? ¿Errores?</span>
         </div>
 
@@ -41,7 +41,6 @@ const Shortcuts = () => {
         <Donate />
 
       </div>
-      <div>&nbsp;</div>
     </div>
   )
 }

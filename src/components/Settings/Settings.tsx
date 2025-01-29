@@ -42,26 +42,26 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
 
             <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
             <div className={`${styles.row} ${!thereAreLogs && styles.disabled}`} onClick={() => navigate("/settings/exportpdf")}>
-              <PdfIcon width={20} height={20} />
+              <PdfIcon width="1.25rem" height="1.25rem" />
               <span>Exportar a PDF</span>
             </div>
 
             <span className={styles.rowTitle}>PERSONALIZAR</span>
             <div className={styles.row} onClick={() => toggleTheme()}>
               {theme === "light" ?
-                <MoonIcon width={20} height={20} />
+                <MoonIcon width="1.25rem" height="1.25rem" />
                 :
-                <SunIcon width={20} height={20} />}
+                <SunIcon width="1.25rem" height="1.25rem" />}
               <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
             </div>
             <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
-              <TrashIcon width={20} height={20} />
+              <TrashIcon width="1.25rem" height="1.25rem" />
               <span>Eliminar todas las mediciones</span>
             </div>
 
             <span className={styles.rowTitle}>CONTACTO</span>
             <div className={styles.row} onClick={() => navigate("/settings/contact")}>
-              <EmailIcon width={20} height={20} />
+              <EmailIcon width="1.25rem" height="1.25rem" />
               <span>¿Dudas? ¿Sugerencias? ¿Errores?</span>
             </div>
 

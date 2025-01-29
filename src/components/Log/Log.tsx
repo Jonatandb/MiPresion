@@ -56,7 +56,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
     <article className={styles.logContainer} onClick={() => setSelectedLogId(id)}>
       <section className={styles.row}>
         <span className={`${styles.level} ${styleByCategory[category.value]}`} title="Nivel">
-          {category.value} {(category.value == categoryType.OUT_OF_RANGE) ? <WarningIcon width={20} height={20} /> : ""}
+          {category.value} {(category.value == categoryType.OUT_OF_RANGE) ? <WarningIcon width="1.25rem" height="1.25rem" /> : ""}
         </span>
         <span className={styles.date} title="Hora">⏱ {date}</span>
       </section>
