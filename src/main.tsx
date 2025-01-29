@@ -10,11 +10,13 @@ import "@/styles.css"
 
 initializeGA()
 
+const basename = import.meta.env.MODE === "development" ? "/" : "/MiPresion"
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeContextProvider>
       <LogContextProvider>
-        <Router>
+        <Router basename={basename}>
           <Routes>
             <Route path="*" element={<App />} />
           </Routes>
