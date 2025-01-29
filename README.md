@@ -124,10 +124,11 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 ## 👷🏻‍♂️ Trabajando:
 
 - [ ] Exportar a PDF:
-  - [ ] Agregar opción de exportar por rango de fechas
-  - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto para el rango de fechas actual.
+  - [ ] Agregar al reporte el promedio de presión máxima/mínima/pulsaciones para el rango de fechas actual.
 
 ## ✅ Completado:
+
+- [x] Agregar opción de exportar por rango de fechas
 
 - [x] Pasar a svg todos los íconos
 
