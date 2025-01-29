@@ -1,10 +1,10 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import Logo from "@/components/Logo/Logo"
-
 import QuestionIcon from "@/assets/svg/question.svg?react"
 import WarningIcon from "@/assets/svg/warning.svg?react"
 import ChartIcon from "@/assets/svg/chart.svg?react"
 import StorageIcon from "@/assets/svg/storage.svg?react"
+import News from "@/components/News/News"
 
 import styles from "./Help.module.css"
 
@@ -51,6 +51,7 @@ const Help = ({ onClose }: { onClose: () => void }) => {
             <span className={styles.rowTitle}></span>
             <span className={styles.rowTitle}></span>
 
+            <News />
           </>
         )}
 

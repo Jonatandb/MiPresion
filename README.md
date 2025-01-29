@@ -129,6 +129,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## ✅ Completado:
 
+- [x] Agregado de sección con changelog al final del modal de ayuda
+
 - [x] Agregar opción de exportar por rango de fechas
 
 - [x] Pasar a svg todos los íconos
