@@ -265,7 +265,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         <i id="outOfRangesValues"></i>
         <OutOfRangeValues />
 
-        <a className={styles.backToTop} href="#top">Ir arriba</a>
+        <a className={styles.backToTop} href="#top">Volver arriba</a>
       </div>
     </div>
   )

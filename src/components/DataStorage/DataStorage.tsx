@@ -6,12 +6,12 @@ const DataStorage = () => {
 
       <h2 className={styles.title}>¿Dónde se guardan mis datos?</h2>
 
-      <p>Los datos que ingresaste quedan guardados localmente en tu navegador. Esto significa que solo vos podés acceder a ellos desde este dispositivo. Es importante que sepas:</p>
+      <p>Los datos que ingresaste quedan guardados localmente <strong>en tu navegador</strong>. Esto significa que solo vos podés acceder a ellos desde este dispositivo. <strong>Es importante que sepas</strong>:</p>
 
       <ul>
-        <li>Si borrás los datos de navegación, las mediciones se van a perder.</li>
-        <li>Si cambiás de navegador, no vas a encontrar tus datos en el nuevo.</li>
-        <li>En modo incógnito los datos se borran al cerrar la ventana.</li>
+        <li>Si borrás los datos de navegación, las mediciones <strong>se van a perder</strong>.</li>
+        <li>Si cambiás de navegador, <strong>no vas a encontrar tus datos</strong> en el nuevo.</li>
+        <li>En modo incógnito los datos <strong>se borran</strong> al cerrar la ventana.</li>
       </ul>
 
       <p>¡Dato importante! Los datos están seguros en tu dispositivo - no se guardan en ningún servidor ni se comparten con nadie.</p>

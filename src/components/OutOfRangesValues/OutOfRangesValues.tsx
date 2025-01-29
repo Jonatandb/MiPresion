@@ -15,7 +15,7 @@ const OutOfRangeValues = () => {
         <li><strong>Posibles errores al ingresar los datos:</strong> Es importante asegurarte de que los valores que ingreses sean correctos y representen una medición real. A veces, un error al escribir puede dar lugar a este mensaje.</li>
       </ul>
 
-      <p>Si estás seguro de que los valores son correctos, es recomendable consultar con un profesional de la salud para obtener una evaluación precisa. Si tenés dudas, también podés revisar la guía sobre <Link to="/help/measurementguide">cómo tomar una medición de presión arterial correctamente</Link>.</p>
+      <p>Si estás seguro de que los valores son correctos, es recomendable consultar con un profesional de la salud para obtener una evaluación precisa. Si tenés dudas, también podés revisar la guía sobre <em><Link to="/help/measurementguide">cómo tomar una medición de presión arterial correctamente</Link></em>.</p>
 
     </div>
   )
