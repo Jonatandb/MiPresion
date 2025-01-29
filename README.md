@@ -94,7 +94,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - Refactors:
 
   - [ ] Corregir/agregar tabindex y outline para navegación por teclado
-  - [ ] Crear un contexto para guardar todos los ajustes (dark mode, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
+  - [ ] Crear un contexto para guardar todos los ajustes (dark mode, theter wallet, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
 
 - Ajustes:
 
