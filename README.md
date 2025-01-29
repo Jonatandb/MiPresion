@@ -93,9 +93,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Refactors:
 
-  - [ ] Corregir/agregar tabindex para navegación por teclado
-  - [ ] Crear un contexto para guardar todos los ajustes (dark mode, idioma, país, formato de fecha, valores de la tabla de niveles, etc)
-  - Pasar a svg todos los íconos
+  - [ ] Corregir/agregar tabindex y outline para navegación por teclado
+  - [ ] Crear un contexto para guardar todos los ajustes (dark mode, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
 
 - Ajustes:
 
@@ -117,10 +116,17 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
+      - Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
+
+- A considerar:
+  - [ ] Hacer versión responsive para que en desktop aproveche todo el ancho de la pantalla
+  - [ ] Agregado de validación para avisar si hay cambios sin guardar y se está intentando cambiar de pantalla
+  - [ ] Agregar opción "Mis otros proyectos"
+  - [ ] Agregar alguna forma de lograr que el usuario se adhiera a registrar las mediciones (para que no se olvide). Podría investiagr sobre ServiceWorkers para enviar una notificación/recordatorio o permitir configurar un envío de email diario de varias veces al día "recordando" tomarse y registrar la presión.
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Agregar opción "Otros de mis proyectos"
+- [ ] Pasar a svg todos los íconos
 
 ## ✅ Completado:
 
@@ -247,6 +253,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - [x] Guardado de datos en localStorage
 
 - [x] Usar Vite: npm create vite
+
+---
 
 ## 🛠 Herramientas y recursos utilizados:
 
