@@ -103,32 +103,33 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
   - [ ] Agregar "Medicina Tomada" con un switch
   - [ ] Agregar "Niveles de presión" con un switch
   - [ ] Agregar "Notas" con un switch
-  - [ ] Exportar a PDF:
-    - [ ] Agregar opción de exportar por rango de fechas
-    - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto
   - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar desde otro navegador (Ideal que los ajustes estén en un contexto)
   - [ ] Agregar sección “Otros de mis proyectos” (debajo de Donate o SocialMedia, incluso debajo del formulario de contacto), con 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de los proyectos.
 
 - Agregar medición:
 
-  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar tales valores y finalmente guarde el valor de sistólica y diastólica promediados
   - [ ] Posibilidad de registar:
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
       - Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
+  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar tales valores y finalmente guarde el valor de sistólica y diastólica promediados
 
 - A considerar:
   - [ ] Hacer versión responsive para que en desktop aproveche todo el ancho de la pantalla
-  - [ ] Agregado de validación para avisar si hay cambios sin guardar y se está intentando cambiar de pantalla
+  - [ ] Agregado de validación para avisar si hay cambios sin guardar y se está intentando cambiar de pantalla (o cerrar el modal)
   - [ ] Agregar opción "Mis otros proyectos"
   - [ ] Agregar alguna forma de lograr que el usuario se adhiera a registrar las mediciones (para que no se olvide). Podría investiagr sobre ServiceWorkers para enviar una notificación/recordatorio o permitir configurar un envío de email diario de varias veces al día "recordando" tomarse y registrar la presión.
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Pasar a svg todos los íconos
+- [ ] Exportar a PDF:
+  - [ ] Agregar opción de exportar por rango de fechas
+  - [ ] Agregar al reporte el promedio de presión máxima, mínima y pulsaciones por minuto para el rango de fechas actual.
 
 ## ✅ Completado:
+
+- [x] Pasar a svg todos los íconos
 
 - [x] Agregado de validación que elimina valores de sistólica, diastólica y pulso cuando el ingreso es incorrecto (no númerico, menor a cero o mayor a 500)
 
@@ -262,6 +263,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)
 - [Photopea](https://www.photopea.com/)
 - [Flaticon](https://www.flaticon.com/)
+- [Canva](https://www.canva.com/es_419/)
+- [Free Online PNG to SVG Converter | Adobe Express](https://www.adobe.com/express/feature/image/convert/png-to-svg)
 
 ---
 

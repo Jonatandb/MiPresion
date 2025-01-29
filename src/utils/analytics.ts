@@ -9,7 +9,7 @@ export const initializeGA = () => {
     ReactGA.initialize(GA4_MEASUREMENT_ID, {
       testMode: import.meta.env.DEV
     })
-    console.log("I want to belive 🛸", { testMode: import.meta.env.DEV })
+    console.log("I want to believe 🛸")
   }
 }
 
