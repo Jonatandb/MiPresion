@@ -129,6 +129,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## ✅ Completado:
 
+- [x] Agregado de 404.html y configuración de Vite para que lo copie a la carpeta build, para ver si cuando refrescan la pagina estando en una ruta simulada por React Router (ej: /MiPresion/help) en lugar de obtener un error el usuario es redirigido a la home
+
 - [x] Agregado de sección con changelog al final del modal de ayuda
 
 - [x] Agregar opción de exportar por rango de fechas

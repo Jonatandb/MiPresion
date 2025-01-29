@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc"
 import { fileURLToPath, URL } from "url"
 import svgr from "vite-plugin-svgr"
 import dts from "vite-plugin-dts"
+import { viteStaticCopy } from "vite-plugin-static-copy"
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -24,7 +25,15 @@ export default defineConfig(({ mode }) => ({
           }
         })
       }
-    }
+    },
+    viteStaticCopy({
+      targets: [
+        {
+          src: "404.html",
+          dest: "", // Empty string means root of outDir (docs)
+        },
+      ],
+    }),
   ],
   base: mode === "development" ? "/" : "/MiPresion/",
   build: {
