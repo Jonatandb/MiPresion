@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { trackEvent } from "@/utils/analytics"
 
 import jonatandb from "@/assets/jonatandb.jpg"
 import gmail from "@/assets/gmail.png"
@@ -7,7 +8,6 @@ import linkedin from "@/assets/linkedin.png"
 import twitter from "@/assets/twitter.png"
 
 import styles from "./SocialMedia.module.css"
-import { trackEvent } from "@/utils/analytics"
 
 const SocialMedia = () => {
   useEffect(() => {
