@@ -38,69 +38,110 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 5,
   },
+  tableHeaderCell: {
+    textAlign: "center",
+    border: "1px solid #555",
+  },
   tableRow: {
     display: "flex",
     flexDirection: "row",
     padding: 5,
-  },
-  marginTop10: {
-    marginTop: 10,
+    width: "100%",
   },
   borderGray: {
     border: "1px solid #555",
+  },
+  header: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  headerRow: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  headerLogo: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-end",
+  },
+  headerLogoImage: {
+    width: 40,
+    height: 40,
+    borderRadius: "25%",
+    marginRight: "5px",
+  },
+  headerLogoText: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  headerRight: {
+    display: "flex",
+    justifyContent: "flex-end",
+    height: "100%",
+  },
+  link: {
+    fontSize: 10,
+    color: "#00F",
+  },
+  footer: {
+    fontSize: 10,
+    marginTop: "10px",
+    width: "100%",
+    textAlign: "center"
   },
 })
 
 const PDFReport = ({ logs }: { logs: LogData[] }) => {
   const tableTitle = `Reporte de mediciones - ${formatToShortDateWithTimeString()}`
+  let totalSystolic = 0
+  let totalDiastolic = 0
+  let totalPulse = 0
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-
-          <View fixed style={{ display: "flex", flexDirection: "column" }} id="header">
-            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-              <View style={{ display: "flex", flexDirection: "row", alignItems: "flex-end" }}>
-                <Image src={favicon120} style={{ width: 40, height: 40, borderRadius: "25%", marginRight: "5px" }} />
-                <View style={{ display: "flex", flexDirection: "column" }}>
+          <View fixed style={styles.header} id="header">
+            <View style={styles.headerRow}>
+              <View style={styles.headerLogo}>
+                <Image src={favicon120} style={styles.headerLogoImage} />
+                <View style={styles.headerLogoText}>
                   <Text style={styles.textXLarge}>MiPresión</Text>
                   <Text style={styles.textSmall}>Registro de Presión Sanguínea</Text>
                 </View>
               </View>
-
-              <View style={{ display: "flex", justifyContent: "flex-end", height: "100%" }}>
-                <Text style={{ ...styles.textSmall }}>Desarrollado por Jonatandb@gmail.com</Text>
-                <Text style={{ ...styles.textSmall, color: "#00F" }}>https://jonatandb.dev.ar/MiPresion</Text>
+              <View style={styles.headerRight}>
+                <Text style={styles.textSmall}>Desarrollado por Jonatandb@gmail.com</Text>
+                <Text style={styles.link}>https://jonatandb.dev.ar/MiPresion</Text>
               </View>
             </View>
-
             <Text style={{ ...styles.textLarge, margin: "15px 0" }}>{tableTitle}</Text>
           </View>
 
           <View style={{ ...styles.table, ...styles.borderGray }}>
-            <View style={{ ...styles.tableRow, width: "100%" }} id="tableHeader">
-              <View style={{ width: "12%", textAlign: "left", border: "1px solid #555" }}>
+            <View style={styles.tableRow} id="tableHeader">
+              <View style={{ ...styles.tableHeaderCell, textAlign: "left", width: "12%" }}>
                 <Text style={styles.textMedium}>Fecha</Text>
               </View>
-              <View style={{ width: "7%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "7%" }}>
                 <Text style={styles.textMedium}>Hora</Text>
               </View>
-              <View style={{ width: "10%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "10%" }}>
                 <Text style={styles.textMedium}>Sistólica</Text>
               </View>
-              <View style={{ width: "12%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "12%" }}>
                 <Text style={styles.textMedium}>Diastólica</Text>
               </View>
-              <View style={{ width: "8%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "8%" }}>
                 <Text style={styles.textMedium}>Pulso</Text>
               </View>
-              <View style={{ width: "12%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "12%" }}>
                 <Text style={styles.textMedium}>Medicina</Text>
               </View>
-              <View style={{ width: "10%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "10%" }}>
                 <Text style={styles.textMedium}>Nivel</Text>
               </View>
-              <View style={{ width: "29%", textAlign: "center", border: "1px solid #555" }}>
+              <View style={{ ...styles.tableHeaderCell, width: "29%" }}>
                 <Text style={styles.textMedium}>Notas</Text>
               </View>
             </View>
@@ -110,9 +151,13 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
                 const onlyDDMMYYYYDate = new Date(date).toLocaleDateString("es-ES").split("T")[0]
                 const time = date.split("T")[1].substring(0, 5)
                 const category = getCategory(systolic, diastolic).value
+                totalSystolic += Number(systolic)
+                totalDiastolic += Number(diastolic)
+                totalPulse += Number(pulse)
+
                 return (
                   <View key={index}>
-                    <View wrap={false} style={{ ...styles.tableRow, width: "100%", backgroundColor: (index % 2 === 0) ? "#CCC" : "transparent" }}>
+                    <View wrap={false} style={{ ...styles.tableRow, backgroundColor: (index % 2 === 0) ? "transparent" : "#CCC" }}>
                       <View style={{ width: "12%", textAlign: "left" }}>
                         <Text style={styles.textMedium}>{onlyDDMMYYYYDate}</Text>
                       </View>
@@ -142,14 +187,31 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
                 )
               })
             }
+
+            <View wrap={false} style={{ ...styles.tableRow }}>
+              <View style={{ width: "19%", textAlign: "center", backgroundColor: "#CCC" }}>
+                <Text style={styles.textMedium}>Promedios:</Text>
+              </View>
+              <View style={{ width: "10%", textAlign: "center", backgroundColor: "#CCC" }}>
+                <Text style={styles.textMedium}>{Math.round(totalSystolic / logs.length)}</Text>
+              </View>
+              <View style={{ width: "12%", textAlign: "center", backgroundColor: "#CCC" }}>
+                <Text style={styles.textMedium}>{Math.round(totalDiastolic / logs.length)}</Text>
+              </View>
+              <View style={{ width: "8%", textAlign: "center", backgroundColor: "#CCC" }}>
+                <Text style={styles.textMedium}>{Math.round(totalPulse / logs.length)}</Text>
+              </View>
+              <View style={{ width: "51%" }}>
+                <Text></Text>
+              </View>
+            </View>
           </View>
 
           <Text
             fixed
-            style={{ ...styles.textSmall, ...styles.marginTop10, width: "100%", textAlign: "center" }}
-            render={({ pageNumber, totalPages }) => (
-              `${pageNumber} / ${totalPages}`
-            )} />
+            style={styles.footer}
+            render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+          />
         </View>
 
       </Page>

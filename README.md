@@ -108,11 +108,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Agregar medición:
 
-  - [ ] Posibilidad de registar:
-    - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
-    - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
-    - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
-      - Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
   - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar valores de una segunda medición y finalmente guarde el valor de sistólica, diastólica y pulso promediados.
 
 - A considerar:
@@ -124,10 +119,16 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Exportar a PDF:
-  - [ ] Agregar al reporte el promedio de presión sistólica/diastólica/pulso para el rango de fechas actual.
+- Agregar medición:
+  - [ ] Posibilidad de registar:
+    - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
+    - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
+    - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
+      - \*Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
 
 ## ✅ Completado:
+
+- [x] Agregar al reporte el promedio de presión sistólica/diastólica/pulso para el rango de fechas actual.
 
 - [x] Agregado de 404.html y configuración de Vite para que lo copie a la carpeta build, para ver si cuando refrescan la pagina estando en una ruta simulada por React Router (ej: /MiPresion/help) en lugar de obtener un error el usuario es redirigido a la home
 
@@ -265,6 +266,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 🛠 Herramientas y recursos utilizados:
 
+- [React-PDF](https://react-pdf.org/)
 - [EmailJS](https://emailjs.com)
 - [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)
 - [Photopea](https://www.photopea.com/)
