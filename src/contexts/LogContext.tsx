@@ -1,6 +1,6 @@
 
-import { createContext, useEffect, useState } from "react";
-import { LogData } from "@/components/AddEditLog/AddEditLog";
+import { createContext, useEffect, useState } from "react"
+import { LogData } from "@/components/AddEditLog/AddEditLog"
 
 export interface LogContextState {
   logs: LogData[]
@@ -13,50 +13,49 @@ export interface LogContextState {
   resetLogs: () => void
 }
 
-const LogContext = createContext<LogContextState>({} as LogContextState);
+const LogContext = createContext<LogContextState>({} as LogContextState)
 
-const initialState: LogData[] = localStorage.getItem('logs') ? JSON.parse(localStorage.getItem('logs') as string) : [];
+const initialState: LogData[] = localStorage.getItem("logs") ? JSON.parse(localStorage.getItem("logs") as string) : []
 
 const sortLogs = (logs: LogData[]) => logs.sort((a, b) => b.date.localeCompare(a.date))
 
 const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [logs, setLogs] = useState<LogData[]>(initialState)
-  const [selectedLogId, setSelectedLogId] = useState('')
+  const [logs, setLogs] = useState<LogData[]>(() => sortLogs(initialState))
+  const [selectedLogId, setSelectedLogId] = useState("")
 
   const addLog = (newLog: LogData) => {
     const id = crypto.randomUUID()
     newLog.id = id
     setLogs(prevLogs => sortLogs([...prevLogs, newLog]))
-    setSelectedLogId('')
+    setSelectedLogId("")
   }
 
   const updateLog = (updatedLog: LogData) => {
-    const OldLog = logs.find(oldLog => oldLog.id === updatedLog.id)
-    if (!OldLog) return
     setLogs(prevLogs => {
-      return sortLogs([
-        ...prevLogs.filter(log => log.id !== updatedLog.id),
-        { ...OldLog, ...updatedLog }
-      ])
+      const newLogs = prevLogs.map(log =>
+        log.id === updatedLog.id
+          ? { ...log, ...updatedLog }
+          : log
+      )
+      return sortLogs(newLogs)
     })
-    setSelectedLogId('')
+    setSelectedLogId("")
   }
 
   const deleteLog = (id: string) => {
     setLogs(logs.filter(log => log.id !== id))
-    setSelectedLogId('')
+    setSelectedLogId("")
   }
 
   const getLogById = (id: string) => logs.find(log => log.id === id)
 
   const resetLogs = () => {
     setLogs([])
-    setSelectedLogId('')
+    setSelectedLogId("")
   }
 
   useEffect(() => {
-    localStorage.setItem('logs', JSON.stringify(logs))
-
+    localStorage.setItem("logs", JSON.stringify(logs))
   }, [logs])
 
 
