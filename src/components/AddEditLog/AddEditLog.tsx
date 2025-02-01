@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { useLogContext } from "@/hooks/useLogContext"
 import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
-import OutOfRangeValues from "@/components/OutOfRangesValues/OutOfRangesValues"
+import OutOfRangeValues from "@/components/OutOfRangeValues/OutOfRangeValues"
 import { formatToISODateString } from "@/utils/formatDateUtils"
 import { categoryType, getCategory } from "@/utils/getCategory"
 
@@ -25,7 +25,6 @@ interface AddEditLogProps {
 }
 
 const AddEditLog = ({ onClose }: AddEditLogProps) => {
-  const { setSelectedLogId } = useLogContext()
   const [data, setData] = useState<LogData>(() => {
     const initialState: LogData = {
       id: "",
@@ -39,8 +38,8 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
     return initialState
   })
   const [showOutOfRangeMessage, setShowOutOfRangeMessage] = useState(false)
+  const { selectedLogId, setSelectedLogId, getLogById, addLog, updateLog, deleteLog } = useLogContext()
 
-  const { selectedLogId, getLogById, addLog, updateLog, deleteLog } = useLogContext()
   const datePickerRef = React.useRef(null)
   const systolicRef = React.useRef(null)
   const diastolicRef = React.useRef(null)

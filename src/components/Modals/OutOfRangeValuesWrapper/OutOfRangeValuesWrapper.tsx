@@ -1,5 +1,5 @@
 import Logo from "@/components/Logo/Logo"
-import OutOfRangeValues from "@/components/OutOfRangesValues/OutOfRangesValues"
+import OutOfRangeValues from "@/components/OutOfRangeValues/OutOfRangeValues"
 import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
 
 import styles from "./OutOfRangeValuesWrapper.module.css"

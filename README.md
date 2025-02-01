@@ -99,12 +99,12 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - Ajustes:
 
+  - [ ] Agregar opción "Exportar/Importar los datos" (json), para importar todo desde otro navegador o `dominio` (Ideal que los ajustes estén en un contexto)
   - [ ] Agregar opción de "Modo Daltónico"
   - [ ] Reemplazar "Activar Tema Oscuro" que cambia a "Activar Tema Claro" con un switch
   - [ ] Agregar "Medicina Tomada" con un switch
   - [ ] Agregar "Niveles de presión" con un switch
   - [ ] Agregar "Notas" con un switch
-  - [ ] Agregar opción "Exportar/Importar todos los datos" (En formato json), para descargar e importar todo desde otro navegador (Ideal que los ajustes estén en un contexto)
   - [ ] Agregar sección “Otros de mis proyectos” (debajo de Donate o SocialMedia, incluso debajo del formulario de contacto), con proyectos como 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de tales proyectos.
   - [ ] Agregar opción de exportar reporte a archivo de Excel
   - [ ] Reemplazar alerts con Toastify's (react-toastify)
