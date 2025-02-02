@@ -1,6 +1,18 @@
+import { Link } from "react-router-dom"
+import { useLogContext } from "@/hooks/useLogContext"
+
 import styles from "./News.module.css"
 
+const generateLinkOrSpan = (to: string, text: string, condition = true) => {
+  if (condition) {
+    return <Link to={to}>{text}</Link>
+  }
+  return <span>{text}</span>
+}
+
 const News = () => {
+  const { logs } = useLogContext()
+
   return (
     <div className={styles.newsContainer}>
       <h3 className={styles.title}>¿Que hay de nuevo?</h3>
@@ -9,21 +21,23 @@ const News = () => {
         <li className={styles.newVersion}>
           <strong>v.3.3.0</strong>
           <ul>
-            <li>Se agregó funcionalidad que permite registrar arritmia en las mediciones.</li>
+            <li>Se agregó funcionalidad que permite {generateLinkOrSpan("/addedit", "registrar arritmia en las mediciones")}.</li>
+            <li>Se hicieron ajustes generales que permiten que cuando se agrande el tamaño del texto todo se vea correctamente.</li>
+            <li>Se hicieron ajustes generales que permiten que en pantallas grandes se pueda hacer zoom.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.2.0</strong>
           <ul>
-            <li>El reporte PDF ahora incluye los valores promedio (sistólica, diastólica, pulso) del rango de fechas seleccionado.</li>
+            <li>El {generateLinkOrSpan("/settings/exportpdf", "reporte PDF", logs.length > 0)} ahora incluye los valores promedio (sistólica, diastólica, pulso) del rango de fechas seleccionado.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.0.0</strong>
           <ul>
-            <li><strong>Nueva funcionalidad</strong>: Generación de informes (PDF) por rango de fechas.</li>
+            <li><strong>Nueva funcionalidad</strong>: Selección de rango de fechas durante la {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
             <li>Mejoras en la consistencia visual general de la aplicación.</li>
           </ul>
         </li>
@@ -33,8 +47,8 @@ const News = () => {
           <ul>
             <li><strong>Nuevos componentes</strong>:
               <ul>
-                <li><strong>Shortcuts</strong>: Accesos rápidos para mejorar la usabilidad.</li>
-                <li><strong>DataStorage</strong>: Sección de la ayuda que explica dónde se almacenan los datos.</li>
+                <li><strong>Shortcuts</strong>: Accesos rápidos para mejorar la usabilidad de los nuevos usuarios.</li>
+                <li><strong>DataStorage</strong>: Sección de la ayuda que explica {generateLinkOrSpan("/help/storage", "dónde se almacenan los datos")}.</li>
               </ul>
             </li>
             <li>Validación de entrada para restablecer valores de presión arterial inválidos.</li>
@@ -44,15 +58,15 @@ const News = () => {
         <li className={styles.newVersion}>
           <strong>v.2.1.1</strong>
           <ul>
-            <li><strong>Nueva funcionalidad</strong>: Detección de mediciones fuera de rango con icono de advertencia y mensajes de alerta.</li>
-            <li>Mejoras en los estilos de los componentes <strong>SocialMedia</strong> y <strong>Donate</strong>.</li>
+            <li><strong>Nueva funcionalidad</strong>: Detección de mediciones fuera de rango con icono de advertencia y mensaje de alerta al guardar.</li>
+            <li>Mejoras en los estilos de los componentes {generateLinkOrSpan("/settings", "SocialMedia y Donate")}.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.1.3.0</strong>
           <ul>
-            <li><strong>Nueva funcionalidad</strong>: Exportación de datos a PDF.</li>
+            <li><strong>Nueva funcionalidad</strong>: {generateLinkOrSpan("/settings/exportpdf", "Exportación de datos a PDF", logs.length > 0)}.</li>
             <li>Mejoras en la optimización de imágenes y favicons.</li>
           </ul>
         </li>
@@ -63,7 +77,7 @@ const News = () => {
             <li><strong>Nuevos componentes</strong>:
               <ul>
                 <li><strong>About</strong>: Información sobre la aplicación (luego renombrado a <strong>Help</strong>).</li>
-                <li><strong>ContactForm</strong>: Formulario de contacto para feedback.</li>
+                <li><strong>ContactForm</strong>: {generateLinkOrSpan("/settings/contact", "Formulario de contacto")} para feedback.</li>
               </ul>
             </li>
             <li>Mejoras en la organización del código y optimizaciones sugeridas por <strong>Lighthouse</strong> para SEO y un rendimiento mejorado.</li>
