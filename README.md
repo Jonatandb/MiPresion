@@ -111,6 +111,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
   - [ ] Agregar React-Modal o similar para reemplazar los confirm
   - [ ] Agregar React-share para permitir compartir el sitio en redes sociales
   - [ ] Agregar React-helmet para mejorar SEO
+  - [ ] Simplificar ítem wallet USDT: quitar address y mostrarla en el alert de confirmación de copiado al portapapeles
 
 - Agregar medición:
 
@@ -127,11 +128,13 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 - Agregar medición:
   - [ ] Posibilidad de registar:
     - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
-    - Posición del cuerpo (Menú desplegable: Sentado, Parado, Acostado)
+    - Postura (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
       - \*Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
 
 ## ✅ Completado:
+
+- [x] Reemplazar px por rem en todos los CSS
 
 - [x] Agregar al reporte el promedio de presión sistólica/diastólica/pulso para el rango de fechas actual.
 
@@ -225,8 +228,6 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 - [x] Usar variables CSS en todos los CSS
 
-- [x] Reemplazar px por rem en todos los CSS
-
 - [x] Corregir colores de dark mode
 
 - [x] Implementar CSS Modules en Log y Header, ToggleTheme, SettingIcon, Logo
@@ -271,6 +272,7 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 🛠 Herramientas y recursos utilizados:
 
+- [SVG Repo](https://www.svgrepo.com/)
 - [React-PDF](https://react-pdf.org/)
 - [EmailJS](https://emailjs.com)
 - [Conversor de PX a REM](https://nekocalc.com/es/px-a-rem-conversor)

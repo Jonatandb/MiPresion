@@ -1,17 +1,17 @@
 .socialMediaContainer {
-  max-width: 375px;
+  max-width: 23.438rem;
 }
 
 .title {
   margin: 0 auto;
   text-align: center;
   font-weight: bold;
+  padding-bottom: .5rem;
 }
 
 .socialMediaContent {
   display: flex;
   justify-content: center;
-  border: 2px;
 }
 
 .socialMediaContentWrapper {

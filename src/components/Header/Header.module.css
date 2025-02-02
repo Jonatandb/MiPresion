@@ -7,7 +7,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 375px;
+  max-width: 23.438rem;
   background-color: var(--light-bg);
   color: var(--light-text);
   border-end-end-radius: 0.625rem;
