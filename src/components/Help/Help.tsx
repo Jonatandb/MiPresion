@@ -43,17 +43,16 @@ const Help = ({ onClose }: { onClose: () => void }) => {
             </div>
 
             <span className={styles.rowTitle}></span>
-            <div className={styles.row} onClick={() => navigate("/help/storage")}>
-              <StorageIcon width="1.25rem" height="1.25rem" />
-              <span>¿Dónde se guardan mis datos?</span>
-            </div>
-
-            <span className={styles.rowTitle}></span>
             <div className={styles.row} onClick={() => navigate("/help/bloodpressurelevels")}>
               <ChartIcon width="1.25rem" height="1.25rem" />
               <span>Tabla de niveles de presión</span>
             </div>
 
+            <span className={styles.rowTitle}></span>
+            <div className={styles.row} onClick={() => navigate("/help/storage")}>
+              <StorageIcon width="1.25rem" height="1.25rem" />
+              <span>¿Dónde se guardan mis datos?</span>
+            </div>
             <span className={styles.rowTitle}></span>
             <span className={styles.rowTitle}></span>
 
