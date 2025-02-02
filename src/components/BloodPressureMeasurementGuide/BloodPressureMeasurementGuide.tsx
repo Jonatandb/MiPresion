@@ -1,4 +1,3 @@
-import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
 
 import styles from "./BloodPressureMeasurementGuide.module.css"
 
@@ -67,7 +66,6 @@ const BloodPressureMeasurementGuide = () => {
       </ul>
 
       <br />
-      <BloodPressureLevels />
 
     </div>
   )
