@@ -6,6 +6,7 @@ export interface LogData {
     medicine: boolean;
     notes: string;
     date: string;
+    arrhythmia: boolean;
 }
 interface AddEditLogProps {
     onClose: () => void;

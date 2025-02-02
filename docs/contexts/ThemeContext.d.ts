@@ -1,6 +1,6 @@
-/// <reference types="react" />
+import { Theme } from './ThemeEnum';
 export interface ThemeContextState {
-    theme: "light" | "dark";
+    theme: Theme;
     toggleTheme: () => void;
 }
 declare const ThemeContext: import('react').Context<ThemeContextState>;
