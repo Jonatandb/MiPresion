@@ -1,11 +1,13 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { useLogContext } from "@/hooks/useLogContext"
+import { useThemeContext } from "@/hooks/useTheme"
 import BloodPressureLevels from "@/components/BloodPressureLevels/BloodPressureLevels"
 import OutOfRangeValues from "@/components/OutOfRangeValues/OutOfRangeValues"
 import { formatToISODateString } from "@/utils/formatDateUtils"
 import { categoryType, getCategory } from "@/utils/getCategory"
+import getPNGIconPath from "@/utils/getPNGIconPath"
+import { Theme } from "@/contexts/ThemeEnum"
 
-import pill from "@/assets/pill.png"
 import WarningIcon from "@/assets/svg/warning.svg?react"
 
 import styles from "./AddEditLog.module.css"
@@ -18,6 +20,7 @@ export interface LogData {
   medicine: boolean;
   notes: string;
   date: string;
+  arrhythmia: boolean
 }
 
 interface AddEditLogProps {
@@ -31,12 +34,14 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
       systolic: "",
       diastolic: "",
       pulse: "",
+      date: formatToISODateString(),
       medicine: false,
-      notes: "",
-      date: formatToISODateString()
+      arrhythmia: false,
+      notes: ""
     }
     return initialState
   })
+  const { theme } = useThemeContext()
   const [showOutOfRangeMessage, setShowOutOfRangeMessage] = useState(false)
   const { selectedLogId, setSelectedLogId, getLogById, addLog, updateLog, deleteLog } = useLogContext()
 
@@ -134,19 +139,11 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
 
 
   useEffect(() => {
-    if (!data.date) {
-      if (datePickerRef.current) {
-        const datePicker = datePickerRef.current as HTMLInputElement
-        datePicker.value = formatToISODateString()
-      }
-    } else {
-      if (hasOutOfRangeValues(data.systolic, data.diastolic)) {
-        setShowOutOfRangeMessage(true)
-      } else {
-        setShowOutOfRangeMessage(false)
-      }
+    if (!data.date && datePickerRef.current) {
+      (datePickerRef.current as HTMLInputElement).value = formatToISODateString()
     }
-  }, [data.date, data, hasOutOfRangeValues])
+    setShowOutOfRangeMessage(hasOutOfRangeValues(data.systolic, data.diastolic))
+  }, [data.date, data.systolic, data.diastolic, hasOutOfRangeValues])
 
   useEffect(() => {
     if (selectedLogId) {
@@ -193,7 +190,8 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               min={1}
               max={999}
               onChange={e => setData({ ...data, systolic: parseInt(e.target.value) || "" })}
-              value={data.systolic} onKeyDown={handleKeyDown}
+              value={data.systolic}
+              onKeyDown={handleKeyDown}
               onFocus={() => handleFocus(systolicRef)}
               onBlur={handleOnBlur}
             />
@@ -208,13 +206,14 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               min={1}
               max={999}
               onChange={e => setData({ ...data, diastolic: parseInt(e.target.value) || "" })}
-              value={data.diastolic} onKeyDown={handleKeyDown}
+              value={data.diastolic}
+              onKeyDown={handleKeyDown}
               onFocus={() => handleFocus(diastolicRef)}
               onBlur={handleOnBlur}
             />
           </div>
           <div className={styles.inputContainer}>
-            <label htmlFor="pulse">Pulso (BPM)</label>
+            <label htmlFor="pulse">Pulso <span className={styles.bpmText}>(BPM)</span></label>
             <input
               type="number"
               id="pulse"
@@ -223,7 +222,8 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
               min={1}
               max={999}
               onChange={e => setData({ ...data, pulse: parseInt(e.target.value) || "" })}
-              value={data.pulse} onKeyDown={handleKeyDown}
+              value={data.pulse}
+              onKeyDown={handleKeyDown}
               onFocus={() => handleFocus(pulseRef)}
               onBlur={handleOnBlur}
             />
@@ -240,14 +240,43 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
           <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
             <label htmlFor="date">Fecha</label>
             <div className={styles.dateContainer}>
-              <input type="datetime-local" id="date" ref={datePickerRef} onChange={e => setData({ ...data, date: e.target.value })} value={data.date} />
+              <input type="datetime-local"
+                id="date"
+                ref={datePickerRef}
+                onChange={e => setData({ ...data, date: e.target.value })}
+                value={data.date}
+              />
             </div>
           </div>
           <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
-            <label className={styles.pillLabel} htmlFor="pill">Medicina
-              <div className={styles.pillContainer}>
-                <input type="checkbox" id="pill" onChange={e => setData({ ...data, medicine: e.target.checked })} checked={data.medicine} />
-                <img className={styles.pillIcon} width="16" height="16" src={pill} alt="Ícono de píldora" />
+            <label className={styles.iconLabel} htmlFor="medicine">Medicina
+              <div className={styles.iconContainer}>
+                <input type="checkbox"
+                  id="medicine"
+                  onChange={e => setData({ ...data, medicine: e.target.checked })}
+                  checked={data.medicine} />
+                <img className={styles.icon}
+                  width="16" height="16"
+                  src={data?.medicine ? getPNGIconPath("pill") : getPNGIconPath("pill", theme)}
+                  alt={`Ícono píldora ${data?.medicine ? "" : "no "}tomada`}
+                  title={`Píldora ${data?.medicine ? "" : "no "}tomada`}
+                />
+              </div>
+            </label>
+          </div>
+          <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
+            <label className={styles.iconLabel} htmlFor="arrhythmia">Arritmia (latido irregular)
+              <div className={styles.iconContainer}>
+                <input type="checkbox"
+                  id="arrhythmia"
+                  onChange={e => setData({ ...data, arrhythmia: e.target.checked })}
+                  checked={data.arrhythmia} />
+                <img className={styles.icon}
+                  width="16" height="16"
+                  src={data?.arrhythmia ? getPNGIconPath("heart") : getPNGIconPath("heart", theme)}
+                  alt={`Ícono píldora ${data?.arrhythmia ? "" : "no "}tomada`}
+                  title={`Píldora ${data?.arrhythmia ? "" : "no "}tomada`}
+                />
               </div>
             </label>
           </div>
@@ -255,7 +284,20 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
 
         <div className={`${styles.row} ${styles.column}`}>
           <div className={styles.inputContainer}>
-            <textarea id="notes" placeholder='Notas' rows={4} autoComplete='off' maxLength={200} onChange={e => setData({ ...data, notes: e.target.value })} value={data.notes} />
+            <textarea id="notes"
+              placeholder='Notas'
+              rows={4}
+              autoComplete='off'
+              maxLength={200}
+              onChange={e => setData({ ...data, notes: e.target.value })}
+              value={data.notes}
+              className={
+                data?.notes
+                  ? styles.hasContent
+                  : theme === Theme.Dark
+                    ? styles.emptyDark
+                    : styles.emptyLight}
+            />
           </div>
         </div>
 

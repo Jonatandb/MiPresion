@@ -75,15 +75,15 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 🏁 Posibles agregados:
 
-- [ ] Agregar opción para cambiar de idioma entre inglés y español
+- [ ] Agregar opción para cambiar de idioma entre inglés y español (y potencialmente portugués y francés)
 
-- [ ] Agregar calendario
+- [ ] Agregar calendario que indique en que fechas se registraron mediciones
 
 - [ ] Agregar tablero con estadísticas
 
-- [ ] Agregar posibilidad de modificar valores de los niveles
-
 - [ ] Que desde Ajustes se pueda especificar el país de origen y la tabla de niveles se muestre de acuerdo a dicho país, también los niveles mostrados en los registros.
+
+- [ ] Agregar posibilidad de modificar valores de la tabla de niveles
 
 ## 📝 Pendientes:
 
@@ -111,28 +111,30 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
   - [ ] Agregar React-Modal o similar para reemplazar los confirm
   - [ ] Agregar React-share para permitir compartir el sitio en redes sociales
   - [ ] Agregar React-helmet para mejorar SEO
-  - [ ] Simplificar ítem wallet USDT: quitar address y mostrarla en el alert de confirmación de copiado al portapapeles
 
 - Agregar medición:
 
   - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar valores de una segunda medición y finalmente guarde el valor de sistólica, diastólica y pulso promediados.
 
 - A considerar:
+
   - [ ] Hacer versión responsive para que en desktop aproveche todo el ancho de la pantalla
   - [ ] Agregar validación que avise si hay cambios sin guardar y se está intentando cambiar de pantalla (o cerrar el modal)
   - [ ] Agregar alguna forma de lograr que el usuario se adhiera a registrar las mediciones (para que no se olvide). Podría investiagr sobre ServiceWorkers para enviar una notificación/recordatorio o permitir configurar un envío de email diario de varias veces al día "recordando" tomarse la presión y registrar la medición.
-  - Agregar opción para cambiar el idioma a inglés (y potencialmente a portugués y francés)
 
 ## 👷🏻‍♂️ Trabajando:
 
 - Agregar medición:
   - [ ] Posibilidad de registar:
-    - Arritmia (Latido irregular) 🖤/❤ (Checkbox)
     - Postura (Menú desplegable: Sentado, Parado, Acostado)
     - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
       - \*Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
 
 ## ✅ Completado:
+
+- [x] Se pasaron todas las medidas en px a rem para poder hacer zoom y que todo se vea proporcionalmente más grande correctamente
+
+- [x] Agregada posibilidad de registar Arritmia (Latido irregular) (Checkbox)
 
 - [x] Reemplazar px por rem en todos los CSS
 

@@ -7,6 +7,13 @@ const News = () => {
 
       <ul>
         <li className={styles.newVersion}>
+          <strong>v.3.3.0</strong>
+          <ul>
+            <li>Se agregó funcionalidad que permite registrar arritmia en las mediciones.</li>
+          </ul>
+        </li>
+
+        <li className={styles.newVersion}>
           <strong>v.3.2.0</strong>
           <ul>
             <li>El reporte PDF ahora incluye los valores promedio (sistólica, diastólica, pulso) del rango de fechas seleccionado.</li>

@@ -3,13 +3,8 @@ import { LogData } from "@/components/AddEditLog/AddEditLog"
 import { useThemeContext } from "@/hooks/useTheme"
 import { useLogContext } from "@/hooks/useLogContext"
 import { categoryType, getCategory } from "@/utils/getCategory"
+import getPNGIconPath from "@/utils/getPNGIconPath"
 
-import pencilEmptyWhite from "@/assets/pencil_white.png"
-import pencilFull from "@/assets/pencil.png"
-import pencilBlack from "@/assets/pencil_black.png"
-import pillEmptyWhite from "@/assets/pill_white.png"
-import pillFull from "@/assets/pill.png"
-import pillBlack from "@/assets/pill_black.png"
 import WarningIcon from "@/assets/svg/warning.svg?react"
 
 import styles from "./Log.module.css"
@@ -24,29 +19,7 @@ const styleByCategory = {
   [categoryType.OUT_OF_RANGE]: styles["levelError"]
 }
 
-interface imageByThemeType {
-  light: {
-    pill: string,
-    pencil: string,
-  },
-  dark: {
-    pill: string,
-    pencil: string,
-  },
-}
-
-const imageByTheme: imageByThemeType = {
-  light: {
-    pill: pillBlack,
-    pencil: pencilBlack,
-  },
-  dark: {
-    pill: pillEmptyWhite,
-    pencil: pencilEmptyWhite,
-  },
-}
-
-const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData) => {
+const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes, arrhythmia }: LogData) => {
   const { theme } = useThemeContext()
   const { setSelectedLogId } = useLogContext()
 
@@ -70,18 +43,9 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes }: LogData)
         </div>
         <div className={styles.bpmContainer}>
           <div className={styles.iconsContainer}>
-            {
-              medicine ?
-                <img className={styles.icon} width="19" height="19" src={pillFull} alt="Ícono píldora tomada" title="Píldora tomada" />
-                :
-                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pill"]} alt="Ícono píldora no tomada" title="Píldora no tomada" />
-            }
-            {
-              notes ?
-                <img className={styles.icon} width="19" height="19" src={pencilFull} alt="Ícono hay notas" title="Hay notas" />
-                :
-                <img className={styles.icon} width="19" height="19" src={imageByTheme[theme]["pencil"]} alt="Ícono no hay notas" title="No hay notas" />
-            }
+            <img className={styles.icon} width="19" height="19" src={arrhythmia ? getPNGIconPath("heart") : getPNGIconPath("heart", theme)} alt={`Ícono ${arrhythmia ? "arritmia" : "no arritmia"}`} title={`${arrhythmia ? "Arritmia" : "No arritmia"}`} />
+            <img className={styles.icon} width="19" height="19" src={medicine ? getPNGIconPath("pill") : getPNGIconPath("pill", theme)} alt={`Ícono píldora ${medicine ? "" : "no "}tomada`} title={`Píldora ${medicine ? "" : "no "}tomada`} />
+            <img className={styles.icon} width="19" height="19" src={notes ? getPNGIconPath("pencil") : getPNGIconPath("pencil", theme)} alt={`Ícono ${notes ? "hay" : "no hay"} notas`} title={`${notes ? "Hay" : "No hay"} notas`} />
           </div>
           <span className={styles.bpm} title="Pulso">{pulse} <span className={styles.leyend}>BPM</span></span>
         </div>

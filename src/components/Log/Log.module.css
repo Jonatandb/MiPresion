@@ -45,7 +45,7 @@
 .bpmContainer {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2%;
   width: 10rem;
 }
 
