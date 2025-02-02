@@ -1,4 +1,4 @@
-function generateRandomNumber(min, max) {
+function generateRandomNumber(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
@@ -19,7 +19,7 @@ function generateRandomDate() {
 }
 
 function insertLogsIntoLocalStorage(numberOfLogs = 100) {
-  let logs = JSON.parse(localStorage.getItem("logs")) || []
+  const logs = JSON.parse(localStorage.getItem("logs") as string) || []
 
   for (let i = 0; i < numberOfLogs; i++) {
     const log = {
@@ -37,4 +37,4 @@ function insertLogsIntoLocalStorage(numberOfLogs = 100) {
   localStorage.setItem("logs", JSON.stringify(logs))
 }
 
-insertLogsIntoLocalStorage() // Default 100 logs - Should be executed only in the browser console -
+export default insertLogsIntoLocalStorage

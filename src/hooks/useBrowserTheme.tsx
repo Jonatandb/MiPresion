@@ -1,35 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { Theme } from "@/contexts/ThemeEnum"
 
 export const useBrowserTheme = () => {
-  const [theme, setTheme] = useState<"dark" | "light">(() => {
-    const storedTheme: string | null = localStorage.getItem("theme");
+  const [theme, setTheme] = useState<Theme>(() => {
+    const storedTheme: string | null = localStorage.getItem("theme")
     if (!storedTheme) {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      return prefersDark ? "dark" : "light";
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      return prefersDark ? Theme.Dark : Theme.Light
     }
-    if (storedTheme === "dark" || storedTheme === "light") {
-      return storedTheme as "dark" | "light";
+    if (storedTheme === Theme.Dark || storedTheme === Theme.Light) {
+      return storedTheme as Theme
     }
-    return "light";
-  });
+    return Theme.Light
+  })
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    document.documentElement.setAttribute("data-theme", theme)
+    localStorage.setItem("theme", theme)
+  }, [theme])
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
     const handleChange = (e: MediaQueryListEvent) => {
-      setTheme(e.matches ? "dark" : "light");
-    };
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
+      setTheme(e.matches ? Theme.Dark : Theme.Light)
+    }
+    mediaQuery.addEventListener("change", handleChange)
+    return () => mediaQuery.removeEventListener("change", handleChange)
+  }, [])
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
+    setTheme((prevTheme) => (prevTheme === Theme.Light ? Theme.Dark : Theme.Light))
+  }
 
-  return { theme, toggleTheme };
-};
+  return { theme, toggleTheme }
+}

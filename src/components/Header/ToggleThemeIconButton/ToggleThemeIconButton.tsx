@@ -1,6 +1,7 @@
 import { useThemeContext } from "@/hooks/useTheme"
 import MoonIcon from "@/assets/svg/moon.svg?react"
 import SunIcon from "@/assets/svg/sun.svg?react"
+import { Theme } from "@/contexts/ThemeEnum"
 
 import styles from "./ToggleThemeIconButton.module.css"
 
@@ -14,7 +15,7 @@ const ToggleThemeIconButton = () => {
       role="button"
       className={styles.toggleThemeIconButton}
     >
-      {theme === "light" ?
+      {theme === Theme.Light ?
         <MoonIcon width="1.5rem" height="1.5rem" />
         :
         <SunIcon width="1.5rem" height="1.5rem" />

@@ -4,6 +4,7 @@ import { useThemeContext } from "@/hooks/useTheme"
 import Logo from "@/components/Logo/Logo"
 import SocialMedia from "@/components/SocialMedia/SocialMedia"
 import Donate from "@/components/Donate/Donate"
+import { Theme } from "@/contexts/ThemeEnum"
 
 import PdfIcon from "@/assets/svg/pdf.svg?react"
 import MoonIcon from "@/assets/svg/moon.svg?react"
@@ -48,11 +49,11 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
 
             <span className={styles.rowTitle}>PERSONALIZAR</span>
             <div className={styles.row} onClick={() => toggleTheme()}>
-              {theme === "light" ?
+              {theme === Theme.Light ?
                 <MoonIcon width="1.25rem" height="1.25rem" />
                 :
                 <SunIcon width="1.25rem" height="1.25rem" />}
-              <span>Activar Tema {theme === "light" ? "Oscuro" : "Claro"}</span>
+              <span>Activar Tema {theme === Theme.Light ? "Oscuro" : "Claro"}</span>
             </div>
             <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
               <TrashIcon width="1.25rem" height="1.25rem" />
