@@ -52,10 +52,10 @@ const App = () => {
           <FloatingAddButton onClick={() => navigate("/addedit")} />
         </>
       ) : (
-        <>
+        <div style={{ marginTop: "2rem" }}>
           <NoLogsMessage onAddClicked={() => navigate("/addedit")} />
           <Shortcuts />
-        </>
+        </div>
       )}
 
 
