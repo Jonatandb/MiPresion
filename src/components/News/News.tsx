@@ -1,14 +1,8 @@
-import { Link } from "react-router-dom"
 import { useLogContext } from "@/hooks/useLogContext"
+import generateLinkOrSpan from "@/utils/generateLinkOrSpan"
 
 import styles from "./News.module.css"
 
-const generateLinkOrSpan = (to: string, text: string, condition = true) => {
-  if (condition) {
-    return <Link to={to}>{text}</Link>
-  }
-  return <span>{text}</span>
-}
 
 const News = () => {
   const { logs } = useLogContext()
@@ -18,6 +12,13 @@ const News = () => {
       <h3 className={styles.title}>¿Que hay de nuevo?</h3>
 
       <ul>
+        <li className={styles.newVersion}>
+          <strong>v.3.3.2</strong>
+          <ul>
+            <li>Se agregó sección en la ayuda que explica {generateLinkOrSpan("/help/arrythmia", "que es Arritmia (latido irregular)")}.</li>
+          </ul>
+        </li>
+
         <li className={styles.newVersion}>
           <strong>v.3.3.0</strong>
           <ul>

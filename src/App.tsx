@@ -17,6 +17,7 @@ import BloodPressureMeasurementGuideWrapper from "@/components/Modals/BloodPress
 import OutOfRangeValuesWrapper from "@/components/Modals/OutOfRangeValuesWrapper/OutOfRangeValuesWrapper"
 import Shortcuts from "@/components/Shortcuts/Shortcuts"
 import DataStorageWrapper from "@/components/Modals/DataStorageWrapper/DataStorageWrapper"
+import ArrythmiaWrapper from "./components/Modals/ArrythmiaWrapper/ArrythmiaWrapper"
 
 const App = () => {
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
@@ -81,6 +82,12 @@ const App = () => {
           <Route path="outofrangevalues" element={
             <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
               <OutOfRangeValuesWrapper onClose={() => handleCloseModal("/help")} />
+            </Modal>
+          } />
+
+          <Route path="arrythmia" element={
+            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
+              <ArrythmiaWrapper onClose={() => handleCloseModal("/help")} />
             </Modal>
           } />
 

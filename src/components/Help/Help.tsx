@@ -33,7 +33,13 @@ const Help = ({ onClose }: { onClose: () => void }) => {
             <span className={styles.rowTitle}></span>
             <div className={styles.row} onClick={() => navigate("/help/outofrangevalues")}>
               <WarningIcon width="1.25rem" height="1.25rem" />
-              <span>¿"Valores fuera de rango"?</span>
+              <span>¿Qué es "Valores fuera de rango"?</span>
+            </div>
+
+            <span className={styles.rowTitle}></span>
+            <div className={styles.row} onClick={() => navigate("/help/arrythmia")}>
+              <QuestionIcon width="1.25rem" height="1.25rem" />
+              <span>¿Qué es "Arritmia (latido irregular)"?</span>
             </div>
 
             <span className={styles.rowTitle}></span>
