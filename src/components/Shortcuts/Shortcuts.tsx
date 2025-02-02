@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom"
 import SocialMedia from "@/components/SocialMedia/SocialMedia"
-import Donate from "@/components/Donate/Donate"
 
 import QuestionIcon from "@/assets/svg/question.svg?react"
 import EmailIcon from "@/assets/svg/email.svg?react"
@@ -38,7 +37,6 @@ const Shortcuts = () => {
         <span className={styles.rowTitle}></span>
 
         <SocialMedia />
-        <Donate />
 
       </div>
     </div>
