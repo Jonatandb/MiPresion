@@ -126,14 +126,17 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
               <View style={{ ...styles.tableHeaderCell, width: "7%" }}>
                 <Text style={styles.textMedium}>Hora</Text>
               </View>
-              <View style={{ ...styles.tableHeaderCell, width: "10%" }}>
-                <Text style={styles.textMedium}>Sistólica</Text>
+              <View style={{ ...styles.tableHeaderCell, width: "6%" }}>
+                <Text style={styles.textMedium}>Sis.</Text>
               </View>
-              <View style={{ ...styles.tableHeaderCell, width: "12%" }}>
-                <Text style={styles.textMedium}>Diastólica</Text>
+              <View style={{ ...styles.tableHeaderCell, width: "6%" }}>
+                <Text style={styles.textMedium}>Dia.</Text>
               </View>
               <View style={{ ...styles.tableHeaderCell, width: "8%" }}>
                 <Text style={styles.textMedium}>Pulso</Text>
+              </View>
+              <View style={{ ...styles.tableHeaderCell, width: "10%" }}>
+                <Text style={styles.textMedium}>Arritmia</Text>
               </View>
               <View style={{ ...styles.tableHeaderCell, width: "12%" }}>
                 <Text style={styles.textMedium}>Medicina</Text>
@@ -147,8 +150,8 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
             </View>
 
             {
-              logs.map(({ date, systolic, diastolic, pulse, medicine, notes }, index) => {
-                const onlyDDMMYYYYDate = new Date(date).toLocaleDateString("es-ES").split("T")[0]
+              logs.map(({ date, systolic, diastolic, pulse, medicine, notes, arrhythmia }, index) => {
+                const onlyDDMMYYYYDate = formatToShortDateWithTimeString(new Date(date)).split(" ")[0]
                 const time = date.split("T")[1].substring(0, 5)
                 const category = getCategory(systolic, diastolic).value
                 totalSystolic += Number(systolic)
@@ -164,14 +167,17 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
                       <View style={{ width: "7%", textAlign: "center" }}>
                         <Text style={styles.textMedium}>{time}</Text>
                       </View>
-                      <View style={{ width: "10%", textAlign: "center" }}>
+                      <View style={{ width: "6%", textAlign: "center" }}>
                         <Text style={styles.textMedium}>{systolic}</Text>
                       </View>
-                      <View style={{ width: "12%", textAlign: "center" }}>
+                      <View style={{ width: "6%", textAlign: "center" }}>
                         <Text style={styles.textMedium}>{diastolic}</Text>
                       </View>
                       <View style={{ width: "8%", textAlign: "center" }}>
                         <Text style={styles.textMedium}>{pulse}</Text>
+                      </View>
+                      <View style={{ width: "10%", textAlign: "center" }}>
+                        <Text style={styles.textMedium}>{arrhythmia ? "Si" : "No"}</Text>
                       </View>
                       <View style={{ width: "12%", textAlign: "center" }}>
                         <Text style={styles.textMedium}>{medicine ? "Si" : "No"}</Text>
@@ -192,16 +198,16 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
               <View style={{ width: "19%", textAlign: "center", backgroundColor: "#CCC" }}>
                 <Text style={styles.textMedium}>Promedios:</Text>
               </View>
-              <View style={{ width: "10%", textAlign: "center", backgroundColor: "#CCC" }}>
+              <View style={{ width: "6%", textAlign: "center", backgroundColor: "#CCC" }}>
                 <Text style={styles.textMedium}>{Math.round(totalSystolic / logs.length)}</Text>
               </View>
-              <View style={{ width: "12%", textAlign: "center", backgroundColor: "#CCC" }}>
+              <View style={{ width: "6%", textAlign: "center", backgroundColor: "#CCC" }}>
                 <Text style={styles.textMedium}>{Math.round(totalDiastolic / logs.length)}</Text>
               </View>
               <View style={{ width: "8%", textAlign: "center", backgroundColor: "#CCC" }}>
                 <Text style={styles.textMedium}>{Math.round(totalPulse / logs.length)}</Text>
               </View>
-              <View style={{ width: "51%" }}>
+              <View style={{ width: "61%" }}>
                 <Text></Text>
               </View>
             </View>

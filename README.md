@@ -132,6 +132,8 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## ✅ Completado:
 
+- [x] Agregado de columna "Arritmia" al reporte PDF
+
 - [x] Agregado posibilidad de generar el reporte PDF especificando rango de fechas
 
 - [x] Agregado de ícono para exportar a PDF en el header. Y en la pantalla de exportar a PDF agregado de un mensaje que avisa si no hay mediciones e invita a crear una.

@@ -14,6 +14,13 @@ const News = () => {
       <ul>
 
         <li className={styles.newVersion}>
+          <strong>v.3.4.1</strong>
+          <ul>
+            <li>Se agregó columna "Arritmia" al reporte PDF.</li>
+          </ul>
+        </li>
+
+        <li className={styles.newVersion}>
           <strong>v.3.4.0</strong>
           <ul>
             <li>Se agregó ícono en la cabecera que lleva a la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
