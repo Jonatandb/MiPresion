@@ -12,6 +12,21 @@ const News = () => {
       <h3 className={styles.title}>¿Que hay de nuevo?</h3>
 
       <ul>
+
+        <li className={styles.newVersion}>
+          <strong>v.3.4.0</strong>
+          <ul>
+            <li>Se agregó ícono en la cabecera que lleva a la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
+            <li>Se mejoró el diseño de la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
+            <li>Se actualizaron los accesos de la pantalla de inicio:
+              <ul>
+                <li>Se agregó acceso a la sección en la ayuda que explica {generateLinkOrSpan("/help/arrythmia", "que es Arritmia (latido irregular)")}.</li>
+                <li>Se agregó acceso directo para cambiar entre tema claro/oscuro.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
         <li className={styles.newVersion}>
           <strong>v.3.3.2</strong>
           <ul>

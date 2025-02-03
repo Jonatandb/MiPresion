@@ -42,7 +42,7 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
             <h2 className={styles.title}>Ajustes</h2>
 
             <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
-            <div className={`${styles.row} ${!thereAreLogs && styles.disabled}`} onClick={() => navigate("/settings/exportpdf")}>
+            <div className={`${styles.row}`} onClick={() => navigate("/settings/exportpdf")}>
               <PdfIcon width="1.25rem" height="1.25rem" />
               <span>Exportar a PDF</span>
             </div>
@@ -55,6 +55,8 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
                 <SunIcon width="1.25rem" height="1.25rem" />}
               <span>Activar Tema {theme === Theme.Light ? "Oscuro" : "Claro"}</span>
             </div>
+
+            <span className={styles.rowTitle}>MANTENIMIENTO</span>
             <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
               <TrashIcon width="1.25rem" height="1.25rem" />
               <span>Eliminar todas las mediciones</span>

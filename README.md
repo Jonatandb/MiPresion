@@ -87,15 +87,15 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
 
 ## 📝 Pendientes:
 
-- Errores:
-
-  - [ ] 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
-
 - Refactors:
 
   - [ ] Corregir/agregar tabindex y outline para navegación por teclado
   - [ ] Crear un contexto para guardar todos los ajustes (dark mode, theter wallet, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
   - [ ] Reemplazar formulario de agregar medición con uno de Formik (con Yup para validaciones) o React Hook Form
+
+- Errores 🐛
+
+  - [ ] Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
 
 - Ajustes:
 
@@ -107,9 +107,9 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
   - [ ] Agregar "Notas" con un switch
   - [ ] Agregar sección “Otros de mis proyectos” (debajo de Donate o SocialMedia, incluso debajo del formulario de contacto), con proyectos como 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de tales proyectos.
   - [ ] Agregar opción de exportar reporte a archivo de Excel
-  - [ ] Reemplazar alerts con Toastify's (react-toastify)
+  - [ ] Reemplazar alerts con [React-toastify](https://www.npmjs.com/package/react-toastify)
   - [ ] Agregar React-Modal o similar para reemplazar los confirm
-  - [ ] Agregar React-share para permitir compartir el sitio en redes sociales
+  - [ ] Agregar [React-share](https://www.npmjs.com/package/react-share) para permitir compartir el sitio en redes sociales
   - [ ] Agregar React-helmet para mejorar SEO
 
 - Agregar medición:
@@ -131,6 +131,14 @@ O bien `build-dev` (Establece VITE_ANALYTICS_ENABLED=false), para verificar el b
       - \*Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
 
 ## ✅ Completado:
+
+- [x] Agregado posibilidad de generar el reporte PDF especificando rango de fechas
+
+- [x] Agregado de ícono para exportar a PDF en el header. Y en la pantalla de exportar a PDF agregado de un mensaje que avisa si no hay mediciones e invita a crear una.
+
+- [x] Agregado al componente Shortcuts sección que lleva a ayuda sobre la arritmia
+
+- [x] Eliminado del componente Shortcuts opción que llevaba al formulario de contacto
 
 - [x] Se pasaron todas las medidas en px a rem para poder hacer zoom y que todo se vea proporcionalmente más grande correctamente
 

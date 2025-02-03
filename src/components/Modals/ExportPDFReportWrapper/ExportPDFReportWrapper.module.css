@@ -60,31 +60,3 @@
 .content::-webkit-scrollbar {
   display: none;
 }
-
-.dateRangeContainer {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-.dateRangeContainer input {
-  border: 1px solid var(--background-color);
-  background-color: var(--background-color-secondary);
-  color: var(--text-color);
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: inherit;
-  border-radius: 0.313rem;
-  padding: .3rem;
-}
-
-.title {
-  font-size: 1.2rem;
-  margin: 0;
-}
