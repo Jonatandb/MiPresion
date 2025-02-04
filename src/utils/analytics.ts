@@ -1,15 +1,13 @@
 import ReactGA from "react-ga4"
 
-const isAnalyticsEnabled = import.meta.env.VITE_ANALYTICS_ENABLED === "true"
-
-const GA4_MEASUREMENT_ID = "G-1BK96Q3JVW"
+const isAnalyticsEnabled = import.meta.env.VITE_ANALYTICS_ID
 
 export const initializeGA = () => {
   if (isAnalyticsEnabled) {
-    ReactGA.initialize(GA4_MEASUREMENT_ID, {
+    ReactGA.initialize(isAnalyticsEnabled, {
       testMode: import.meta.env.DEV
     })
-    console.log(`I want to believe 🛸 ${import.meta.env.DEV ? "(testMode)" : ""}`)
+    console.log(`I want to believe 🛸 ${import.meta.env.DEV ? `- TestMode - Using: '${isAnalyticsEnabled}'` : ""}`)
   }
 }
 

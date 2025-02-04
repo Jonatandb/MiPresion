@@ -1,7 +1,7 @@
 {
   "name": "mipresion",
   "description": "MiPresión - Registro de presión sanguínea por Jonatandb",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "author": {
     "name": "Jonatandb",
     "email": "jonatandb@gmail.com",
@@ -15,9 +15,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node -e \"const { execSync } = require('child_process'); const version = require('child_process').execSync('node ./src/utils/readVersion.js').toString().trim(); execSync(`cross-env VITE_APP_VERSION=${version} vite`, { stdio: 'inherit' });\"",
-    "build": "node -e \"const { execSync } = require('child_process'); const version = require('child_process').execSync('node ./src/utils/readVersion.js').toString().trim(); execSync(`tsc && cross-env VITE_APP_VERSION=${version} VITE_ANALYTICS_ENABLED=true vite build`, { stdio: 'inherit' });\"",
-    "build-dev": "node -e \"const { execSync } = require('child_process'); const version = require('child_process').execSync('node ./src/utils/readVersion.js').toString().trim(); execSync(`tsc && cross-env VITE_APP_VERSION=${version} VITE_ANALYTICS_ENABLED=false vite build`, { stdio: 'inherit' });\"",
+    "dev": "node -e \"    require('dotenv').config({ path: './.env.development' });    const { execSync } = require('child_process');    const version = execSync('node ./src/utils/readVersion.js').toString().trim();    const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID;    execSync(`cross-env VITE_APP_VERSION=${version} VITE_ANALYTICS_ID='${gaId}' vite`, { stdio: 'inherit' });     \"",
+    "build-dev": "node -e \"    require('dotenv').config({ path: './.env.development' });    const { execSync } = require('child_process');    const version = execSync('node ./src/utils/readVersion.js').toString().trim();    const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID;    execSync(`tsc && cross-env VITE_APP_VERSION=${version} VITE_ANALYTICS_ID='${gaId}' vite build`, { stdio: 'inherit' });    \"",
+    "build": "node -e \"    require('dotenv').config({ path: './.env' });    const { execSync } = require('child_process');    const version = execSync('node ./src/utils/readVersion.js').toString().trim();    const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID;    execSync(`tsc && cross-env VITE_APP_VERSION=${version} VITE_ANALYTICS_ID='${gaId}' vite build`, { stdio: 'inherit' });    \"",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -41,13 +41,14 @@
     "@typescript-eslint/parser": "6.14.0",
     "@vitejs/plugin-react-swc": "3.5.0",
     "cross-env": "7.0.3",
+    "dotenv": "16.4.7",
     "eslint": "8.55.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.5",
     "typescript": "5.2.2",
     "vite": "5.4.12",
-    "vite-plugin-svgr": "4.3.0",
     "vite-plugin-dts": "4.5.0",
-    "vite-plugin-static-copy": "2.2.0"
+    "vite-plugin-static-copy": "2.2.0",
+    "vite-plugin-svgr": "4.3.0"
   }
 }
