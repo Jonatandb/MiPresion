@@ -72,7 +72,7 @@ const ExportPDFReport = () => {
   useEffect(() => {
     if (logs.length > 0) {
       const updatedTo = subSeconds(addDays(new Date(userTo), 1), 1) // 1 second before the next day
-      const filteredLogs = filterLogsByDateRange(new Date(userFrom).toISOString(), updatedTo.toISOString(), logs)
+      const filteredLogs = filterLogsByDateRange(new Date(userFrom).toISOString().substring(0, 19), updatedTo.toISOString().substring(0, 19), logs)
       setFilteredLogs(filteredLogs)
       setShouldGenerate(false)
     }

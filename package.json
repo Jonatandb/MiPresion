@@ -1,7 +1,7 @@
 {
   "name": "mipresion",
   "description": "MiPresión - Registro de presión sanguínea por Jonatandb",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "author": {
     "name": "Jonatandb",
     "email": "jonatandb@gmail.com",
@@ -51,4 +51,3 @@
     "vite-plugin-static-copy": "2.2.0"
   }
 }
-
