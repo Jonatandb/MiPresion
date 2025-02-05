@@ -17,7 +17,8 @@ import BloodPressureMeasurementGuideWrapper from "@/components/Modals/BloodPress
 import OutOfRangeValuesWrapper from "@/components/Modals/OutOfRangeValuesWrapper/OutOfRangeValuesWrapper"
 import Shortcuts from "@/components/Shortcuts/Shortcuts"
 import DataStorageWrapper from "@/components/Modals/DataStorageWrapper/DataStorageWrapper"
-import ArrythmiaWrapper from "./components/Modals/ArrythmiaWrapper/ArrythmiaWrapper"
+import ArrythmiaWrapper from "@/components/Modals/ArrythmiaWrapper/ArrythmiaWrapper"
+import Seo from "@/components/SEO/SEO"
 
 const App = () => {
   const { selectedLogId, setSelectedLogId, logs } = useLogContext()
@@ -44,6 +45,9 @@ const App = () => {
 
   return (
     <main>
+
+      <Seo />
+
       <Header />
 
       {logs.length > 0 ? (
@@ -91,15 +95,15 @@ const App = () => {
             </Modal>
           } />
 
-          <Route path="storage" element={
-            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
-              <DataStorageWrapper onClose={() => handleCloseModal("/help")} />
-            </Modal>
-          } />
-
           <Route path="bloodpressurelevels" element={
             <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
               <BloodPressureLevelsWrapper onClose={() => handleCloseModal("/help")} />
+            </Modal>
+          } />
+
+          <Route path="storage" element={
+            <Modal onClose={() => handleCloseModal("/help")} isOpen={true}>
+              <DataStorageWrapper onClose={() => handleCloseModal("/help")} />
             </Modal>
           } />
 
