@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=/MiPresion">
-  </head>
+
+<head>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BK96Q3JVW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+    gtag('js', new Date())
+    gtag('config', 'G-1BK96Q3JVW')
+
+    const failedPath = window.location.pathname + window.location.search + window.location.hash
+
+    gtag('event', 'page_not_found', {
+      event_category: 'Error',
+      event_label: failedPath,
+      referrer: document.referrer
+    })
+
+    setTimeout(() => {
+      window.location.href = "/MiPresion/";
+    }, 200);
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/MiPresion/">
+  </noscript>
+
+</head>
+
 </html>
