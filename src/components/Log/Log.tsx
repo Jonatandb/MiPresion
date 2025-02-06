@@ -47,7 +47,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes, arrhythmia
             <img className={styles.icon} width="19" height="19" src={medicine ? getPNGIconPath("pill") : getPNGIconPath("pill", theme)} alt={`Ícono píldora ${medicine ? "" : "no "}tomada`} title={`Píldora ${medicine ? "" : "no "}tomada`} />
             <img className={styles.icon} width="19" height="19" src={notes ? getPNGIconPath("pencil") : getPNGIconPath("pencil", theme)} alt={`Ícono ${notes ? "hay" : "no hay"} notas`} title={`${notes ? "Hay" : "No hay"} notas`} />
           </div>
-          {pulse && (
+          {(Number(pulse) > 0) && (
             <div className={styles.pulseContainer}>
               <span className={styles.bpm} title="Pulso">{pulse}</span>
               <div className={styles.leyendContainer}>
