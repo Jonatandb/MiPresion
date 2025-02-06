@@ -39,7 +39,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes, arrhythmia
           <span className={styles.mmhg}>/</span>
           <span className={styles.mmhg} title="Presión diastólica">{diastolic}</span>
           {" "}
-          <span className={styles.leyend} title="Milímetros de mercurio">mm Hg</span>
+          <span className={styles.leyend} title="Milímetros de mercurio">mmHg</span>
         </div>
         <div className={styles.bpmContainer}>
           <div className={styles.iconsContainer}>
@@ -47,7 +47,13 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes, arrhythmia
             <img className={styles.icon} width="19" height="19" src={medicine ? getPNGIconPath("pill") : getPNGIconPath("pill", theme)} alt={`Ícono píldora ${medicine ? "" : "no "}tomada`} title={`Píldora ${medicine ? "" : "no "}tomada`} />
             <img className={styles.icon} width="19" height="19" src={notes ? getPNGIconPath("pencil") : getPNGIconPath("pencil", theme)} alt={`Ícono ${notes ? "hay" : "no hay"} notas`} title={`${notes ? "Hay" : "No hay"} notas`} />
           </div>
-          <span className={styles.bpm} title="Pulso">{pulse} <span className={styles.leyend}>BPM</span></span>
+          <div className={styles.pulseContainer}>
+            <span className={styles.bpm} title="Pulso">{pulse}</span>
+            <div className={styles.leyendContainer}>
+              <span className={styles.leyend}>Pulso</span>
+              <span className={styles.leyendSmaller}>BPM</span>
+            </div>
+          </div>
         </div>
       </section>
     </article>

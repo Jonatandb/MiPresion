@@ -2,7 +2,7 @@
   border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .3rem;
   padding: .3rem .8rem;
   font-size: 1.6rem;
   color: var(--text-color);
@@ -37,11 +37,6 @@
   font-weight: 700;
 }
 
-.bpm {
-  color: var(--text-color);
-  font-weight: 700;
-}
-
 .bpmContainer {
   display: flex;
   justify-content: space-between;
@@ -49,10 +44,31 @@
   width: 10rem;
 }
 
+.bpm {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
 .leyend {
   color: var(--text-color);
   font-size: 0.8rem;
   font-weight: normal;
+}
+
+.leyendSmaller {
+  font-size: 0.55rem;
+}
+
+.pulseContainer {
+  display: flex;
+  gap: .3rem;
+}
+
+.leyendContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .levelNormal {

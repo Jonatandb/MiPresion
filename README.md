@@ -140,6 +140,10 @@ O bien `build-dev` para verificar el build:
 
 ## ✅ Completado:
 
+- [x] Se corrige el detalle de que "mmHg" va todo junto
+
+- [x] Se agrega texto "Pulso" sobre el texto "BPM"
+
 - [x] Agregado de columna "Arritmia" al reporte PDF
 
 - [x] Agregado posibilidad de generar el reporte PDF especificando rango de fechas
