@@ -14,6 +14,15 @@ const News = () => {
       <ul>
 
         <li className={styles.newVersion}>
+          <strong>v.3.4.8</strong>
+          <ul>
+            <li>Al agregar una medición, ya no es obligatorio ingresar el pulso.</li>
+            <li>Pequeñas mejoras en el diseño de la lista de mediciones.</li>
+            <li>Pequeñas mejoras en las validaciones de los valores ingresados durante una medición.</li>
+          </ul>
+        </li>
+
+        <li className={styles.newVersion}>
           <strong>v.3.4.1</strong>
           <ul>
             <li>Se agregó columna "Arritmia" al reporte PDF.</li>

@@ -31,6 +31,8 @@ const initialState: LogData[] = localStorage.getItem("logs") ? JSON.parse(localS
 
 const sortLogs = (logs: LogData[]) => logs.sort((a, b) => b.date.localeCompare(a.date))
 
+const cleanPulse = (log: LogData) => ({ ...log, pulse: !Number(log.pulse) || Number(log.pulse) === 0 || Math.floor(Number(log.pulse)) === 0 ? "" : log.pulse })
+
 const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [logs, setLogs] = useState<LogData[]>(() => sortLogs(initialState))
   const [selectedLogId, setSelectedLogId] = useState("")
@@ -39,6 +41,7 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   const addLog = (newLog: LogData) => {
     const id = crypto.randomUUID()
     newLog.id = id
+    newLog = cleanPulse(newLog)
     setLogs(prevLogs => sortLogs([...prevLogs, newLog]))
     setSelectedLogId("")
   }
@@ -47,7 +50,7 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
     setLogs(prevLogs => {
       const newLogs = prevLogs.map(log =>
         log.id === updatedLog.id
-          ? { ...log, ...updatedLog }
+          ? { ...log, ...cleanPulse(updatedLog) }
           : log
       )
       return sortLogs(newLogs)

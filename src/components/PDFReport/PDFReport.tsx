@@ -96,7 +96,8 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
   const tableTitle = `Reporte de mediciones - ${formatToShortDateWithTimeString()}`
   let totalSystolic = 0
   let totalDiastolic = 0
-  let totalPulse = 0
+  let totalValidPulse = 0
+  let sumPulse = 0
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -156,7 +157,10 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
                 const category = getCategory(systolic, diastolic).value
                 totalSystolic += Number(systolic)
                 totalDiastolic += Number(diastolic)
-                totalPulse += Number(pulse)
+                if (pulse && pulse !== 0) {
+                  totalValidPulse++
+                  sumPulse += Number(pulse)
+                }
 
                 return (
                   <View key={index}>
@@ -204,12 +208,22 @@ const PDFReport = ({ logs }: { logs: LogData[] }) => {
               <View style={{ width: "6%", textAlign: "center", backgroundColor: "#CCC" }}>
                 <Text style={styles.textMedium}>{Math.round(totalDiastolic / logs.length)}</Text>
               </View>
-              <View style={{ width: "8%", textAlign: "center", backgroundColor: "#CCC" }}>
-                <Text style={styles.textMedium}>{Math.round(totalPulse / logs.length)}</Text>
-              </View>
-              <View style={{ width: "61%" }}>
-                <Text></Text>
-              </View>
+              {
+                totalValidPulse === 0 ? (
+                  <View style={{ width: "69%" }}>
+                    <Text></Text>
+                  </View>
+                ) : (
+                  <>
+                    <View style={{ width: "8%", textAlign: "center", backgroundColor: "#CCC" }}>
+                      <Text style={styles.textMedium}>{Math.round(sumPulse / totalValidPulse)}</Text>
+                    </View>
+                    <View style={{ width: "61%" }}>
+                      <Text></Text>
+                    </View>
+                  </>
+                )
+              }
             </View>
           </View>
 
