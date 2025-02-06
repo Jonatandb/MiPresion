@@ -2,8 +2,6 @@ import ReactGA from "react-ga4"
 
 const isAnalyticsEnabled = import.meta.env.VITE_GOOGLE_ANALYTICS_ID
 
-const basename = import.meta.env.MODE === "development" ? "/" : "/MiPresion"
-
 export const initializeGA = () => {
   if (isAnalyticsEnabled) {
     ReactGA.initialize(isAnalyticsEnabled, {
@@ -29,17 +27,13 @@ export const trackEvent = (action: string, category = "Interaction", label?: str
 
 export const trackPageView = (path: string) => {
   let normalizedPath = path
-
-  console.log("Mode:", import.meta.env.MODE, "Basename:", basename, "Raw path:", path)
-
   if (isAnalyticsEnabled) {
-
     if (normalizedPath === "") {
       normalizedPath = "/"
     }
     ReactGA.send({ hitType: "pageview", page: normalizedPath })
     if (import.meta.env.DEV) {
-      console.log(`Page: ${normalizedPath}`)
+      console.log(`Page: ${normalizedPath} - Raw path: ${path}`)
     }
   }
 }
