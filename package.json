@@ -1,7 +1,7 @@
 {
   "name": "mipresion",
   "description": "MiPresión - Registro de presión sanguínea por Jonatandb",
-  "version": "3.4.12",
+  "version": "3.4.13",
   "author": {
     "name": "Jonatandb",
     "email": "jonatandb@gmail.com",
@@ -15,9 +15,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node -e \"    require('dotenv').config({ path: './.env.development' });    const { execSync } = require('child_process');    const version = execSync('node ./src/utils/readVersion.js').toString().trim();    const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID;if(!gaId) { console.log('\\nVITE_GOOGLE_ANALYTICS_ID env var missing or empty.\\n');} else { console.log(`Using VITE_GOOGLE_ANALYTICS_ID: ${gaId}`);}    execSync(`cross-env VITE_APP_VERSION=${version} vite`, { stdio: 'inherit' });     \"",
-    "build-dev": "node -e \"    require('dotenv').config({ path: './.env.development' });    const { execSync } = require('child_process');    const version = execSync('node ./src/utils/readVersion.js').toString().trim();    const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID; if(!gaId) { console.log('\\nVITE_GOOGLE_ANALYTICS_ID env var missing or empty.\\n');} else { console.log(`Using VITE_GOOGLE_ANALYTICS_ID: ${gaId}`);}   execSync(`tsc && cross-env VITE_APP_VERSION=${version} vite build && sed -i \"s/G-XXXXXXXXXX/${gaId}/g\" docs/404.html`, { stdio: 'inherit' });    \"",
-    "build": "node -e \"    require('dotenv').config({ path: './.env' });    const { execSync } = require('child_process');    const version = execSync('node ./src/utils/readVersion.js').toString().trim();    const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID; if(!gaId) { console.log('\\nVITE_GOOGLE_ANALYTICS_ID env var missing or empty.\\n');} else { console.log(`Using VITE_GOOGLE_ANALYTICS_ID: ${gaId}`);}   execSync(`tsc && cross-env VITE_APP_VERSION=${version} vite build && sed -i \"s/G-XXXXXXXXXX/${gaId}/g\" docs/404.html`, { stdio: 'inherit' });    \"",
+    "dev": "node -e       \"require('dotenv').config({ path: './.env.development' }); const { execSync } = require('child_process'); const version = execSync('node ./src/utils/readVersion.js').toString().trim(); const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID; if(!gaId) { console.log('\\nVITE_GOOGLE_ANALYTICS_ID env var missing or empty.\\n');} else { console.log(`Using VITE_GOOGLE_ANALYTICS_ID: ${gaId}`);} execSync(`cross-env VITE_APP_VERSION=${version} vite`, { stdio: 'inherit' }); \"",
+    "build-dev": "node -e \"require('dotenv').config({ path: './.env.development' }); const { execSync } = require('child_process'); const version = execSync('node ./src/utils/readVersion.js').toString().trim(); const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID; if(!gaId) { console.log('\\nVITE_GOOGLE_ANALYTICS_ID env var missing or empty.\\n');} else { console.log(`Using VITE_GOOGLE_ANALYTICS_ID: ${gaId}`);} execSync(`tsc && cross-env VITE_APP_VERSION=${version} vite build && sed -i \"s/G-XXXXXXXXXX/${gaId}/g\" docs/404.html`, { stdio: 'inherit' }); \"",
+    "build": "node -e     \"require('dotenv').config({ path: './.env' });             const { execSync } = require('child_process'); const version = execSync('node ./src/utils/readVersion.js').toString().trim(); const gaId = process.env.VITE_GOOGLE_ANALYTICS_ID; if(!gaId) { console.log('\\nVITE_GOOGLE_ANALYTICS_ID env var missing or empty.\\n');} else { console.log(`Using VITE_GOOGLE_ANALYTICS_ID: ${gaId}`);} execSync(`tsc && cross-env VITE_APP_VERSION=${version} vite build && sed -i \"s/G-XXXXXXXXXX/${gaId}/g\" docs/404.html`, { stdio: 'inherit' }); \"",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
