@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom"
 import AddEditLog from "@/components/AddEditLog/AddEditLog"
-import FloatingAddButton from "@/components/FloatingAddButton/FloatingAddButton"
+import FloatingButtons from "@/components/FloatingButtons/FloatingButtons"
 import Header from "@/components/Header/Header"
 import LogsList from "@/components/LogsList/LogsList"
 import Modal from "@/components/Modal/Modal"
@@ -53,7 +53,7 @@ const App = () => {
       {logs.length > 0 ? (
         <>
           <LogsList />
-          <FloatingAddButton onClick={() => navigate("/addedit")} />
+          <FloatingButtons onClick={() => navigate("/addedit")} />
         </>
       ) : (
         <div style={{ marginTop: "2rem" }}>

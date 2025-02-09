@@ -83,66 +83,58 @@ O bien `build-dev` para verificar el build:
 
 ## 🏁 Posibles agregados:
 
-- [ ] Agregar opción para cambiar de idioma entre inglés y español (y potencialmente portugués y francés)
-
 - [ ] Agregar calendario que indique en que fechas se registraron mediciones
-
 - [ ] Agregar tablero con estadísticas
-
-- [ ] Que desde Ajustes se pueda especificar el país de origen y la tabla de niveles se muestre de acuerdo a dicho país, también los niveles mostrados en los registros.
-
-- [ ] Agregar posibilidad de modificar valores de la tabla de niveles
+- [ ] Que desde Ajustes se pueda especificar el país de origen y la tabla de niveles (y los niveles mostrados en los registros) se muestre de acuerdo a dicho país.
+  - [ ] Agregar posibilidad de modificar valores de la tabla de niveles
+- [ ] Agregar opción de exportar reporte a archivo de Excel
+- [ ] Agregar opción de "Modo Daltónico"
+- [ ] Agregar opción para cambiar de idioma entre inglés y español (y potencialmente portugués y francés)
 
 ## 📝 Pendientes:
 
 - Ajustes:
 
-  - [ ] Agregar opción "Exportar/Importar los datos" (json), para importar todo desde otro navegador o `dominio` (Ideal que los ajustes estén en un contexto)
-  - [ ] Agregar opción de "Modo Daltónico"
-  - [ ] Reemplazar "Activar Tema Oscuro" que cambia a "Activar Tema Claro" con un switch
-  - [ ] Agregar "Medicina Tomada" con un switch
-  - [ ] Agregar "Niveles de presión" con un switch
-  - [ ] Agregar "Notas" con un switch
+  - [ ] Agregar opción "Exportar/Importar los datos" (json), para importar todo desde otro navegador o `dominio`
   - [ ] Agregar sección “Otros de mis proyectos” (debajo de Donate o SocialMedia, incluso debajo del formulario de contacto), con proyectos como 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de tales proyectos.
-  - [ ] Agregar opción de exportar reporte a archivo de Excel
-  - [ ] Reemplazar alerts con [React-toastify](https://www.npmjs.com/package/react-toastify)
-  - [ ] Agregar React-Modal o similar para reemplazar los confirm
-  - [ ] Agregar [React-share](https://www.npmjs.com/package/react-share) para permitir compartir el sitio en redes sociales
-  - [ ] Agregar [React-helmet](https://www.npmjs.com/package/react-helmet) para mejorar SEO
 
-- Agregar medición:
+- Reporte PDF:
 
-  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar valores de una segunda medición y finalmente guarde el valor de sistólica, diastólica y pulso promediados.
+  - [ ] Agregar sección que permita elegir qué columnas tendrá el reporte (Pulso, Medicina, Postura, Ubicación del medidor, Notas), por defecto: Pulso, Medicina y Notas.
 
 - A considerar:
 
-  - [ ] Hacer versión responsive para que en desktop aproveche todo el ancho de la pantalla
+  - [ ] Agregar datos de postura y ubicación del medidor al reporte PDF (¿hoja en horizontal?)
   - [ ] Agregar validación que avise si hay cambios sin guardar y se está intentando cambiar de pantalla (o cerrar el modal)
-  - [ ] Agregar alguna forma de lograr que el usuario se adhiera a registrar las mediciones (para que no se olvide). Podría investiagr sobre ServiceWorkers para enviar una notificación/recordatorio o permitir configurar un envío de email diario de varias veces al día "recordando" tomarse la presión y registrar la medición.
+  - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar valores de una segunda medición y finalmente guarde el valor de sistólica, diastólica y pulso promediados.
+  - [ ] Hacer versión responsive para que en desktop aproveche todo el ancho de la pantalla
+  - [ ] Investigar alguna forma de lograr que el usuario vuelva un hábito registrar las mediciones (para que no se olvide).
+    - Podría investiagr sobre ServiceWorkers para enviar una notificación/recordatorio o permitir configurar un envío de email diario de varias veces al día "recordando" tomarse la presión y registrar la medición.
 
 - Refactors:
 
-  - [ ] Corregir/agregar tabindex y outline para navegación por teclado
   - [ ] Crear un contexto para guardar todos los ajustes (dark mode, theter wallet, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
-  - [ ] Reemplazar formulario de agregar medición con uno de Formik (con Yup para validaciones) o React Hook Form
-
-- Errores 🐛
-
-  - [ ] Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
+  - [ ] Reemplazar formulario de agregar medición con uno de Formik (o React Hook Form) con Yup para validaciones
+  - [ ] Reemplazar alerts con [React-toastify](https://www.npmjs.com/package/react-toastify)
+  - [ ] Agregar React-Modal o similar para reemplazar los confirm
 
 ## 👷🏻‍♂️ Trabajando:
 
-- Agregar medición:
-  - [ ] Posibilidad de registar:
-    - Postura (Menú desplegable: Sentado, Parado, Acostado)
-    - Ubicación del medidor (Menú desplegable: brazo izquierdo, brazo derecho, muñeca izquierda, muñeca derecha)
-      - \*Seguramente implicará hacer que la página del PDF esté en horizontal para que se vean todas las columnas cómodamente
-
 ## ✅ Completado:
+
+- [x] Agregar [React-share](https://www.npmjs.com/package/react-share) para permitir compartir el sitio en redes sociales
+
+- [x] Agregado de tabindex y outline para navegación por teclado
+
+- [x] Solucionado: 🐛 Verificar por qué cuando clickeo los botones de cancelar y actualizar en el modal de agregar, el click parece que se "va al fondo" y se selecciona el 2do registro de la lista...(o algo similar)
+
+- [x] Se agrego posibibilidad de registrar postura y ubicación del medidor
 
 - [x] Se corrige el detalle de que "mmHg" va todo junto
 
 - [x] Se agrega texto "Pulso" sobre el texto "BPM"
+
+- [x] Agregado de [React-helmet](https://www.npmjs.com/package/react-helmet) para mejorar SEO
 
 - [x] Agregado de columna "Arritmia" al reporte PDF
 
@@ -310,4 +302,3 @@ O bien `build-dev` para verificar el build:
 ## Autor
 
 - Jonatandb - [@jonatandb](https://www.github.com/jonatandb)
-

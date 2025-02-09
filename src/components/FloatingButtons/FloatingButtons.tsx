@@ -1,19 +1,24 @@
 import AddButton from "@/components/AddButton/AddButton"
+import Share from "@/components/Share/Share"
 
-import styles from "./FloatingAddButton.module.css"
+import styles from "./FloatingButtons.module.css"
 
-interface FloatingAddButtonProps {
+interface FloatingButtonsProps {
   onClick: () => void
 }
 
-const FloatingAddButton = ({ onClick }: FloatingAddButtonProps) => {
+const FloatingButtons = ({ onClick }: FloatingButtonsProps) => {
   return (
     <div className={styles.bottomContainer}>
+
+      <Share />
+
       <div className={styles.buttonContainer}>
         <AddButton onClick={onClick} />
       </div>
+
     </div>
   )
 }
 
-export default FloatingAddButton
+export default FloatingButtons

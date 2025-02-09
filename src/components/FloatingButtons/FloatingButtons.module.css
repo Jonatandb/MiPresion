@@ -6,8 +6,9 @@
   max-width: 23.438rem;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   pointer-events: none;
+  align-items: flex-end;
 }
 
 .buttonContainer {
