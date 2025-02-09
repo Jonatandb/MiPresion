@@ -21,7 +21,9 @@ export interface LogData {
   medicine: boolean;
   notes: string;
   date: string;
-  arrhythmia: boolean
+  arrhythmia: boolean;
+  posture: string;
+  deviceLocation: string;
 }
 
 interface AddEditLogProps {
@@ -38,7 +40,9 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
       date: formatToISODateString(),
       medicine: false,
       arrhythmia: false,
-      notes: ""
+      notes: "",
+      posture: "",
+      deviceLocation: ""
     }
     return initialState
   })
@@ -271,6 +275,35 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
                   />
                 </div>
               </label>
+            </div>
+            <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
+              <label className={styles.iconLabel} htmlFor="posture">Postura</label>
+              <div className={styles.iconContainer}>
+                <select
+                  id="posture"
+                  onChange={e => setData({ ...data, posture: e.target.value })}
+                  value={data.posture} >
+                  <option value="">Seleccionar postura</option>
+                  <option value="parado">Parado</option>
+                  <option value="sentado">Sentado</option>
+                  <option value="acostado">Acostado</option>
+                </select>
+              </div>
+            </div>
+            <div className={`${styles.inputContainer} ${styles.fullWidth}`}>
+              <label className={styles.iconLabel} htmlFor="location">Ubicación del medidor</label>
+              <div className={styles.iconContainer}>
+                <select
+                  id="location"
+                  onChange={e => setData({ ...data, deviceLocation: e.target.value })}
+                  value={data.deviceLocation} >
+                  <option value="">Seleccionar ubicación</option>
+                  <option value="b_derecho">Brazo derecho</option>
+                  <option value="b_izquierdo">Brazo izquierdo</option>
+                  <option value="m_derecha">Muñeca derecha</option>
+                  <option value="m_izquierda">Muñeca izquierda</option>
+                </select>
+              </div>
             </div>
           </div>
 

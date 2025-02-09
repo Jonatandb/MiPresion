@@ -29,7 +29,6 @@
 .button:focus,
 .button:active {
   text-decoration: none;
-  outline: none;
   border: none;
 }
 
@@ -133,7 +132,6 @@
   font-family: inherit;
   border: none;
   resize: none;
-  outline: none;
   background-image: none;
   background-origin: content-box;
   background-size: 1.1rem 1.1rem;
@@ -257,4 +255,13 @@
   margin-bottom: 2rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.inputContainer select {
+  border: 1px solid var(--background-color);
+  background-color: var(--background-color-secondary);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 0.313rem;
 }

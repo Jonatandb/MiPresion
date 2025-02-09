@@ -1,4 +1,3 @@
-
 import { createContext, useEffect, useState } from "react"
 import { LogData } from "@/components/AddEditLog/AddEditLog"
 import { formatToISODateString } from "@/utils/formatDateUtils"
@@ -22,7 +21,9 @@ const defaultLogPropertyValues: LogData = {
   date: formatToISODateString(),
   medicine: false,
   arrhythmia: false,
-  notes: ""
+  notes: "",
+  posture: "",
+  deviceLocation: ""
 }
 
 const LogContext = createContext<LogContextState>({} as LogContextState)
@@ -36,7 +37,7 @@ const cleanPulse = (log: LogData) => ({ ...log, pulse: !Number(log.pulse) || Num
 const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [logs, setLogs] = useState<LogData[]>(() => sortLogs(initialState))
   const [selectedLogId, setSelectedLogId] = useState("")
-  const [stateMigrated, setStateMigrated] = useState(false)
+  const [logsHaveBeenMigrated, setLogsHaveBeenMigrated] = useState(false)
 
   const addLog = (newLog: LogData) => {
     const id = crypto.randomUUID()
@@ -71,18 +72,18 @@ const LogContextProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   useEffect(() => {
-    if (logs.length > 0 && !stateMigrated) {
+    if (logs.length > 0 && !logsHaveBeenMigrated) {
       const updatedLogs = logs.map((log) => {
         const updatedLog = { ...defaultLogPropertyValues, ...log }
         return updatedLog
       })
       localStorage.setItem("logs", JSON.stringify(updatedLogs))
       setLogs(updatedLogs)
-      setStateMigrated(true)
+      setLogsHaveBeenMigrated(true)
     } else {
       localStorage.setItem("logs", JSON.stringify(logs))
     }
-  }, [logs, stateMigrated])
+  }, [logs, logsHaveBeenMigrated])
 
   return (
     <LogContext.Provider value={{ logs, addLog, updateLog, deleteLog, selectedLogId, setSelectedLogId, getLogById, resetLogs }}>

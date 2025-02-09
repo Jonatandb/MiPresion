@@ -14,6 +14,14 @@ const News = () => {
       <ul>
 
         <li className={styles.newVersion}>
+          <strong>v.3.4.15</strong>
+          <ul>
+            <li>Se agrega funcionalidad que permite registrar postura corporal y posición del medidor.</li>
+            <li>Se mejora navegación por teclado en toda la aplicación.</li>
+          </ul>
+        </li>
+
+        <li className={styles.newVersion}>
           <strong>v.3.4.8</strong>
           <ul>
             <li>Al agregar una medición, ya no es obligatorio ingresar el pulso.</li>
