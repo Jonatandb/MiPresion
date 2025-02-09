@@ -46,31 +46,31 @@ const Settings = ({ onClose }: { onClose: () => void }) => {
               <h2 className={styles.title}>Ajustes</h2>
 
               <span className={styles.rowTitle}>GUARDAR / IMPRIMIR</span>
-              <div className={`${styles.row}`} onClick={() => navigate("/settings/exportpdf")}>
+              <button className={`${styles.row} ${styles.button}`} onClick={() => navigate("/settings/exportpdf")}>
                 <PdfIcon width="1.25rem" height="1.25rem" />
                 <span>Exportar a PDF</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}>PERSONALIZAR</span>
-              <div className={styles.row} onClick={() => toggleTheme()}>
+              <button className={`${styles.row} ${styles.button}`} onClick={() => toggleTheme()}>
                 {theme === Theme.Light ?
                   <MoonIcon width="1.25rem" height="1.25rem" />
                   :
                   <SunIcon width="1.25rem" height="1.25rem" />}
                 <span>Activar Tema {theme === Theme.Light ? "Oscuro" : "Claro"}</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}>MANTENIMIENTO</span>
-              <div className={`${styles.row} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
+              <button className={`${styles.row} ${styles.button} ${logs.length === 0 ? styles.disabled : ""}`} onClick={handleReset}>
                 <TrashIcon width="1.25rem" height="1.25rem" />
                 <span>Eliminar todas las mediciones</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}>CONTACTO</span>
-              <div className={styles.row} onClick={() => navigate("/settings/contact")}>
+              <button className={`${styles.row} ${styles.button}`} onClick={() => navigate("/settings/contact")}>
                 <EmailIcon width="1.25rem" height="1.25rem" />
                 <span>¿Dudas? ¿Sugerencias? ¿Errores?</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}></span>
               <span className={styles.rowTitle}></span>

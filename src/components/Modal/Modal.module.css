@@ -20,7 +20,7 @@
   flex-direction: column;
   overflow: hidden;
   background-color: var(--background-color);
-
+  outline: none;
   overscroll-behavior: contain;
   position: relative;
   touch-action: none;

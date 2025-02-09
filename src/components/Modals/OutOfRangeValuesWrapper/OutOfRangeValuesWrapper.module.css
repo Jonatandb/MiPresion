@@ -31,7 +31,6 @@
 .button:focus,
 .button:active {
   text-decoration: none;
-  outline: none;
   border: none;
 }
 

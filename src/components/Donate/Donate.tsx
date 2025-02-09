@@ -72,7 +72,7 @@ const Donate = () => {
           alt="MercadoPago banner"
         />
       </a>
-      <div className={styles.theterWallet} onClick={handleTheterClick}>
+      <button className={styles.theterWallet} onClick={handleTheterClick}>
         <div title='Donar Theter'>
           <img src={usdt}
             alt="Theter logo"
@@ -90,7 +90,7 @@ const Donate = () => {
             height="1rem"
           />
         </div>
-      </div>
+      </button>
       <a href="https://ko-fi.com/L3L31N4GV/"
         target="_blank"
         rel="noopener noreferrer"

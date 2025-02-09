@@ -29,34 +29,34 @@ const Help = ({ onClose }: { onClose: () => void }) => {
               <h2 className={styles.title}>Ayuda</h2>
 
               <span className={styles.rowTitle}></span>
-              <div className={styles.row} onClick={() => navigate("/help/measurementguide")}>
+              <button className={`${styles.row}  ${styles.button}`} onClick={() => navigate("/help/measurementguide")}>
                 <QuestionIcon width="1.25rem" height="1.25rem" />
                 <span>¿Cómo me tomo la presión?</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}></span>
-              <div className={styles.row} onClick={() => navigate("/help/outofrangevalues")}>
+              <button className={`${styles.row}  ${styles.button}`} onClick={() => navigate("/help/outofrangevalues")}>
                 <WarningIcon width="1.25rem" height="1.25rem" />
                 <span>¿Qué es "Valores fuera de rango"?</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}></span>
-              <div className={styles.row} onClick={() => navigate("/help/arrythmia")}>
+              <button className={`${styles.row}  ${styles.button}`} onClick={() => navigate("/help/arrythmia")}>
                 <QuestionIcon width="1.25rem" height="1.25rem" />
                 <span>¿Qué es "Arritmia (latido irregular)"?</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}></span>
-              <div className={styles.row} onClick={() => navigate("/help/bloodpressurelevels")}>
+              <button className={`${styles.row}  ${styles.button}`} onClick={() => navigate("/help/bloodpressurelevels")}>
                 <ChartIcon width="1.25rem" height="1.25rem" />
                 <span>Tabla de niveles de presión</span>
-              </div>
+              </button>
 
               <span className={styles.rowTitle}></span>
-              <div className={styles.row} onClick={() => navigate("/help/storage")}>
+              <button className={`${styles.row}  ${styles.button}`} onClick={() => navigate("/help/storage")}>
                 <StorageIcon width="1.25rem" height="1.25rem" />
                 <span>¿Dónde se guardan mis datos?</span>
-              </div>
+              </button>
               <span className={styles.rowTitle}></span>
               <span className={styles.rowTitle}></span>
 

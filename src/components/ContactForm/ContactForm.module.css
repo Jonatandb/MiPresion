@@ -27,7 +27,6 @@
   color: var(--text-color);
   font-family: inherit;
   border: none;
-  outline: none;
   box-shadow: none;
 }
 
@@ -39,7 +38,6 @@
   color: var(--text-color);
   font-family: inherit;
   border: none;
-  outline: none;
   box-shadow: none;
   resize: none;
 }

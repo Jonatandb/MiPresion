@@ -26,7 +26,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes, arrhythmia
   const category = getCategory(systolic, diastolic)
 
   return (
-    <article className={styles.logContainer} onClick={() => setSelectedLogId(id)}>
+    <button className={styles.logContainer} onClick={() => setSelectedLogId(id)}>
       <section className={styles.row}>
         <span className={`${styles.level} ${styleByCategory[category.value]}`} title="Nivel">
           {category.value} {(category.value == categoryType.OUT_OF_RANGE) ? <WarningIcon width="1.25rem" height="1.25rem" /> : ""}
@@ -58,7 +58,7 @@ const Log = ({ id, date, systolic, diastolic, pulse, medicine, notes, arrhythmia
           )}
         </div>
       </section>
-    </article>
+    </button>
   )
 }
 

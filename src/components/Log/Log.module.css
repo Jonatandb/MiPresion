@@ -7,17 +7,18 @@
   font-size: 1.6rem;
   color: var(--text-color);
   background-color: var(--background-color-secondary);
+  border: none;
 }
 
 .logContainer:hover {
   cursor: pointer;
-  background-color: var(--color-primary);
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  width: 100%;
 }
 
 .level {

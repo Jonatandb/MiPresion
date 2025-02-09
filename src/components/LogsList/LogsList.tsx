@@ -45,8 +45,8 @@ const LogsList = () => {
           if (shouldShowYearHeader)
             lastYear = yearToShow
 
-          return (
-            <div key={log.id}>
+          return (shouldShowYearHeader || shouldShowDateHeader) ? (
+            <div key={log.id} className={styles.dateYearContainer}>
               {
                 shouldShowYearHeader && (
                   <h2
@@ -65,9 +65,11 @@ const LogsList = () => {
                   </h2>
                 )
               }
-              <Log{...log} date={timeToShow} />
+              <Log {...log} date={timeToShow} />
             </div>
           )
+            :
+            <Log key={log.id} {...log} date={timeToShow} />
         })
       }
     </section>

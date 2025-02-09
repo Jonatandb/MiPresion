@@ -34,6 +34,15 @@
   flex-direction: column;
   padding-bottom: .1rem;
   margin-bottom: .8rem;
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+}
+
+.theterWallet:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  border-radius: 0.313rem;
 }
 
 .theterWallet div {
@@ -61,11 +70,6 @@
   justify-content: center;
 }
 
-.theterWallet:hover {
-  cursor: pointer;
-  background-color: var(--color-primary);
-  border-radius: 0.313rem;
-}
 
 .theterWallet span {
   font-size: .5rem;
