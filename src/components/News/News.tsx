@@ -14,38 +14,38 @@ const News = () => {
       <ul>
 
         <li className={styles.newVersion}>
-          <strong>v.3.4.15</strong>
+          <strong>v.3.5.0</strong>
           <ul>
-            <li>Se agrega funcionalidad que permite registrar postura corporal y posición del medidor.</li>
-            <li>Se mejora navegación por teclado en toda la aplicación.</li>
+            <li><strong>Se agrega nueva funcionalidad</strong> que permite registrar <strong>postura corporal</strong> y <strong>ubicación del medidor</strong> (tensiómetro) al {generateLinkOrSpan("/addedit", "agregar una medición")}.</li>
+            <li><strong>Se mejora navegación por teclado</strong> en toda la aplicación.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.4.8</strong>
           <ul>
-            <li>Al agregar una medición, ya no es obligatorio ingresar el pulso.</li>
-            <li>Pequeñas mejoras en el diseño de la lista de mediciones.</li>
-            <li>Pequeñas mejoras en las validaciones de los valores ingresados durante una medición.</li>
+            <li>Al {generateLinkOrSpan("/addedit", "agregar una medición")}, ya no es obligatorio ingresar el pulso.</li>
+            <li><strong>Se realizaron pequeñas mejoras</strong> en el diseño de la lista de mediciones.</li>
+            <li><strong>Se realizaron pequeñas mejoras</strong> en las validaciones de los valores ingresados al {generateLinkOrSpan("/addedit", "agregar una medición")}.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.4.1</strong>
           <ul>
-            <li>Se agregó columna "Arritmia" al reporte PDF.</li>
+            <li><strong>Se agregó columna "Arritmia"</strong> al {generateLinkOrSpan("/settings/exportpdf", "reporte PDF", logs.length > 0)}.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.4.0</strong>
           <ul>
-            <li>Se agregó ícono en la cabecera que lleva a la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
-            <li>Se mejoró el diseño de la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
-            <li>Se actualizaron los accesos de la pantalla de inicio:
+            <li><strong>Se agregó ícono en la cabecera</strong> que lleva a la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
+            <li><strong>Se mejoró el diseño</strong> de la pantalla de {generateLinkOrSpan("/settings/exportpdf", "generación de reportes PDF", logs.length > 0)}.</li>
+            <li><strong>Se actualizaron</strong> los accesos de la pantalla de inicio:
               <ul>
-                <li>Se agregó acceso a la sección en la ayuda que explica {generateLinkOrSpan("/help/arrythmia", "que es Arritmia (latido irregular)")}.</li>
-                <li>Se agregó acceso directo para cambiar entre tema claro/oscuro.</li>
+                <li><strong>Se agregó acceso</strong> a la sección en la ayuda que explica {generateLinkOrSpan("/help/arrythmia", "qué es Arritmia (latido irregular)")}.</li>
+                <li><strong>Se agregó acceso</strong> directo para cambiar entre tema claro/oscuro.</li>
               </ul>
             </li>
           </ul>
@@ -54,23 +54,23 @@ const News = () => {
         <li className={styles.newVersion}>
           <strong>v.3.3.2</strong>
           <ul>
-            <li>Se agregó sección en la ayuda que explica {generateLinkOrSpan("/help/arrythmia", "que es Arritmia (latido irregular)")}.</li>
+            <li><strong>Se agregó sección en la ayuda</strong> que explica {generateLinkOrSpan("/help/arrythmia", "qué es Arritmia (latido irregular)")}.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.3.0</strong>
           <ul>
-            <li>Se agregó funcionalidad que permite {generateLinkOrSpan("/addedit", "registrar arritmia en las mediciones")}.</li>
-            <li>Se hicieron ajustes generales que permiten que cuando se agrande el tamaño del texto todo se vea correctamente.</li>
-            <li>Se hicieron ajustes generales que permiten que en pantallas grandes se pueda hacer zoom.</li>
+            <li><strong>Se agregó nueva funcionalidad</strong> que permite {generateLinkOrSpan("/addedit", "registrar arritmia en las mediciones")}.</li>
+            <li>Se hicieron ajustes generales que permiten que <strong>cuando se agrande el tamaño del texto todo se vea correctamente</strong>.</li>
+            <li>Se hicieron ajustes generales que permiten que <strong>en pantallas grandes se pueda hacer zoom</strong>.</li>
           </ul>
         </li>
 
         <li className={styles.newVersion}>
           <strong>v.3.2.0</strong>
           <ul>
-            <li>El {generateLinkOrSpan("/settings/exportpdf", "reporte PDF", logs.length > 0)} ahora incluye los valores promedio (sistólica, diastólica, pulso) del rango de fechas seleccionado.</li>
+            <li>El {generateLinkOrSpan("/settings/exportpdf", "reporte PDF", logs.length > 0)} <strong>ahora incluye los valores promedio</strong> (sistólica, diastólica, pulso) del rango de fechas seleccionado.</li>
           </ul>
         </li>
 
