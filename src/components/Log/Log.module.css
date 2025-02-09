@@ -112,8 +112,3 @@
   padding-bottom: .3rem;
   justify-content: center;
 }
-
-.logContainer:hover .level.levelStage3,
-.logContainer:hover .level.levelAisolated {
-  color: var(--color-white);
-}
