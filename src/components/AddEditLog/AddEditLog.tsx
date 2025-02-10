@@ -68,12 +68,18 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
         (diastolicRef.current as HTMLInputElement).focus()
       return
     }
+    if (data.diastolic >= data.systolic) {
+      alert("La presión diastólica no puede ser mayor que la presión sistólica")
+      if (diastolicRef.current)
+        (diastolicRef.current as HTMLInputElement).focus()
+      return
+    }
     if (!data.date) {
       data.date = new Date().toISOString().slice(0, 16)
     }
 
     if (hasOutOfRangeValues()) {
-      const wantToSaveAnyway = confirm("Valores fuera de rango. ¿Guardar igual?")
+      const wantToSaveAnyway = confirm("Valores fuera de rango. ¿Continuar?")
       if (wantToSaveAnyway == false) {
         setShowOutOfRangeMessage(true)
         return

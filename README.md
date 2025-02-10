@@ -120,7 +120,11 @@ O bien `build-dev` para verificar el build:
 
 ## 👷🏻‍♂️ Trabajando:
 
+- [ ] Se mejora validaciones para detectar "valores fuera de rango"
+
 ## ✅ Completado:
+
+- [x] Se agrega validación para evitar ingresar diastólica menor a sistólica
 
 - [x] Agregar [React-share](https://www.npmjs.com/package/react-share) para permitir compartir el sitio en redes sociales
 

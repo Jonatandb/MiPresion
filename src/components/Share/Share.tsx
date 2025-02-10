@@ -6,9 +6,9 @@ import {
   WhatsappShareButton,
   XIcon,
 } from "react-share"
+import { trackEvent } from "@/utils/analytics"
 
 import styles from "./Share.module.css"
-import { trackEvent } from "@/utils/analytics"
 
 const Share = () => {
   const shareUrl = "https://jonatandb.dev.ar/MiPresion/"
