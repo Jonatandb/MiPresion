@@ -24,6 +24,8 @@ const categories: Category[] = [
       let result = false
       if (diastolic > 0 && (systolic < 80 || systolic > 200)) {
         result = true
+      } else if (diastolic > 0 && systolic > 0 && (systolic < 130 && diastolic < 50)) {
+        result = true
       } else if (diastolic > 0 && systolic > 0 && diastolic >= systolic) {
         result = true
       } else if (systolic > 0 && diastolic > 200) {

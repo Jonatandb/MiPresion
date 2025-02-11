@@ -14,7 +14,7 @@ const News = () => {
       <ul>
 
         <li className={styles.newVersion}>
-          <strong>v.3.6.4</strong>
+          <strong>v.3.6.5</strong>
           <ul>
             <li><strong>Se agregan íconos para compartir</strong> la aplicación en redes sociales.</li>
             <li><strong>Se mejoran validaciones</strong> que detectan valores fuera de rango al {generateLinkOrSpan("/addedit", "agregar una medición")}.</li>
