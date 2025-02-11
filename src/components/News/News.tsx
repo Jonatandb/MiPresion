@@ -14,6 +14,14 @@ const News = () => {
       <ul>
 
         <li className={styles.newVersion}>
+          <strong>v.3.6.4</strong>
+          <ul>
+            <li><strong>Se agregan íconos para compartir</strong> la aplicación en redes sociales.</li>
+            <li><strong>Se mejoran validaciones</strong> que detectan valores fuera de rango al {generateLinkOrSpan("/addedit", "agregar una medición")}.</li>
+          </ul>
+        </li>
+
+        <li className={styles.newVersion}>
           <strong>v.3.5.0</strong>
           <ul>
             <li><strong>Se agrega nueva funcionalidad</strong> que permite registrar <strong>postura corporal</strong> y <strong>ubicación del medidor</strong> (tensiómetro) al {generateLinkOrSpan("/addedit", "agregar una medición")}.</li>
