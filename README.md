@@ -113,6 +113,7 @@ O bien `build-dev` para verificar el build:
 
 - Refactors:
 
+  - [ ] Hacer que la categoría a la que corresponde una medición sea un campo de la misma y no sea recalculada en cada renderizado
   - [ ] Crear un contexto para guardar todos los ajustes (dark mode, theter wallet, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
   - [ ] Reemplazar formulario de agregar medición con uno de Formik (o React Hook Form) con Yup para validaciones
   - [ ] Reemplazar alerts con [React-toastify](https://www.npmjs.com/package/react-toastify)
@@ -120,9 +121,9 @@ O bien `build-dev` para verificar el build:
 
 ## 👷🏻‍♂️ Trabajando:
 
-- [ ] Se mejora validaciones para detectar "valores fuera de rango"
-
 ## ✅ Completado:
+
+- [x] Se mejoran validaciones para detectar "valores fuera de rango"
 
 - [x] Se agrega validación para evitar ingresar diastólica menor a sistólica
 

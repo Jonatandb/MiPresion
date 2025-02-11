@@ -69,7 +69,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
       return
     }
     if (data.diastolic >= data.systolic) {
-      alert("La presión diastólica no puede ser mayor que la presión sistólica")
+      alert("Diastólica no puede ser mayor ni igual que Sistólica")
       if (diastolicRef.current)
         (diastolicRef.current as HTMLInputElement).focus()
       return
@@ -136,12 +136,23 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
     setData(updatedData)
   }
 
-
   useEffect(() => {
     if (!data.date && datePickerRef.current) {
       (datePickerRef.current as HTMLInputElement).value = formatToISODateString()
     }
-    setShowOutOfRangeMessage(hasOutOfRangeValues(data.systolic, data.diastolic))
+
+    let systolicNum: number
+    let diastolicNum: number
+    try {
+      systolicNum = Number(data.systolic)
+      diastolicNum = Number(data.diastolic)
+      if (systolicNum > 0 && diastolicNum > 0) {
+        setShowOutOfRangeMessage(hasOutOfRangeValues(systolicNum, diastolicNum))
+      }
+    } catch (error) {
+      console.error("AddEditLog error:", { error })
+    }
+
   }, [data.date, data.systolic, data.diastolic, hasOutOfRangeValues])
 
   useEffect(() => {
@@ -234,7 +245,7 @@ const AddEditLog = ({ onClose }: AddEditLogProps) => {
           {showOutOfRangeMessage && (
             <div className={styles.outOfRangeMessageContainer}>
               <WarningIcon width="1rem" height="1rem" />
-              <span>Valores fuera de rango</span>
+              <span>Valores fuera de rango.</span>
               <a href="#outOfRangesValues">¿Que significa?</a>
             </div>
           )}
