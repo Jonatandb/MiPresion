@@ -85,8 +85,8 @@ O bien `build-dev` para verificar el build:
 
 - [ ] Agregar calendario que indique en que fechas se registraron mediciones
 - [ ] Agregar tablero con estadísticas
-- [ ] Que desde Ajustes se pueda especificar el país de origen y la tabla de niveles (y los niveles mostrados en los registros) se muestre de acuerdo a dicho país.
-  - [ ] Agregar posibilidad de modificar valores de la tabla de niveles
+- [ ] Que desde Ajustes se pueda especificar el país de origen y que la tabla de niveles (y los niveles mostrados en los registros) se muestre de acuerdo a dicho país.
+  - [ ] Agregar posibilidad de personalizar valores de la tabla de niveles
 - [ ] Agregar opción de exportar reporte a archivo de Excel
 - [ ] Agregar opción de "Modo Daltónico"
 - [ ] Agregar opción para cambiar de idioma entre inglés y español (y potencialmente portugués y francés)
@@ -96,7 +96,7 @@ O bien `build-dev` para verificar el build:
 - Ajustes:
 
   - [ ] Agregar opción "Exportar/Importar los datos" (json), para importar todo desde otro navegador o `dominio`
-  - [ ] Agregar sección “Otros de mis proyectos” (debajo de Donate o SocialMedia, incluso debajo del formulario de contacto), con proyectos como 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de tales proyectos.
+  - [ ] Agregar sección “Otros de mis proyectos” con proyectos como 🔑LoginsAdmin y 💸MisDeudas (próximamente), clickeables (con su propia URL), con info de tales proyectos.
 
 - Reporte PDF:
 
@@ -104,7 +104,6 @@ O bien `build-dev` para verificar el build:
 
 - A considerar:
 
-  - [ ] Agregar datos de postura y ubicación del medidor al reporte PDF (¿hoja en horizontal?)
   - [ ] Agregar validación que avise si hay cambios sin guardar y se está intentando cambiar de pantalla (o cerrar el modal)
   - [ ] Agregar checkbox "Promediar con segunda medición", que permita ingresar valores de una segunda medición y finalmente guarde el valor de sistólica, diastólica y pulso promediados.
   - [ ] Hacer versión responsive para que en desktop aproveche todo el ancho de la pantalla
@@ -113,8 +112,8 @@ O bien `build-dev` para verificar el build:
 
 - Refactors:
 
-  - [ ] Hacer que la categoría a la que corresponde una medición sea un campo de la misma y no sea recalculada en cada renderizado
-  - [ ] Crear un contexto para guardar todos los ajustes (dark mode, theter wallet, idioma, país, formato de fecha, valores de la tabla de niveles, valores de los switches de los ajustes, etc)
+  - [ ] Hacer que la categoría a la que corresponde una medición sea un campo de la misma y no sea recalculada en cada renderizado sino en cada modificación
+  - [ ] Crear un contexto para guardar todos los ajustes (Facilitará exportación a JSON)
   - [ ] Reemplazar formulario de agregar medición con uno de Formik (o React Hook Form) con Yup para validaciones
   - [ ] Reemplazar alerts con [React-toastify](https://www.npmjs.com/package/react-toastify)
   - [ ] Agregar React-Modal o similar para reemplazar los confirm
