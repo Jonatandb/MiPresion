@@ -25,6 +25,12 @@
 
 ---
 
+Chatear con este repo:
+
+- [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Jonatandb/MiPresion)
+
+---
+
 ## Ejecutar localmente
 
 Clonar el proyecto
